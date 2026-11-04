@@ -1,0 +1,87 @@
+site_name: LunCoSim Documentation
+site_description: Install LunCoSim, run your first mission, and learn how Twins, USD, Modelica, Rhai, and Assets.toml fit together.
+site_url: https://luncosim.github.io/luncosim-docs/
+repo_url: https://github.com/LunCoSim/luncosim-docs
+repo_name: LunCoSim/luncosim-docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: assets/images/luncosim-icon.png
+  favicon: assets/images/luncosim-icon.png
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Install: getting-started/install.md
+      - First run: getting-started/first-run.md
+      - First lesson: getting-started/first-lesson.md
+  - Concepts:
+      - How it fits together: concepts/how-it-fits-together.md
+      - Twin: concepts/twin.md
+      - twin.toml: concepts/twin-toml.md
+      - USD: concepts/usd.md
+      - Modelica: concepts/modelica.md
+      - Rhai: concepts/rhai.md
+      - Assets.toml: concepts/assets-toml.md
+  - Guides:
+      - Create a Twin: guides/create-a-twin.md
+      - Write a Rhai scenario: guides/write-a-scenario.md
+      - Inspect telemetry: guides/inspect-telemetry.md
+      - Use the HTTP API: guides/http-api.md
+      - Troubleshooting: guides/troubleshooting.md
+  - Reference:
+      - CLI: reference/cli.md
+      - Controls: reference/controls.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.keys
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/LunCoSim/lunco-sim
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/A6U3GdvQum
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@LunCoSim

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img" aria-labelledby="title desc">
+  <title id="title">LunCoSim runtime loop</title>
+  <desc id="desc">Authored USD, Modelica, Rhai, and Assets.toml are composed and projected into a live world. The fixed clock advances Modelica and physics, events and typed commands feed back into Rhai policy, and presentation renders the result.</desc>
+  <style>
+    .canvas { fill: #f7f9fc; }
+    .title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 26px; font-weight: 700; }
+    .subtitle { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 400; }
+    .box { stroke-width: 1.5; }
+    .box-title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 17px; font-weight: 700; }
+    .box-body { fill: #445066; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 400; }
+    .arrow { stroke: #7a879c; stroke-width: 2.2; fill: none; }
+    .arrow-strong { stroke: #254f8f; stroke-width: 2.6; fill: none; }
+    .label { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 600; }
+    .num { fill: #ffffff; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 700; }
+  </style>
+
+  <defs>
+    <marker id="head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7a879c"/>
+    </marker>
+    <marker id="head-strong" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#254f8f"/>
+    </marker>
+  </defs>
+
+  <rect class="canvas" x="0" y="0" width="1000" height="640"/>
+
+  <text class="title" x="48" y="52">From authored files to a live world</text>
+  <text class="subtitle" x="48" y="78">The runtime owns the loop. A composed USD stage by itself does nothing.</text>
+
+  <rect class="box" x="48" y="112" width="264" height="132" rx="12" fill="#e8eef8" stroke="#b9c8dd"/>
+  <circle cx="80" cy="144" r="15" fill="#254f8f"/>
+  <text class="num" x="75" y="149">1</text>
+  <text class="box-title" x="106" y="150">Author</text>
+  <text class="box-body" x="68" y="180">twin.toml · scene.usda</text>
+  <text class="box-body" x="68" y="200">models/Drive.mo · scenarios/drive.rhai</text>
+  <text class="box-body" x="68" y="220">Assets.toml · requirements.sysml</text>
+
+  <rect class="box" x="368" y="112" width="264" height="132" rx="12" fill="#eaf3ee" stroke="#9fc7b2"/>
+  <circle cx="400" cy="144" r="15" fill="#2f7a55"/>
+  <text class="num" x="395" y="149">2</text>
+  <text class="box-title" x="426" y="150">Compose + project</text>
+  <text class="box-body" x="388" y="180">Resolve references, payloads,</text>
+  <text class="box-body" x="388" y="200">variants and connections.</text>
+  <text class="box-body" x="388" y="220">Project to entities and bodies.</text>
+
+  <rect class="box" x="688" y="112" width="264" height="132" rx="12" fill="#f2ecfa" stroke="#c0a8da"/>
+  <circle cx="720" cy="144" r="15" fill="#6a3d9a"/>
+  <text class="num" x="715" y="149">3</text>
+  <text class="box-title" x="746" y="150">Advance the clock</text>
+  <text class="box-body" x="708" y="180">Fixed-step master clock.</text>
+  <text class="box-body" x="708" y="200">Modelica at communication points.</text>
+  <text class="box-body" x="708" y="220">Avian physics for rigid bodies.</text>
+
+  <rect class="box" x="688" y="326" width="264" height="132" rx="12" fill="#fdf2e7" stroke="#dcb98c"/>
+  <circle cx="720" cy="358" r="15" fill="#a8611b"/>
+  <text class="num" x="715" y="363">4</text>
+  <text class="box-title" x="746" y="364">Observe + decide</text>
+  <text class="box-body" x="708" y="394">Events reach on_event hooks.</text>
+  <text class="box-body" x="708" y="414">Tasks and objectives advance.</text>
+  <text class="box-body" x="708" y="434">Rhai issues typed commands.</text>
+
+  <rect class="box" x="368" y="326" width="264" height="132" rx="12" fill="#e8eef8" stroke="#b9c8dd"/>
+  <circle cx="400" cy="358" r="15" fill="#254f8f"/>
+  <text class="num" x="395" y="363">5</text>
+  <text class="box-title" x="426" y="364">Present</text>
+  <text class="box-body" x="388" y="394">Camera, terrain, materials,</text>
+  <text class="box-body" x="388" y="414">HUD, graphs, coach marks.</text>
+  <text class="box-body" x="388" y="434">The UI dispatches commands.</text>
+
+  <rect class="box" x="48" y="326" width="264" height="132" rx="12" fill="#ffffff" stroke="#c8d2e0"/>
+  <circle cx="80" cy="358" r="15" fill="#315f91"/>
+  <text class="num" x="75" y="363">6</text>
+  <text class="box-title" x="106" y="364">Inspect + test</text>
+  <text class="box-body" x="68" y="394">Read ports and solver state.</text>
+  <text class="box-body" x="68" y="414">Capture screenshots and graphs.</text>
+  <text class="box-body" x="68" y="434">Authored Rhai emits a verdict.</text>
+
+  <path class="arrow" marker-end="url(#head)" d="M312 178 L368 178"/>
+  <path class="arrow" marker-end="url(#head)" d="M632 178 L688 178"/>
+  <path class="arrow" marker-end="url(#head)" d="M820 244 L820 326"/>
+  <path class="arrow" marker-end="url(#head)" d="M688 392 L632 392"/>
+  <path class="arrow" marker-end="url(#head)" d="M368 392 L312 392"/>
+
+  <path class="arrow-strong" marker-end="url(#head-strong)" d="M180 458 L180 526 L820 526 L820 458"/>
+  <text class="label" x="430" y="550">commands, input, and policy changes feed the next fixed step</text>
+
+  <rect class="box" x="48" y="574" width="904" height="42" rx="10" fill="#162033" stroke="#162033"/>
+  <text class="box-body" x="68" y="600" fill="#c8d4e6">The loop is deterministic for the same admitted scene revision and ordered inputs. UI responsiveness never chooses authoritative state.</text>
+</svg>
