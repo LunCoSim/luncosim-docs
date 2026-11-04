@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Twin folder layout</title>
+  <desc id="desc">A Twin is a folder containing twin.toml plus a USD scene, Modelica models, Rhai scenarios, SysML requirements, and Assets.toml. The .lunco folder holds local session state.</desc>
+  <style>
+    .canvas { fill: #f7f9fc; }
+    .title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 26px; font-weight: 700; }
+    .subtitle { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 400; }
+    .panel { fill: #ffffff; stroke: #c8d2e0; stroke-width: 1.5; }
+    .folder { fill: #162033; font-family: SFMono-Regular, Consolas, monospace; font-size: 20px; font-weight: 700; }
+    .file { fill: #253149; font-family: SFMono-Regular, Consolas, monospace; font-size: 16px; font-weight: 400; }
+    .comment { fill: #6a7689; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 400; }
+    .lead { fill: #445066; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 400; }
+    .tag { fill: #ffffff; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+  </style>
+
+  <rect class="canvas" x="0" y="0" width="1000" height="600"/>
+
+  <text class="title" x="48" y="52">A Twin is a folder with a manifest</text>
+  <text class="subtitle" x="48" y="78">The manifest is the only required file. Everything else is an ordinary domain document.</text>
+
+  <rect class="panel" x="48" y="108" width="470" height="412" rx="14"/>
+
+  <text class="folder" x="76" y="154">my-rover-twin/</text>
+  <text class="file" x="100" y="188">twin.toml</text>
+  <text class="comment" x="240" y="188">project manifest</text>
+
+  <text class="file" x="100" y="222">scene.usda</text>
+  <text class="comment" x="240" y="222">default USD scene</text>
+
+  <text class="file" x="100" y="256">models/</text>
+  <text class="file" x="124" y="286">Drive.mo</text>
+  <text class="comment" x="240" y="286">continuous behavior</text>
+
+  <text class="file" x="100" y="320">scenarios/</text>
+  <text class="file" x="124" y="350">drive.rhai</text>
+  <text class="comment" x="240" y="350">mission policy</text>
+
+  <text class="file" x="100" y="384">requirements.sysml</text>
+  <text class="comment" x="300" y="384">optional requirements</text>
+
+  <text class="file" x="100" y="418">Assets.toml</text>
+  <text class="comment" x="240" y="418">external bytes</text>
+
+  <text class="file" x="100" y="452">.lunco/</text>
+  <text class="comment" x="240" y="452">local session state</text>
+
+  <text class="file" x="100" y="486">engine/</text>
+  <text class="comment" x="240" y="486">optional child Twin</text>
+
+  <rect x="548" y="124" width="404" height="92" rx="12" fill="#e8eef8" stroke="#b9c8dd"/>
+  <rect x="568" y="144" width="82" height="24" rx="6" fill="#254f8f"/>
+  <text class="tag" x="580" y="161">ENTRY</text>
+  <text class="lead" x="568" y="192" font-weight="700" fill="#162033">twin.toml selects the world.</text>
+  <text class="lead" x="568" y="212">"default_scene" is a Twin-relative path.</text>
+
+  <rect x="548" y="232" width="404" height="92" rx="12" fill="#eaf3ee" stroke="#9fc7b2"/>
+  <rect x="568" y="252" width="82" height="24" rx="6" fill="#2f7a55"/>
+  <text class="tag" x="580" y="269">SCENE</text>
+  <text class="lead" x="568" y="300" font-weight="700" fill="#162033">USD owns structure.</text>
+  <text class="lead" x="568" y="320">Hierarchy, transforms, physics, ports.</text>
+
+  <rect x="548" y="340" width="404" height="92" rx="12" fill="#f2ecfa" stroke="#c0a8da"/>
+  <rect x="568" y="360" width="82" height="24" rx="6" fill="#6a3d9a"/>
+  <text class="tag" x="580" y="377">BEHAVIOR</text>
+  <text class="lead" x="568" y="408" font-weight="700" fill="#162033">Modelica owns continuous state.</text>
+  <text class="lead" x="568" y="428">Equations, parameters, inputs and outputs.</text>
+
+  <rect x="548" y="448" width="404" height="72" rx="12" fill="#fdf2e7" stroke="#dcb98c"/>
+  <rect x="568" y="466" width="72" height="24" rx="6" fill="#a8611b"/>
+  <text class="tag" x="580" y="483">POLICY</text>
+  <text class="lead" x="568" y="510" font-weight="700" fill="#162033">Rhai owns sequencing and events.</text>
+
+  <rect x="48" y="544" width="904" height="36" rx="8" fill="#ffffff" stroke="#c8d2e0"/>
+  <text class="lead" x="68" y="567">.lunco/ is session state, not project content. Commit twin.toml, USD, .mo, .rhai, .sysml, and Assets.toml; ignore .lunco/.</text>
+</svg>
