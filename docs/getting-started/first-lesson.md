@@ -37,6 +37,11 @@ The rover's motion comes from the authored Modelica controller and the native
 physics engine. The lesson script observes possession, the flag sensor, and the
 rover's speed; it does not advance from elapsed time.
 
+<figure class="shot">
+<a href="../../assets/images/screenshots/first-lesson.webp"><img src="../../assets/images/screenshots/first-lesson.webp" alt="The First Drive scene with the lesson card listing objectives and actions, the rover in the sandbox, and the green glowing route marker."></a>
+<figcaption>The lesson card names the current objective and the actions that are valid now. Progress is checked against the live simulation.</figcaption>
+</figure>
+
 ## Reading the lesson card
 
 The card shows the current objective and the actions that are valid now. Some

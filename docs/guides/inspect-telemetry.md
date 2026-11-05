@@ -19,6 +19,11 @@ number.
 The graph records real simulation samples. It is not a render-frame animation.
 When the world is paused, the last sample stays visible.
 
+<figure class="shot">
+<a href="../../assets/images/screenshots/perspective-analyze.webp"><img src="../../assets/images/screenshots/perspective-analyze.webp" alt="The Analyze perspective with Telemetry on the left, Ports on the right, and a Graphs panel across the bottom."></a>
+<figcaption>The Analyze perspective brings Telemetry, Ports, and Graphs together. Select a channel in Telemetry to plot its samples in Graphs.</figcaption>
+</figure>
+
 ## From the HTTP API
 
 Start LunCoSim with an explicit port:

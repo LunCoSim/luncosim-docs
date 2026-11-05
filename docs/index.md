@@ -1,10 +1,24 @@
-# LunCoSim Documentation
+---
+title: LunCoSim Documentation
+---
 
-**Build a space mission. See how it behaves.**
-
-LunCoSim is an open-source simulation workbench for space engineers,
-researchers, and students. You assemble a vehicle and its environment, connect
-physical models, and watch the system behave through a mission.
+<div class="hero" markdown>
+<div class="hero__copy" markdown>
+<p class="hero__eyebrow">Open-source space mission workbench</p>
+<h1 class="hero__title">Build a space mission.<br>See how it behaves.</h1>
+<p class="hero__lead">LunCoSim connects a USD scene, Modelica equations, and
+Rhai mission logic into one running system. Assemble a vehicle and its
+environment, then watch the mission behave.</p>
+<div class="hero__actions" markdown>
+[Install LunCoSim](getting-started/install.md){ .md-button .md-button--primary }
+[Run your first lesson](getting-started/first-lesson.md){ .md-button }
+</div>
+</div>
+<figure class="hero__shot">
+<a href="assets/images/screenshots/first-drive.webp"><img src="assets/images/screenshots/first-drive.webp" alt="The LunCoSim workbench running the First Drive sandbox scene, with a rover, a glowing route marker, and the View perspective active."></a>
+<figcaption>First Drive in the View perspective. The tutorial card appears when a lesson starts.</figcaption>
+</figure>
+</div>
 
 This site is the user guide. It covers installation, the first lessons, and the
 concepts behind a LunCoSim project.

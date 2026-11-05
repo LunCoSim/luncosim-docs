@@ -17,6 +17,11 @@ dashboard, a USD document, or a Modelica model.
 The exact panels depend on the active perspective. **View → Reset Layout**
 restores the authored default for the current task.
 
+<figure class="shot">
+<a href="../../assets/images/screenshots/first-drive.webp"><img src="../../assets/images/screenshots/first-drive.webp" alt="The LunCoSim window with the perspective tabs in the title bar, a 3D viewport, and the status bar along the bottom."></a>
+<figcaption>The View perspective with the First Drive sandbox open. Panels and tabs change when you switch perspectives.</figcaption>
+</figure>
+
 ## Perspectives
 
 Choose a perspective from the title bar or **View → Perspectives**:

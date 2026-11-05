@@ -1,0 +1,313 @@
+/* LunCoSim documentation theme */
+
+:root {
+  --md-text-font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --md-code-font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  --md-primary-fg-color: #0b1b2b;
+  --md-primary-fg-color--light: #16324a;
+  --md-primary-fg-color--dark: #07121d;
+  --md-accent-fg-color: #0b8fa3;
+
+  --lunco-cyan: #22b8cf;
+  --lunco-cyan-soft: rgba(34, 184, 207, 0.14);
+  --lunco-card-border: rgba(11, 27, 43, 0.12);
+  --lunco-shadow: 0 10px 30px rgba(4, 16, 28, 0.12);
+}
+
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: #0a6b7a;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-typeset-a-color: #4dd0e1;
+  --md-accent-fg-color: #4dd0e1;
+  --lunco-card-border: rgba(213, 228, 240, 0.16);
+  --lunco-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+/* Wider shell, larger and more comfortable reading type */
+
+.md-grid {
+  max-width: 68rem;
+}
+
+.md-typeset {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.md-typeset p {
+  margin: 0.85em 0;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.8rem;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2.1rem;
+}
+
+.md-typeset h3 {
+  font-weight: 700;
+  margin-top: 1.6rem;
+}
+
+.md-typeset li {
+  margin-bottom: 0.35em;
+}
+
+/* Tables were the smallest text on the site */
+
+.md-typeset table:not([class]) {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--lunco-card-border);
+}
+
+.md-typeset table:not([class]) th {
+  font-weight: 700;
+  padding: 0.7em 0.9em;
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.65em 0.9em;
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background-color: rgba(127, 127, 127, 0.035);
+}
+
+/* Code stays compact but legible */
+
+.md-typeset code {
+  font-size: 0.84em;
+}
+
+.md-typeset pre > code {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.md-typeset .highlight {
+  border-radius: 8px;
+}
+
+.md-typeset img[src$=".svg"] {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--lunco-card-border);
+  border-radius: 12px;
+  box-shadow: var(--lunco-shadow);
+}
+
+/* Navigation */
+
+.md-nav {
+  font-size: 0.78rem;
+}
+
+.md-nav__item {
+  padding-top: 0.18rem;
+}
+
+.md-nav__link {
+  line-height: 1.45;
+}
+
+.md-header {
+  background: linear-gradient(100deg, #081521 0%, #0f2a40 58%, #0b3b4a 100%);
+  box-shadow: 0 2px 12px rgba(2, 10, 18, 0.28);
+}
+
+.md-tabs {
+  background-color: #0a2233;
+}
+
+.md-tabs__link {
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.md-footer {
+  background-color: #07121d;
+}
+
+/* Home hero */
+
+.hero {
+  margin: 0.6rem 0 2.4rem;
+  padding: 2rem;
+  border: 1px solid var(--lunco-card-border);
+  border-radius: 16px;
+  background:
+    radial-gradient(
+      circle at 8% 12%,
+      var(--lunco-cyan-soft),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(11, 27, 43, 0.055),
+      rgba(34, 184, 207, 0.08)
+    );
+}
+
+.hero__copy {
+  max-width: 44rem;
+}
+
+[data-md-color-scheme="slate"] .hero {
+  background:
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(34, 184, 207, 0.16),
+      transparent 48%
+    ),
+    linear-gradient(135deg, rgba(7, 18, 29, 0.65), rgba(11, 44, 58, 0.55));
+}
+
+.hero__eyebrow {
+  margin: 0 0 0.45rem;
+  color: #0a6b7a;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+[data-md-color-scheme="slate"] .hero__eyebrow {
+  color: #63d8e8;
+}
+
+.hero__title {
+  margin: 0 0 0.8rem !important;
+  font-size: 2.1rem !important;
+  line-height: 1.15 !important;
+  font-weight: 700;
+}
+
+.hero__lead {
+  margin: 0 0 1.2rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--md-default-fg-color--light);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.hero__actions .md-button {
+  margin: 0;
+  padding: 0.65em 1.35em;
+  font-size: 0.78rem;
+}
+
+.hero__actions .md-button:not(.md-button--primary) {
+  color: var(--md-typeset-a-color);
+  border-color: currentColor;
+}
+
+[data-md-color-scheme="slate"] .hero__actions .md-button--primary {
+  color: #06202b;
+  background-color: var(--lunco-cyan);
+  border-color: var(--lunco-cyan);
+}
+
+[data-md-color-scheme="slate"] .hero__actions .md-button--primary:hover {
+  color: #06202b;
+  background-color: #63d8e8;
+  border-color: #63d8e8;
+}
+
+.hero__shot {
+  margin: 1.4rem 0 0;
+}
+
+.hero__shot img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--lunco-card-border);
+  border-radius: 10px;
+  box-shadow: var(--lunco-shadow);
+}
+
+.hero__shot figcaption {
+  margin-top: 0.55rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+/* Screenshot figures */
+
+.md-typeset figure.shot {
+  margin: 1.7rem 0;
+}
+
+.md-typeset figure.shot img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--lunco-card-border);
+  border-radius: 10px;
+  box-shadow: var(--lunco-shadow);
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.md-typeset figure.shot a:hover img {
+  border-color: var(--md-accent-fg-color);
+  box-shadow:
+    0 0 0 2px var(--lunco-cyan-soft),
+    var(--lunco-shadow);
+}
+
+.md-typeset figure.shot figcaption {
+  margin-top: 0.55rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
+/* Card grid on the home page */
+
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--lunco-card-border);
+  border-radius: 12px;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: var(--lunco-shadow);
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 60em) {
+  .hero {
+    padding: 1.4rem;
+  }
+
+  .hero__title {
+    font-size: 1.65rem !important;
+  }
+}
