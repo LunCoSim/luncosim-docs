@@ -136,7 +136,9 @@ not create a public port.
 
 Use the **Build** and **Editor** perspectives for normal authoring. The Editor
 opens one explicit USD document, previews changes, and saves through the
-document journal. The runtime does not rewrite authored USD to hide a bug.
+document journal. The runtime does not rewrite authored USD to hide a bug. See
+[Perspectives](../getting-started/perspectives.md#editor-edit-one-usd-document)
+for the Editor layout and workflow.
 
 The composed stage is inert. It becomes a live world only when the runtime
 projects it and the admitted programs start.

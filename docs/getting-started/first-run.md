@@ -37,6 +37,9 @@ Choose a perspective from the title bar or **View → Perspectives**:
 Switching perspectives preserves the Twin and the simulation. You are changing
 the layout and the visible tools, not restarting the world.
 
+For a detailed tour of each task and its controls, see
+[Perspectives](perspectives.md).
+
 ## Open the Tutorials menu
 
 The **Tutorials** menu contains the authored lesson catalog. Tracks include

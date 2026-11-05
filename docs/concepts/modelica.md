@@ -94,7 +94,9 @@ The rule of thumb:
 
 Open the **Lunica** perspective to work on Modelica directly. It provides the
 model browser, diagram view, equation view, parameter editing, compilation,
-run controls, plots, and experiments.
+run controls, plots, and experiments. See
+[Perspectives](../getting-started/perspectives.md#lunica-engineer-a-modelica-model)
+for the layout and workflow.
 
 Use it to:
 

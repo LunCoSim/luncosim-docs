@@ -43,6 +43,7 @@ nav:
   - Getting started:
       - Install: getting-started/install.md
       - First run: getting-started/first-run.md
+      - Perspectives: getting-started/perspectives.md
       - First lesson: getting-started/first-lesson.md
   - Concepts:
       - How it fits together: concepts/how-it-fits-together.md
