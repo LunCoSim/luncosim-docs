@@ -1,87 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img" aria-labelledby="title desc">
   <title id="title">LunCoSim layer ownership</title>
   <desc id="desc">twin.toml selects a Twin, USD owns scene and topology, Modelica owns continuous behavior, Rhai owns scenario policy, Assets.toml owns external bytes, and the runtime projects and advances the live world.</desc>
   <style>
     .canvas { fill: #f7f9fc; }
-    .title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 26px; font-weight: 700; }
-    .subtitle { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 400; }
+    .title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
+    .subtitle { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 16px; }
     .card { stroke-width: 1.5; }
-    .card-title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; }
-    .card-body { fill: #445066; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 400; }
+    .card-title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 20px; font-weight: 700; }
+    .card-body { fill: #445066; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 15px; }
     .badge { fill: #ffffff; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
     .arrow { stroke: #7a879c; stroke-width: 2; fill: none; }
-    .arrow-label { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 600; }
     .runtime { fill: #162033; }
-    .runtime-title { fill: #ffffff; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 20px; font-weight: 700; }
-    .runtime-body { fill: #c8d4e6; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 400; }
+    .runtime-title { fill: #ffffff; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 22px; font-weight: 700; }
+    .runtime-body { fill: #c8d4e6; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 14px; }
   </style>
 
-  <rect class="canvas" x="0" y="0" width="1000" height="700"/>
+  <rect class="canvas" x="0" y="0" width="700" height="500"/>
 
-  <text class="title" x="48" y="52">One fact, one owner</text>
-  <text class="subtitle" x="48" y="78">A Twin composes standard domain files; the runtime turns the authored documents into a live world.</text>
+  <text class="title" x="36" y="38">One fact, one owner</text>
+  <text class="subtitle" x="36" y="62">Authored files stay in their standard format. The runtime turns them into a live world.</text>
 
-  <rect class="card" x="48" y="108" width="904" height="92" rx="12" fill="#e8eef8" stroke="#b9c8dd"/>
-  <rect x="68" y="128" width="150" height="24" rx="6" fill="#254f8f"/>
-  <text class="badge" x="82" y="145">PROJECT</text>
-  <text class="card-title" x="68" y="176">twin.toml</text>
-  <text class="card-body" x="210" y="176">Identity, version, default scene, Modelica/SysML roots, child Twins, Twin settings.</text>
+  <rect class="card" x="36" y="82" width="628" height="68" rx="10" fill="#e8eef8" stroke="#b9c8dd"/>
+  <rect x="52" y="96" width="72" height="22" rx="5" fill="#254f8f"/>
+  <text class="badge" x="62" y="112">PROJECT</text>
+  <text class="card-title" x="140" y="114">twin.toml</text>
+  <text class="card-body" x="52" y="138">Identity, entry scene, Modelica and SysML roots, child Twins, Twin settings.</text>
 
-  <rect class="card" x="48" y="226" width="214" height="164" rx="12" fill="#eaf3ee" stroke="#9fc7b2"/>
-  <rect x="68" y="246" width="64" height="24" rx="6" fill="#2f7a55"/>
-  <text class="badge" x="80" y="263">USD</text>
-  <text class="card-title" x="68" y="298">Scene + topology</text>
-  <text class="card-body" x="68" y="324">Transforms, geometry,</text>
-  <text class="card-body" x="68" y="344">materials, physics bodies,</text>
-  <text class="card-body" x="68" y="364">joints, typed ports and wires.</text>
+  <rect class="card" x="36" y="174" width="148" height="152" rx="10" fill="#eaf3ee" stroke="#9fc7b2"/>
+  <rect x="50" y="188" width="50" height="21" rx="5" fill="#2f7a55"/>
+  <text class="badge" x="60" y="203">USD</text>
+  <text class="card-title" x="50" y="232">USD</text>
+  <text class="card-body" x="50" y="256">Scene + topology</text>
+  <text class="card-body" x="50" y="278">geometry, physics,</text>
+  <text class="card-body" x="50" y="300">ports and wires</text>
 
-  <rect class="card" x="278" y="226" width="214" height="164" rx="12" fill="#f2ecfa" stroke="#c0a8da"/>
-  <rect x="298" y="246" width="104" height="24" rx="6" fill="#6a3d9a"/>
-  <text class="badge" x="310" y="263">MODELICA</text>
-  <text class="card-title" x="298" y="298">Continuous behavior</text>
-  <text class="card-body" x="298" y="324">Equations, state,</text>
-  <text class="card-body" x="298" y="344">parameters, inputs and</text>
-  <text class="card-body" x="298" y="364">outputs at comm points.</text>
+  <rect class="card" x="194" y="174" width="148" height="152" rx="10" fill="#f2ecfa" stroke="#c0a8da"/>
+  <rect x="208" y="188" width="88" height="21" rx="5" fill="#6a3d9a"/>
+  <text class="badge" x="218" y="203">MODELICA</text>
+  <text class="card-title" x="208" y="232">Modelica</text>
+  <text class="card-body" x="208" y="256">Continuous</text>
+  <text class="card-body" x="208" y="278">equations and</text>
+  <text class="card-body" x="208" y="300">state</text>
 
-  <rect class="card" x="508" y="226" width="214" height="164" rx="12" fill="#fdf2e7" stroke="#dcb98c"/>
-  <rect x="528" y="246" width="64" height="24" rx="6" fill="#a8611b"/>
-  <text class="badge" x="540" y="263">RHAI</text>
-  <text class="card-title" x="528" y="298">Scenario policy</text>
-  <text class="card-body" x="528" y="324">Tasks, objectives, events,</text>
-  <text class="card-body" x="528" y="344">commands, hints, tests.</text>
+  <rect class="card" x="352" y="174" width="148" height="152" rx="10" fill="#fdf2e7" stroke="#dcb98c"/>
+  <rect x="366" y="188" width="50" height="21" rx="5" fill="#a8611b"/>
+  <text class="badge" x="376" y="203">RHAI</text>
+  <text class="card-title" x="366" y="232">Rhai</text>
+  <text class="card-body" x="366" y="256">Scenario policy</text>
+  <text class="card-body" x="366" y="278">tasks, events,</text>
+  <text class="card-body" x="366" y="300">commands</text>
 
-  <rect class="card" x="738" y="226" width="214" height="164" rx="12" fill="#eaf0f8" stroke="#a9bed8"/>
-  <rect x="758" y="246" width="114" height="24" rx="6" fill="#315f91"/>
-  <text class="badge" x="770" y="263">ASSETS.TOML</text>
-  <text class="card-title" x="758" y="298">External bytes</text>
-  <text class="card-body" x="758" y="324">Libraries, terrain rasters,</text>
-  <text class="card-body" x="758" y="344">textures, fonts,</text>
-  <text class="card-body" x="758" y="364">download + processing recipes.</text>
+  <rect class="card" x="510" y="174" width="154" height="152" rx="10" fill="#eaf0f8" stroke="#a9bed8"/>
+  <rect x="524" y="188" width="100" height="21" rx="5" fill="#315f91"/>
+  <text class="badge" x="534" y="203">ASSETS.TOML</text>
+  <text class="card-title" x="524" y="232">Assets.toml</text>
+  <text class="card-body" x="524" y="256">External bytes</text>
+  <text class="card-body" x="524" y="278">libraries, DEMs,</text>
+  <text class="card-body" x="524" y="300">downloads</text>
 
-  <path class="arrow" d="M262 308 L278 308"/>
-  <path class="arrow" d="M492 308 L508 308"/>
-  <path class="arrow" d="M722 308 L738 308"/>
+  <path class="arrow" d="M184 250 L194 250"/>
+  <path class="arrow" d="M342 250 L352 250"/>
+  <path class="arrow" d="M500 250 L510 250"/>
 
-  <path class="arrow" d="M155 200 L155 226"/>
-  <path class="arrow" d="M385 200 L385 226"/>
-  <path class="arrow" d="M615 200 L615 226"/>
-  <path class="arrow" d="M845 200 L845 226"/>
-  <text class="arrow-label" x="170" y="218">selects</text>
-  <text class="arrow-label" x="400" y="218">wires</text>
-  <text class="arrow-label" x="630" y="218">attaches</text>
-  <text class="arrow-label" x="860" y="218">supplies</text>
+  <path class="arrow" d="M110 150 L110 174"/>
+  <path class="arrow" d="M268 150 L268 174"/>
+  <path class="arrow" d="M426 150 L426 174"/>
+  <path class="arrow" d="M584 150 L584 174"/>
 
-  <rect class="runtime" x="48" y="438" width="904" height="112" rx="14"/>
-  <text class="runtime-title" x="72" y="478">Runtime</text>
-  <text class="runtime-body" x="72" y="506">USD projection  ·  fixed master clock  ·  Modelica co-simulation  ·  Avian physics  ·  events and typed commands  ·  presentation</text>
-  <text class="runtime-body" x="72" y="528">The composed USD stage is inert. The runtime projects it, admits participants, and advances the same authoritative state.</text>
+  <rect class="runtime" x="36" y="352" width="628" height="84" rx="10"/>
+  <text class="runtime-title" x="54" y="382">Runtime</text>
+  <text class="runtime-body" x="54" y="406">USD projection · master clock · Modelica · Avian physics · events · UI</text>
+  <text class="runtime-body" x="54" y="426">The composed stage is inert; the runtime projects and advances it.</text>
 
-  <path class="arrow" d="M155 390 L155 438"/>
-  <path class="arrow" d="M385 390 L385 438"/>
-  <path class="arrow" d="M615 390 L615 438"/>
-  <path class="arrow" d="M845 390 L845 438"/>
+  <path class="arrow" d="M110 326 L110 352"/>
+  <path class="arrow" d="M268 326 L268 352"/>
+  <path class="arrow" d="M426 326 L426 352"/>
+  <path class="arrow" d="M584 326 L584 352"/>
 
-  <rect class="card" x="48" y="586" width="904" height="66" rx="12" fill="#ffffff" stroke="#c8d2e0"/>
-  <text class="card-body" x="68" y="614" font-weight="700" fill="#162033">Do not duplicate a fact across layers.</text>
-  <text class="card-body" x="68" y="636">A wheel pose belongs in USD. A motor law belongs in Modelica. A waypoint mission belongs in Rhai. A DEM download belongs in Assets.toml.</text>
+  <rect class="card" x="36" y="456" width="628" height="28" rx="6" fill="#ffffff" stroke="#c8d2e0"/>
+  <text class="card-body" x="50" y="475">Do not duplicate a fact across layers. Each fact has one owner.</text>
 </svg>
