@@ -1275,44 +1275,56 @@
 <strong>Build</strong>, <strong>Analyze</strong>, <strong>Editor</strong>, or <strong>Lunica</strong> does not reload the scene,
 reset the simulation, or duplicate your project. It changes which tools are
 docked and what the center of the window is for.</p>
-<p>The title bar pins the five main tasks. <strong>View → Perspectives</strong> lists every
-available task, including specialist presets such as <strong>Terrain</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Perspective</th>
-<th>Task</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>View</strong></td>
-<td>Observe and operate the running Twin</td>
-</tr>
-<tr>
-<td><strong>Analyze</strong></td>
-<td>Inspect and compare simulation signals</td>
-</tr>
-<tr>
-<td><strong>Build</strong></td>
-<td>Compose the live scene</td>
-</tr>
-<tr>
-<td><strong>Editor</strong></td>
-<td>Edit one explicitly opened USD document</td>
-</tr>
-<tr>
-<td><strong>Lunica</strong></td>
-<td>Edit, compile, and run Modelica models</td>
-</tr>
-</tbody>
-</table>
+<p>The title bar pins the five main tasks. <strong>View → Perspectives</strong> lists those
+tasks plus specialist presets such as <strong>Terrain</strong> and <strong>Keybindings</strong>, and any
+tasks contributed by the Twin.</p>
+<div class="perspective-cards grid cards">
+<ul>
+<li>
+<p><strong>◉ View</strong></p>
+<p>Operate and present the running Twin.</p>
+<p><a href="#view-operate-the-mission">Open View</a></p>
+</li>
+<li>
+<p><strong>↗ Analyze</strong></p>
+<p>Compare signals and inspect live port values.</p>
+<p><a href="#analyze-read-the-signals">Open Analyze</a></p>
+</li>
+<li>
+<p><strong>⚒ Build</strong></p>
+<p>Compose and tune the live scene.</p>
+<p><a href="#build-compose-the-live-scene">Open Build</a></p>
+</li>
+<li>
+<p><strong>✎ Editor</strong></p>
+<p>Edit one explicit USD document in isolation.</p>
+<p><a href="#editor-edit-one-usd-document">Open Editor</a></p>
+</li>
+<li>
+<p><strong>∿ Lunica</strong></p>
+<p>Develop, compile, and run Modelica models.</p>
+<p><a href="#lunica-engineer-a-modelica-model">Open Lunica</a></p>
+</li>
+<li>
+<p><strong>↻ Switch layouts</strong></p>
+<p>Preserve the Twin, documents, and simulation.</p>
+<p><a href="#switch-and-recover-a-layout">Switch and recover</a></p>
+</li>
+</ul>
+</div>
 <p><strong>Analyze</strong> is the built-in label for analytics work; there is no separate
 Analytics tab.</p>
 <h2 id="switch-and-recover-a-layout">Switch and recover a layout<a class="headerlink" href="#switch-and-recover-a-layout" title="Permanent link">&para;</a></h2>
 <p>Select a title-bar tab, or choose <strong>View → Perspectives</strong> and pick a task.
 Compact windows collapse the tabs into a picker. Switching perspectives
-preserves the Twin and the simulation; layout changes stay with their task.</p>
+preserves the Twin and the simulation; layout changes stay with their task.
+Switching does not start or stop the simulation; the title-bar transport and
+simulation state remain global.</p>
+<p>Open document tabs stay open when you switch, including documents with
+unsaved edits. The active task and each task layout are remembered per Twin.
+A Twin can declare its initial task with <code>default_perspective</code> in
+<a href="../../concepts/twin-toml/">twin.toml</a>; once you choose a task yourself, that
+choice takes precedence when you reopen the Twin.</p>
 <ul>
 <li><strong>View → Reset Layout</strong> reapplies the authored default for the current
   perspective.</li>
@@ -1347,9 +1359,10 @@ what is selected.</p>
 <li>Use the transport controls or <kbd>P</kbd> to pause when you need to inspect
    a moment without stopping the app.</li>
 </ol>
-<p>Use View for operating and presenting a Twin. Switch to Build when you need to
-add or edit scene objects, and to Analyze when you need the signal data behind
-what you see.</p>
+<p>Release control with <kbd>G</kbd> when you are done; selecting another object
+does not transfer control. Use View for operating and presenting a Twin. Switch
+to Build when you need to add or edit scene objects, and to Analyze when you
+need the signal data behind what you see.</p>
 <h2 id="analyze-read-the-signals">Analyze: read the signals<a class="headerlink" href="#analyze-read-the-signals" title="Permanent link">&para;</a></h2>
 <p><strong>Analyze</strong> is the telemetry and plotting perspective. The live scene remains
 in the center, <strong>Telemetry</strong> sits above <strong>Entities</strong> on the left, <strong>Ports</strong> is
@@ -1372,7 +1385,8 @@ on the right, and <strong>Graphs</strong> occupies the bottom dock.</p>
 <li>Pause the simulation to inspect the latest sample. The graph keeps the
    samples it already recorded; it does not replay rendered frames.</li>
 </ol>
-<p>If Graphs is hidden, use the <strong>Graphs</strong> menu or open the optional <strong>View →
+<p>Use <strong>New</strong> in the Graphs toolbar to open a separate plot with its own signal
+set. If Graphs is hidden, use the <strong>Graphs</strong> menu or open the optional <strong>View →
 Analyze</strong> panels. Graphs is the canonical analysis surface; the same data is
 also available through the HTTP API when you need to script a check.</p>
 <h2 id="build-compose-the-live-scene">Build: compose the live scene<a class="headerlink" href="#build-compose-the-live-scene" title="Permanent link">&para;</a></h2>
@@ -1400,10 +1414,11 @@ also available through the HTTP API when you need to script a check.</p>
 to edit the internals of a reusable assembly, open that USD document in
 <strong>Editor</strong>. When you need the signal behind a behavior, use <strong>Analyze</strong>.</p>
 <h2 id="editor-edit-one-usd-document">Editor: edit one USD document<a class="headerlink" href="#editor-edit-one-usd-document" title="Permanent link">&para;</a></h2>
-<p><strong>Editor</strong> is a focused USD authoring perspective. <strong>Twin</strong> and <strong>Prims</strong> are
-on the left, the document preview is in the center, and <strong>Inspector</strong>,
-<strong>Requirements</strong>, and <strong>Change History</strong> are on the right. The center stays
-empty until you open a document or tool.</p>
+<p><strong>Editor</strong> is the focused USD authoring perspective, also used as the assembly
+editor for reusable USD components. <strong>Twin</strong> and <strong>Prims</strong> are on the left, the
+document preview is in the center, and <strong>Inspector</strong>, <strong>Requirements</strong>, and
+<strong>Change History</strong> are on the right. The center stays empty until you open a
+document or tool.</p>
 <figure class="shot">
 <a href="../../assets/images/screenshots/perspective-editor.webp"><img src="../../assets/images/screenshots/perspective-editor.webp" alt="The Editor perspective showing the skid rover USD preview, the Prims tree, the Inspector, Requirements, and Change History."></a>
 <figcaption>Editor opens one USD document in an isolated preview. Selecting a prim drives the Inspector; save and undo apply to that document.</figcaption>
@@ -1455,39 +1470,47 @@ in their own document tabs; inside a model, switch between <strong>Text</strong>
 scenario. Use it to develop the continuous model, then wire that model into the
 Twin and observe the coupled behavior in Analyze or View.</p>
 <h2 id="choose-the-right-task">Choose the right task<a class="headerlink" href="#choose-the-right-task" title="Permanent link">&para;</a></h2>
+<div class="perspective-table">
 <table>
 <thead>
 <tr>
 <th>You want to…</th>
 <th>Use</th>
+<th>Start with</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Drive, fly, or present the running mission</td>
-<td><strong>View</strong></td>
+<td><a href="#view-operate-the-mission"><strong>View</strong></a></td>
+<td>Click an input endpoint, or <strong>Take control</strong> in a lesson</td>
 </tr>
 <tr>
-<td>Compare telemetry and inspect current port values</td>
-<td><strong>Analyze</strong></td>
+<td>Compare telemetry and inspect port values</td>
+<td><a href="#analyze-read-the-signals"><strong>Analyze</strong></a></td>
+<td>Select an entity, then check a channel in <strong>Telemetry</strong></td>
 </tr>
 <tr>
 <td>Add, place, or tune objects in the live scene</td>
-<td><strong>Build</strong></td>
+<td><a href="#build-compose-the-live-scene"><strong>Build</strong></a></td>
+<td>Pick an assembly in <strong>Spawn</strong></td>
 </tr>
 <tr>
 <td>Edit the prims and properties inside a USD document</td>
-<td><strong>Editor</strong></td>
+<td><a href="#editor-edit-one-usd-document"><strong>Editor</strong></a></td>
+<td>Open the USD file in <strong>Twin</strong></td>
 </tr>
 <tr>
 <td>Develop, compile, and run a Modelica model</td>
-<td><strong>Lunica</strong></td>
+<td><a href="#lunica-engineer-a-modelica-model"><strong>Lunica</strong></a></td>
+<td>Open a <code>.mo</code> file, then <strong>Compile</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Additional task presets, such as <strong>Terrain</strong>, appear under <strong>View →
-Perspectives</strong> but are not pinned to the title bar. A Twin can also add its own
-perspectives; they appear beside the built-in tasks.</p>
+</div>
+<p>Additional task presets, such as <strong>Terrain</strong> and <strong>Keybindings</strong>, appear under
+<strong>View → Perspectives</strong> but are not pinned to the title bar. A Twin can also
+add its own perspectives; they appear beside the built-in tasks.</p>
 <p>Switching perspectives is part of normal work, not a reset. If a layout feels
 wrong, use <strong>View → Reset Layout</strong> for the current task, or open <strong>Help →
 Perspective help</strong> to confirm what that task is meant to do.</p>
