@@ -5,16 +5,49 @@ A perspective is a task layout over the same Twin. Switching from **View** to
 reset the simulation, or duplicate your project. It changes which tools are
 docked and what the center of the window is for.
 
-The title bar pins the five main tasks. **View → Perspectives** lists every
-available task, including specialist presets such as **Terrain**.
+The title bar pins the five main tasks. **View → Perspectives** lists those
+tasks plus specialist presets such as **Terrain** and **Keybindings**, and any
+tasks contributed by the Twin.
 
-| Perspective | Task |
-|---|---|
-| **View** | Observe and operate the running Twin |
-| **Analyze** | Inspect and compare simulation signals |
-| **Build** | Compose the live scene |
-| **Editor** | Edit one explicitly opened USD document |
-| **Lunica** | Edit, compile, and run Modelica models |
+<div class="perspective-cards grid cards" markdown>
+
+- **◉ View**
+
+    Operate and present the running Twin.
+
+    [Open View](#view-operate-the-mission)
+
+- **↗ Analyze**
+
+    Compare signals and inspect live port values.
+
+    [Open Analyze](#analyze-read-the-signals)
+
+- **⚒ Build**
+
+    Compose and tune the live scene.
+
+    [Open Build](#build-compose-the-live-scene)
+
+- **✎ Editor**
+
+    Edit one explicit USD document in isolation.
+
+    [Open Editor](#editor-edit-one-usd-document)
+
+- **∿ Lunica**
+
+    Develop, compile, and run Modelica models.
+
+    [Open Lunica](#lunica-engineer-a-modelica-model)
+
+- **↻ Switch layouts**
+
+    Preserve the Twin, documents, and simulation.
+
+    [Switch and recover](#switch-and-recover-a-layout)
+
+</div>
 
 **Analyze** is the built-in label for analytics work; there is no separate
 Analytics tab.
@@ -24,6 +57,14 @@ Analytics tab.
 Select a title-bar tab, or choose **View → Perspectives** and pick a task.
 Compact windows collapse the tabs into a picker. Switching perspectives
 preserves the Twin and the simulation; layout changes stay with their task.
+Switching does not start or stop the simulation; the title-bar transport and
+simulation state remain global.
+
+Open document tabs stay open when you switch, including documents with
+unsaved edits. The active task and each task layout are remembered per Twin.
+A Twin can declare its initial task with `default_perspective` in
+[twin.toml](../concepts/twin-toml.md); once you choose a task yourself, that
+choice takes precedence when you reopen the Twin.
 
 - **View → Reset Layout** reapplies the authored default for the current
   perspective.
@@ -62,9 +103,10 @@ To use it:
 5. Use the transport controls or <kbd>P</kbd> to pause when you need to inspect
    a moment without stopping the app.
 
-Use View for operating and presenting a Twin. Switch to Build when you need to
-add or edit scene objects, and to Analyze when you need the signal data behind
-what you see.
+Release control with <kbd>G</kbd> when you are done; selecting another object
+does not transfer control. Use View for operating and presenting a Twin. Switch
+to Build when you need to add or edit scene objects, and to Analyze when you
+need the signal data behind what you see.
 
 ## Analyze: read the signals
 
@@ -90,7 +132,8 @@ To compare signals:
 5. Pause the simulation to inspect the latest sample. The graph keeps the
    samples it already recorded; it does not replay rendered frames.
 
-If Graphs is hidden, use the **Graphs** menu or open the optional **View →
+Use **New** in the Graphs toolbar to open a separate plot with its own signal
+set. If Graphs is hidden, use the **Graphs** menu or open the optional **View →
 Analyze** panels. Graphs is the canonical analysis surface; the same data is
 also available through the HTTP API when you need to script a check.
 
@@ -123,10 +166,11 @@ to edit the internals of a reusable assembly, open that USD document in
 
 ## Editor: edit one USD document
 
-**Editor** is a focused USD authoring perspective. **Twin** and **Prims** are
-on the left, the document preview is in the center, and **Inspector**,
-**Requirements**, and **Change History** are on the right. The center stays
-empty until you open a document or tool.
+**Editor** is the focused USD authoring perspective, also used as the assembly
+editor for reusable USD components. **Twin** and **Prims** are on the left, the
+document preview is in the center, and **Inspector**, **Requirements**, and
+**Change History** are on the right. The center stays empty until you open a
+document or tool.
 
 <figure class="shot">
 <a href="../../assets/images/screenshots/perspective-editor.webp"><img src="../../assets/images/screenshots/perspective-editor.webp" alt="The Editor perspective showing the skid rover USD preview, the Prims tree, the Inspector, Requirements, and Change History."></a>
@@ -185,17 +229,21 @@ Twin and observe the coupled behavior in Analyze or View.
 
 ## Choose the right task
 
-| You want to… | Use |
-|---|---|
-| Drive, fly, or present the running mission | **View** |
-| Compare telemetry and inspect current port values | **Analyze** |
-| Add, place, or tune objects in the live scene | **Build** |
-| Edit the prims and properties inside a USD document | **Editor** |
-| Develop, compile, and run a Modelica model | **Lunica** |
+<div class="perspective-table" markdown>
 
-Additional task presets, such as **Terrain**, appear under **View →
-Perspectives** but are not pinned to the title bar. A Twin can also add its own
-perspectives; they appear beside the built-in tasks.
+| You want to… | Use | Start with |
+|---|---|---|
+| Drive, fly, or present the running mission | [**View**](#view-operate-the-mission) | Click an input endpoint, or **Take control** in a lesson |
+| Compare telemetry and inspect port values | [**Analyze**](#analyze-read-the-signals) | Select an entity, then check a channel in **Telemetry** |
+| Add, place, or tune objects in the live scene | [**Build**](#build-compose-the-live-scene) | Pick an assembly in **Spawn** |
+| Edit the prims and properties inside a USD document | [**Editor**](#editor-edit-one-usd-document) | Open the USD file in **Twin** |
+| Develop, compile, and run a Modelica model | [**Lunica**](#lunica-engineer-a-modelica-model) | Open a `.mo` file, then **Compile** |
+
+</div>
+
+Additional task presets, such as **Terrain** and **Keybindings**, appear under
+**View → Perspectives** but are not pinned to the title bar. A Twin can also
+add its own perspectives; they appear beside the built-in tasks.
 
 Switching perspectives is part of normal work, not a reset. If a layout feels
 wrong, use **View → Reset Layout** for the current task, or open **Help →

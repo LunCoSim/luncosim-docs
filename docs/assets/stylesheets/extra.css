@@ -311,3 +311,79 @@
     font-size: 1.65rem !important;
   }
 }
+
+/* Perspective cards and task table */
+
+@media screen and (max-width: 30em) {
+  .md-typeset .perspective-cards.grid.cards {
+    grid-gap: 0.35rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md-typeset .perspective-cards.grid.cards > ul > li {
+    padding: 0.55rem 0.6rem;
+  }
+
+  .md-typeset .perspective-cards.grid.cards > ul > li p {
+    margin: 0.3em 0;
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  .md-typeset .perspective-cards.grid.cards > ul > li > p:first-child {
+    font-size: 0.78rem;
+  }
+}
+
+@media screen and (max-width: 44em) {
+  .md-typeset .perspective-table table {
+    display: block;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .md-typeset .perspective-table thead {
+    display: none;
+  }
+
+  .md-typeset .perspective-table tbody,
+  .md-typeset .perspective-table tr,
+  .md-typeset .perspective-table td {
+    display: block;
+  }
+
+  .md-typeset .perspective-table tr {
+    margin: 0.55rem 0;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--lunco-card-border);
+    border-radius: 10px;
+    background-color: var(--md-default-bg-color);
+  }
+
+  .md-typeset .perspective-table td {
+    padding: 0.12rem 0;
+    border: 0;
+    background: transparent !important;
+  }
+
+  .md-typeset .perspective-table td:first-child {
+    font-weight: 700;
+  }
+
+  .md-typeset .perspective-table td + td {
+    margin-top: 0.3rem;
+  }
+
+  .md-typeset .perspective-table td:nth-child(2)::before {
+    content: "Use: ";
+    color: var(--md-default-fg-color--light);
+    font-weight: 600;
+  }
+
+  .md-typeset .perspective-table td:nth-child(3)::before {
+    content: "Start with: ";
+    color: var(--md-default-fg-color--light);
+    font-weight: 600;
+  }
+}
