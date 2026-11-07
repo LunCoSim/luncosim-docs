@@ -55,6 +55,20 @@ concepts behind a LunCoSim project.
 
     [Write a Rhai scenario](guides/write-a-scenario.md)
 
+- **Bring your existing stack**
+
+    See what you can keep, what must become USD or Modelica, and which
+    integration paths are available today.
+
+    [Integrate your stack](guides/integrate-your-stack.md)
+
+- **Validate before you trust it**
+
+    Preflight the assets, run the authored test, and understand what the
+    evidence does and does not prove.
+
+    [Validate a Twin](guides/validate-a-twin.md)
+
 </div>
 
 ## What you can do
@@ -67,6 +81,9 @@ concepts behind a LunCoSim project.
   models in the embedded Modelica workbench and compare plots.
 - **Script an operation.** Define mission phases, waypoints, and responses to
   events, then inspect the resulting state in the UI or over the API.
+- **Connect an operator surface.** Drive the same typed command and telemetry
+  surface from an external process. See
+  [Connect mission control](guides/mission-control.md).
 - **Share a project.** A Twin is an ordinary folder of USD, Modelica, Rhai, and
   configuration files that you can version and hand to a colleague.
 
@@ -89,7 +106,7 @@ particular rover, mission, or lesson.
 |---|---|
 | [Getting started](getting-started/install.md) | How do I install and launch LunCoSim? |
 | [Concepts](concepts/how-it-fits-together.md) | What is a Twin, and how do USD, Modelica, Rhai, and assets interact? |
-| [Guides](guides/create-a-twin.md) | How do I create a project, script behavior, and inspect telemetry? |
+| [Guides](guides/create-a-twin.md) | How do I create a project, script behavior, integrate an existing stack, connect an operator tool, and validate the result? |
 | [Reference](reference/cli.md) | What are the CLI flags and default controls? |
 
 ## Current status

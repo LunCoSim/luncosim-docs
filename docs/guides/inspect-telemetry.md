@@ -58,9 +58,9 @@ curl -s "http://127.0.0.1:$PORT/api/commands" \
                   "port_names": ["throttle", "steer", "speed"]}}'
 ```
 
-`ReadPorts` returns one shared `sim_tick` and the selected rows. It does not
-dump every port on an entity; name what you need. Use `ReadPortsBatch` when you
-need the same sample across several entities.
+`ReadPorts` returns the selected rows for one entity. It does not dump every
+port; name what you need. Use `ReadPortsBatch` when you need one shared
+`sim_tick` across several entities.
 
 ## Modelica state
 
@@ -122,4 +122,6 @@ before reporting a visual result.
 | Looking only at ports for solver state | Also call `SnapshotVariables` |
 
 See [HTTP API](http-api.md) for the request envelope and the discovery
-endpoint.
+endpoint, [Connect mission control](mission-control.md) for an operator
+lifecycle, and [Validate a Twin](validate-a-twin.md) for turning a live value
+into evidence.

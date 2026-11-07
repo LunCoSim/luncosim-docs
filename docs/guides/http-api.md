@@ -151,5 +151,8 @@ entities = execute("ListEntities")["entities"]
 - Run scene tests through the production binary (`luncosim test`), not through
   a private HTTP loop that skips the authored verdict.
 
-For live values, see [Inspect telemetry](inspect-telemetry.md). For command-line
-flags, see [CLI](../reference/cli.md).
+For live values, see [Inspect telemetry](inspect-telemetry.md). For the
+operator lifecycle, including authority claims, telemetry, and safe release, see
+[Connect mission control](mission-control.md). For supported asset and tool
+boundaries, see [Integrate your stack](integrate-your-stack.md). For
+command-line flags, see [CLI](../reference/cli.md).

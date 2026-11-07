@@ -101,6 +101,7 @@ commands; authored tests belong in a scene test.
 
 ```bash
 luncosim test --scene assets/scenes/tests/rover_drive.usda
+luncosim test --list
 ```
 
 A scene test runs the authored Rhai test headlessly and deterministically. The
@@ -112,13 +113,28 @@ exit code is the verdict:
 | `1` | FAIL |
 | `2` | No verdict was produced |
 
-Use `--verdict-channel NAME` to select a specific typed verdict channel. Use
-`--verification KEY` with a Twin-owned SysML verification registry entry to run
-that requirement's authored check.
+| Option | Meaning |
+|---|---|
+| `--list` | List discovered test scenes and their execution kind |
+| `--verdict-channel NAME` | Accept the verdict only from this channel |
+| `--verification QUALIFIED_NAME` | Require a Twin manifest SysML verification mapping |
+| `--max-ticks N` | Bound cumulative fixed steps; default 20000 |
+| `--tick-hz HZ` | Manual update rate; default 60 |
+| `--readiness-timeout SECS` | Bound scene and participant preparation; default 420 |
+| `--determinism-reference PATH` | Load a typed JSON state reference for Rhai comparisons |
+| `--threads N` | Compute-pool width; `1` is the gate profile |
+| `--jitter FRAC` / `--seed U64` | Exercise seeded fractional-`dt` pacing |
 
-Do not use a private test harness or `--validate` as a substitute for runtime
-behavior. `--validate` only proves that the files parse and their declarations
-are structurally valid.
+A component-level suite selects its own scene from the Twin manifest:
+
+```bash
+luncosim test-component --twin path/to/twin --component rover.wheels
+```
+
+Run the production binary for these checks; do not substitute a private test
+harness or `--validate`. `--validate` only proves that the files parse and their
+declarations are structurally valid. See
+[Validate a Twin](../guides/validate-a-twin.md) for the evidence layers.
 
 ## Asset validation
 

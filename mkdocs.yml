@@ -58,6 +58,9 @@ nav:
       - Write a Rhai scenario: guides/write-a-scenario.md
       - Inspect telemetry: guides/inspect-telemetry.md
       - Use the HTTP API: guides/http-api.md
+      - Integrate your stack: guides/integrate-your-stack.md
+      - Connect mission control: guides/mission-control.md
+      - Validate a Twin: guides/validate-a-twin.md
       - Troubleshooting: guides/troubleshooting.md
   - Reference:
       - CLI: reference/cli.md
