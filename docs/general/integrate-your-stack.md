@@ -41,15 +41,10 @@ your protocol on one side and the documented HTTP envelope on the other.
 
 Use the same path as the UI and the authored tests:
 
-```text
-your tool
-   │  HTTP/JSON or Rhai
-   ▼
-typed command / query
-   │
-   ▼
-USD, Modelica, Rhai, physics, telemetry
-```
+<figure class="diagram">
+  <img src="../../assets/images/integration-boundary.svg" alt="A tool uses an adapter to translate its protocol to typed LunCoSim commands and queries.">
+  <figcaption>Adapters translate protocol and authentication policy; LunCoSim retains ownership of simulation state and results.</figcaption>
+</figure>
 
 The HTTP envelope is documented in [HTTP API](../reference/http-api.md). The
 JSON is an external wire format only; inside the application, values cross

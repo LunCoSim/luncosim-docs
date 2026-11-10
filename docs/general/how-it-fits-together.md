@@ -11,7 +11,7 @@ the operation does**. Each layer has a standard format and a clear owner. The
 runtime composes those layers into one live world and gives every participant
 the same clock, identity, and command surface.
 
-<figure>
+<figure class="diagram">
 <a href="../../assets/images/luncosim-layers.svg"><img src="../../assets/images/luncosim-layers.svg" alt="The LunCoSim layer model, from the Twin manifest through USD, Modelica, Rhai, and the runtime."></a>
 <figcaption>The authored layers and the runtime. The arrows indicate ownership
 and projection, not a one-way build pipeline.</figcaption>
@@ -34,7 +34,7 @@ Rhai. A downloaded terrain DEM belongs in `Assets.toml` and the asset cache.
 
 ## Runtime flow
 
-<figure>
+<figure class="diagram">
 <a href="../../assets/images/runtime-loop.svg"><img src="../../assets/images/runtime-loop.svg" alt="The LunCoSim runtime loop: manifest, USD composition, projection, Modelica admission, physics, Rhai policy, and UI."></a>
 <figcaption>The runtime loop. The UI observes and commands; it does not own
 domain state.</figcaption>
@@ -78,15 +78,10 @@ waypoint mission.
 
 A complete drive loop can look like this:
 
-```text
-USD                  Modelica                 Physics
-wheels + joints  →   drive law + motor   →   forces + motion
-      ↑                                           │
-      └──────────── typed USD connections ─────────┘
-                           │
-                        Rhai policy
-                 mission events and commands
-```
+<figure class="diagram">
+  <img src="../../assets/images/drive-loop.svg" alt="USD defines wheels, joints, ports and connections; Modelica computes the drive law; physics advances motion; Rhai handles commands and events.">
+  <figcaption>The arrows summarize the composed topology; the runtime derives the schedule from USD connections.</figcaption>
+</figure>
 
 The arrows are not a dataflow that the author programs. They are the
 consequence of the authored topology. The wheel joint is a USD fact. The motor

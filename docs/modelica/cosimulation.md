@@ -56,20 +56,10 @@ holds.
 A participant is a `SimComponent` with named inputs and outputs. Its interface
 is published from the model's **declaration**, not from its solution:
 
-```text
-Modelica class
-  input Real throttle;
-  output Real speed;
-        │
-        ▼
-USD component prim
-  float inputs:throttle
-  float outputs:speed
-        │
-        ▼
-PortRegistry
-  declared names, types, units, bounds, owner
-```
+<figure class="diagram">
+  <img src="../../assets/images/modelica-ports.svg" alt="Modelica declarations are published as USD input and output properties and admitted as named ports in PortRegistry.">
+  <figcaption>The runtime publishes the declared interface before the solver has produced a sample.</figcaption>
+</figure>
 
 This ordering matters. A model that has not produced a sample yet still has an
 interface. Admission can check the wire, the units, and the initial inputs
@@ -186,15 +176,10 @@ exposure. This diagnostic math does not change simulation scheduling.
 
 A rover has a Modelica drivetrain, an Avian chassis, and a Rhai mission:
 
-```text
-Rhai mission
-  └─ SetPorts { throttle, steer }
-        └─ Controller.inputs:throttle / inputs:steer
-              └─ Modelica Drive
-                    └─ outputs:left_torque / outputs:right_torque
-                          └─ Chassis.inputs:left_torque / inputs:right_torque
-                                └─ Avian wheel torques
-```
+<figure class="diagram">
+  <img src="../../assets/images/rover-cosimulation.svg" alt="At a fixed step, Rhai sets throttle and steering; Controller inputs feed Modelica Drive; wheel torques flow to the USD chassis and Avian wheels.">
+  <figcaption>The mission input is latched before the fixed step; Modelica torque outputs enter the chassis before Avian integrates motion.</figcaption>
+</figure>
 
 At each fixed step:
 

@@ -23,22 +23,10 @@ release notes before changing the contract.
 
 ## The boundary
 
-```text
-authoritative engine state
-        │  change detection + bounded presentation cadence
-        ▼
-EngineExposures ────────────────► ReadExposures / telemetry / remote clients
-        │
-        │ named snapshot, revision-gated
-        ▼
-HUI template properties + Flair CSS custom properties
-        │
-        ▼
-retained Bevy UI tree ───────────► WorkbenchEguiHost / window
-
-HTML button ─► HUI callback ─► RuntimeUiAction(action, HookValue map)
-          ─► Rhai policy ─► typed command/event
-```
+<figure class="diagram">
+  <img src="../../assets/images/runtime-ui-flow.svg" alt="Engine state flows to EngineExposures and the retained UI; HUI callbacks become RuntimeUiAction requests interpreted by Rhai and validated by the host.">
+  <figcaption>Exposure snapshots feed presentation and external readers. Authored buttons emit semantic actions that the host validates.</figcaption>
+</figure>
 
 Each layer owns one concern:
 

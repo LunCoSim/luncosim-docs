@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+<title id="title">A drive loop across the authored layers</title>
+<desc id="desc">USD defines wheels, joints, and typed connections. Modelica defines the drive equations. Physics advances motion; Rhai issues mission commands and handles events.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#0b7285"/>
+  </marker>
+</defs>
+<style>
+  .canvas { fill: #f3f7f9; }
+  .title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.3px; }
+  .subtitle { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 15px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .node-title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .body { fill: #243847; font-family: system-ui, sans-serif; font-size: 15px; }
+  .label { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+  .callout-text { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+</style>
+<rect class="canvas" width="1000" height="540" rx="12"/>
+<text class="title" x="40" y="46">A drive loop across the authored layers</text>
+<text class="subtitle" x="40" y="74">The runtime derives scheduling from the composed topology; authors do not program a second dataflow.</text><rect x="40" y="135" width="270" height="148" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="149" width="5" height="120" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="60" y="163" fill="#28785e">TOPOLOGY</text>
+<text class="node-title" x="60" y="191">USD</text>
+<text class="body" x="60" y="217" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">Wheels, joints,</tspan><tspan x="60" dy="20">ports and connections</tspan></text><rect x="365" y="135" width="270" height="148" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="365" y="149" width="5" height="120" rx="2.5" fill="#6951a1"/>
+<text class="eyebrow" x="385" y="163" fill="#6951a1">BEHAVIOR</text>
+<text class="node-title" x="385" y="191">Modelica</text>
+<text class="body" x="385" y="217" fill="#5e707d" font-size="15px"><tspan x="385" dy="0">Drive law, motor</tspan><tspan x="385" dy="20">equations and state</tspan></text><rect x="690" y="135" width="270" height="148" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="690" y="149" width="5" height="120" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="710" y="163" fill="#0b7285">MOTION</text>
+<text class="node-title" x="710" y="191">Physics</text>
+<text class="body" x="710" y="217" fill="#5e707d" font-size="15px"><tspan x="710" dy="0">Forces, contacts</tspan><tspan x="710" dy="20">and solved motion</tspan></text><path d="M310 210 L357 210" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M635 210 L682 210" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><text class="label" x="638" y="195" fill="#5e707d">forces</text><rect x="365" y="345" width="270" height="112" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="365" y="359" width="5" height="84" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="385" y="373" fill="#a96320">MISSION</text>
+<text class="node-title" x="385" y="401">Rhai policy</text>
+<text class="body" x="385" y="427" fill="#5e707d" font-size="15px"><tspan x="385" dy="0">Commands in · events out</tspan></text><path d="M825 283 V400 H635" fill="none" stroke="#a96320" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><text class="label" x="700" y="390" fill="#5e707d">events</text><path d="M500 345 V283" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><text class="label" x="512" y="325" fill="#5e707d">typed command</text><rect x="40" y="475" width="920" height="42" rx="10" fill="#eaf3f5" stroke="#c7dfe4"/>
+<rect x="40" y="475" width="5" height="42" rx="2.5" fill="#0b7285"/>
+<text class="callout-text" x="58" y="502" fill="#0b2239">A connection belongs to USD. The runtime composes it and schedules the coupled step.</text>
+</svg>

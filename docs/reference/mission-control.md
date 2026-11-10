@@ -12,10 +12,10 @@ No YAMCS, Open MCT, or Grafana adapter is bundled in this build.
 
 The integration shape is simple:
 
-```text
-operator tool  ──►  adapter  ──►  POST /api/commands  ──►  LunCoSim
-                               ◄──  telemetry queries  ◄──
-```
+<figure class="diagram">
+  <img src="../../assets/images/integration-boundary.svg" alt="An operator tool uses an adapter to translate its protocol to typed LunCoSim commands and queries.">
+  <figcaption>LunCoSim offers a typed API; an external adapter supplies protocol translation and operator workflow.</figcaption>
+</figure>
 
 The adapter owns protocol translation, authentication policy, and operator
 workflow. LunCoSim owns the scene, simulation state, authority, and typed

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+<title id="title">A model's declared interface is its contract</title>
+<desc id="desc">Modelica declarations are published on the USD component prim and admitted in the PortRegistry before a solution sample exists.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#0b7285"/>
+  </marker>
+</defs>
+<style>
+  .canvas { fill: #f3f7f9; }
+  .title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.3px; }
+  .subtitle { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 15px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .node-title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .body { fill: #243847; font-family: system-ui, sans-serif; font-size: 15px; }
+  .label { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+  .callout-text { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+</style>
+<rect class="canvas" width="1000" height="520" rx="12"/>
+<text class="title" x="40" y="46">A model's declared interface is its contract</text>
+<text class="subtitle" x="40" y="74">Admission can validate names, types, units, bounds, and ownership before the solver advances.</text><rect x="40" y="145" width="280" height="190" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="159" width="5" height="162" rx="2.5" fill="#6951a1"/>
+<text class="eyebrow" x="60" y="173" fill="#6951a1">MODEL</text>
+<text class="node-title" x="60" y="201" family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">Modelica class</text>
+<text class="body" x="60" y="227" fill="#5e707d" font-size="15px" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"><tspan x="60" dy="0">input Real throttle;</tspan><tspan x="60" dy="20">output Real speed;</tspan></text><rect x="360" y="145" width="280" height="190" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="360" y="159" width="5" height="162" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="380" y="173" fill="#28785e">USD</text>
+<text class="node-title" x="380" y="201" family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">Component prim</text>
+<text class="body" x="380" y="227" fill="#5e707d" font-size="15px" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"><tspan x="380" dy="0">float inputs:throttle</tspan><tspan x="380" dy="20">float outputs:speed</tspan></text><rect x="680" y="145" width="280" height="190" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="680" y="159" width="5" height="162" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="700" y="173" fill="#0b7285">REGISTRY</text>
+<text class="node-title" x="700" y="201">PortRegistry</text>
+<text class="body" x="700" y="227" fill="#5e707d" font-size="15px"><tspan x="700" dy="0">Declared names · types</tspan><tspan x="700" dy="20">units · bounds · owner</tspan></text><path d="M320 238 L350 238" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M640 238 L670 238" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><rect x="40" y="400" width="920" height="42" rx="10" fill="#eaf3f5" stroke="#c7dfe4"/>
+<rect x="40" y="400" width="5" height="42" rx="2.5" fill="#0b7285"/>
+<text class="callout-text" x="58" y="427" fill="#0b2239">Private local variables are not public ports. A declared interface exists before the first sample.</text>
+</svg>

@@ -1,82 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img" aria-labelledby="title desc">
-  <title id="title">LunCoSim layer ownership</title>
-  <desc id="desc">twin.toml selects a Twin, USD owns scene and topology, Modelica owns continuous behavior, Rhai owns scenario policy, Assets.toml owns external bytes, and the runtime projects and advances the live world.</desc>
-  <style>
-    .canvas { fill: #f7f9fc; }
-    .title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
-    .subtitle { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 16px; }
-    .card { stroke-width: 1.5; }
-    .card-title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 20px; font-weight: 700; }
-    .card-body { fill: #445066; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 15px; }
-    .badge { fill: #ffffff; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
-    .arrow { stroke: #7a879c; stroke-width: 2; fill: none; }
-    .runtime { fill: #162033; }
-    .runtime-title { fill: #ffffff; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 22px; font-weight: 700; }
-    .runtime-body { fill: #c8d4e6; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 14px; }
-  </style>
-
-  <rect class="canvas" x="0" y="0" width="700" height="500"/>
-
-  <text class="title" x="36" y="38">One fact, one owner</text>
-  <text class="subtitle" x="36" y="62">Authored files stay in their standard format. The runtime turns them into a live world.</text>
-
-  <rect class="card" x="36" y="82" width="628" height="68" rx="10" fill="#e8eef8" stroke="#b9c8dd"/>
-  <rect x="52" y="96" width="72" height="22" rx="5" fill="#254f8f"/>
-  <text class="badge" x="62" y="112">PROJECT</text>
-  <text class="card-title" x="140" y="114">twin.toml</text>
-  <text class="card-body" x="52" y="138">Identity, entry scene, Modelica and SysML roots, child Twins, Twin settings.</text>
-
-  <rect class="card" x="36" y="174" width="148" height="152" rx="10" fill="#eaf3ee" stroke="#9fc7b2"/>
-  <rect x="50" y="188" width="50" height="21" rx="5" fill="#2f7a55"/>
-  <text class="badge" x="60" y="203">USD</text>
-  <text class="card-title" x="50" y="232">USD</text>
-  <text class="card-body" x="50" y="256">Scene + topology</text>
-  <text class="card-body" x="50" y="278">geometry, physics,</text>
-  <text class="card-body" x="50" y="300">ports and wires</text>
-
-  <rect class="card" x="194" y="174" width="148" height="152" rx="10" fill="#f2ecfa" stroke="#c0a8da"/>
-  <rect x="208" y="188" width="88" height="21" rx="5" fill="#6a3d9a"/>
-  <text class="badge" x="218" y="203">MODELICA</text>
-  <text class="card-title" x="208" y="232">Modelica</text>
-  <text class="card-body" x="208" y="256">Continuous</text>
-  <text class="card-body" x="208" y="278">equations and</text>
-  <text class="card-body" x="208" y="300">state</text>
-
-  <rect class="card" x="352" y="174" width="148" height="152" rx="10" fill="#fdf2e7" stroke="#dcb98c"/>
-  <rect x="366" y="188" width="50" height="21" rx="5" fill="#a8611b"/>
-  <text class="badge" x="376" y="203">RHAI</text>
-  <text class="card-title" x="366" y="232">Rhai</text>
-  <text class="card-body" x="366" y="256">Scenario policy</text>
-  <text class="card-body" x="366" y="278">tasks, events,</text>
-  <text class="card-body" x="366" y="300">commands</text>
-
-  <rect class="card" x="510" y="174" width="154" height="152" rx="10" fill="#eaf0f8" stroke="#a9bed8"/>
-  <rect x="524" y="188" width="100" height="21" rx="5" fill="#315f91"/>
-  <text class="badge" x="534" y="203">ASSETS.TOML</text>
-  <text class="card-title" x="524" y="232">Assets.toml</text>
-  <text class="card-body" x="524" y="256">External bytes</text>
-  <text class="card-body" x="524" y="278">libraries, DEMs,</text>
-  <text class="card-body" x="524" y="300">downloads</text>
-
-  <path class="arrow" d="M184 250 L194 250"/>
-  <path class="arrow" d="M342 250 L352 250"/>
-  <path class="arrow" d="M500 250 L510 250"/>
-
-  <path class="arrow" d="M110 150 L110 174"/>
-  <path class="arrow" d="M268 150 L268 174"/>
-  <path class="arrow" d="M426 150 L426 174"/>
-  <path class="arrow" d="M584 150 L584 174"/>
-
-  <rect class="runtime" x="36" y="352" width="628" height="84" rx="10"/>
-  <text class="runtime-title" x="54" y="382">Runtime</text>
-  <text class="runtime-body" x="54" y="406">USD projection · master clock · Modelica · Avian physics · events · UI</text>
-  <text class="runtime-body" x="54" y="426">The composed stage is inert; the runtime projects and advances it.</text>
-
-  <path class="arrow" d="M110 326 L110 352"/>
-  <path class="arrow" d="M268 326 L268 352"/>
-  <path class="arrow" d="M426 326 L426 352"/>
-  <path class="arrow" d="M584 326 L584 352"/>
-
-  <rect class="card" x="36" y="456" width="628" height="28" rx="6" fill="#ffffff" stroke="#c8d2e0"/>
-  <text class="card-body" x="50" y="475">Do not duplicate a fact across layers. Each fact has one owner.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="580" viewBox="0 0 1000 580" role="img" aria-labelledby="title desc">
+<title id="title">One fact, one owner</title>
+<desc id="desc">The Twin manifest selects authored sources; LunCoSim composes and advances them without duplicating domain facts.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#0b7285"/>
+  </marker>
+</defs>
+<style>
+  .canvas { fill: #f3f7f9; }
+  .title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.3px; }
+  .subtitle { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 15px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .light-title { fill: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .light-body { fill: #d7e5ec; font-family: system-ui, sans-serif; font-size: 16px; }
+  .node-title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .body { fill: #243847; font-family: system-ui, sans-serif; font-size: 15px; }
+  .label { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+  .callout-text { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+</style>
+<rect class="canvas" width="1000" height="580" rx="12"/>
+<text class="title" x="40" y="46">One fact, one owner</text>
+<text class="subtitle" x="40" y="74">Standard files keep their own responsibilities. The runtime brings them together.</text><rect x="40" y="100" width="920" height="82" rx="14" fill="#e7f0f4" stroke="#c8d7df" stroke-width="1.5"/><text class="eyebrow" x="62" y="126" fill="#0b7285">PROJECT ENTRY</text><text class="node-title" x="62" y="153">twin.toml</text><text class="body" x="225" y="153" fill="#5e707d">Selects the default scene and declares Twin roots and settings.</text><rect x="40" y="225" width="215" height="160" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="239" width="5" height="132" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="60" y="253" fill="#28785e">SCENE</text>
+<text class="node-title" x="60" y="281">USD</text>
+<text class="body" x="60" y="307" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">Structure, geometry,</tspan><tspan x="60" dy="20">physics and typed ports;</tspan><tspan x="60" dy="20">may reference glTF.</tspan></text><path d="M147 182 L147 216" fill="none" stroke="#c8d7df" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><rect x="275" y="225" width="215" height="160" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="275" y="239" width="5" height="132" rx="2.5" fill="#6951a1"/>
+<text class="eyebrow" x="295" y="253" fill="#6951a1">BEHAVIOR</text>
+<text class="node-title" x="295" y="281">Modelica</text>
+<text class="body" x="295" y="307" fill="#5e707d" font-size="15px"><tspan x="295" dy="0">Continuous equations,</tspan><tspan x="295" dy="20">parameters and state.</tspan></text><path d="M382 182 L382 216" fill="none" stroke="#c8d7df" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><rect x="510" y="225" width="215" height="160" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="510" y="239" width="5" height="132" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="530" y="253" fill="#a96320">POLICY</text>
+<text class="node-title" x="530" y="281">Rhai</text>
+<text class="body" x="530" y="307" fill="#5e707d" font-size="15px"><tspan x="530" dy="0">Events, tasks,</tspan><tspan x="530" dy="20">commands and objectives.</tspan></text><path d="M617 182 L617 216" fill="none" stroke="#c8d7df" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><rect x="745" y="225" width="215" height="160" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="745" y="239" width="5" height="132" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="765" y="253" fill="#0b7285">EXTERNAL BYTES</text>
+<text class="node-title" x="765" y="281">Assets.toml</text>
+<text class="body" x="765" y="307" fill="#5e707d" font-size="15px"><tspan x="765" dy="0">Libraries, DEMs,</tspan><tspan x="765" dy="20">hashes and processing.</tspan></text><path d="M852 182 L852 216" fill="none" stroke="#c8d7df" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M147 385 L147 423" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M382 385 L382 423" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M617 385 L617 423" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M852 385 L852 423" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><rect x="40" y="425" width="920" height="74" rx="14" fill="#0b2239"/><text class="light-title" x="64" y="456">LunCoSim runtime</text><text class="light-body" x="278" y="456">Compose  ·  project  ·  schedule  ·  simulate  ·  render</text><rect x="40" y="520" width="920" height="42" rx="10" fill="#eaf3f5" stroke="#c7dfe4"/>
+<rect x="40" y="520" width="5" height="42" rx="2.5" fill="#0b7285"/>
+<text class="callout-text" x="58" y="547" fill="#0b2239">Keep each fact in the format that owns it; the runtime builds the live world.</text>
 </svg>

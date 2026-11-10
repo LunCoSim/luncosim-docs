@@ -211,6 +211,19 @@
   line-height: 1.55;
 }
 
+.md-typeset__scrollwrap {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.md-typeset table:not([class]) th code,
+.md-typeset table:not([class]) td code {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
 .md-typeset table:not([class]) th {
   padding: 0.55em 0.7em;
   border: 1px solid var(--lunco-rule-strong);
@@ -246,6 +259,14 @@
   text-align: center;
 }
 
+.md-typeset figure.diagram {
+  overflow: hidden;
+  border: 1px solid var(--lunco-rule);
+  border-radius: 6px;
+  background: #f5f8fa;
+  text-align: left;
+}
+
 .chapter figure {
   counter-increment: figure;
 }
@@ -258,12 +279,25 @@
   box-shadow: var(--lunco-shadow);
 }
 
+.md-typeset figure.diagram img {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .md-typeset figcaption {
   margin-top: 0.55rem;
   color: var(--md-default-fg-color--light);
   font-size: 0.76rem;
   line-height: 1.55;
   text-align: left;
+}
+
+.md-typeset figure.diagram figcaption {
+  margin: 0;
+  padding: 0.65rem 0.9rem 0.75rem;
+  border-top: 1px solid var(--lunco-rule);
+  background: var(--md-default-bg-color);
 }
 
 .chapter figcaption::before {

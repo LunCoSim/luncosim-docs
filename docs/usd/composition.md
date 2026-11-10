@@ -104,15 +104,14 @@ USD edit and enters the journal; it is not a hidden runtime toggle.
 The authored stage a user edits is a `UsdDocument` with three layers. They
 compose in this order:
 
-```text
-view   (weakest authored layer, disposable)
-runtime (durable document edits, kept out of the source file)
-base   (the source file)
-```
+<figure class="diagram">
+  <img src="../../assets/images/document-layers.svg" alt="The base USD source layer sits under durable runtime edits and disposable view edits, ordered from weakest to strongest.">
+  <figcaption>View changes are temporary, runtime edits belong to the live document, and base is saved to the source file.</figcaption>
+</figure>
 
 The diagram below places USD in the larger layer model:
 
-<figure markdown="span">
+<figure class="diagram" markdown="span">
   <a href="../../assets/images/luncosim-layers.svg">
     <img src="../../assets/images/luncosim-layers.svg" alt="The LunCoSim layer model: TOML configuration, USD scene, Modelica behavior, Rhai policy, and the Rust runtime.">
   </a>

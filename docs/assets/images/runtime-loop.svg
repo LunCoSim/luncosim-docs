@@ -1,91 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img" aria-labelledby="title desc">
-  <title id="title">LunCoSim runtime loop</title>
-  <desc id="desc">Authored USD, Modelica, Rhai, and Assets.toml are composed and projected into a live world. The fixed clock advances Modelica and physics, events and typed commands feed back into Rhai policy, and presentation renders the result.</desc>
-  <style>
-    .canvas { fill: #f7f9fc; }
-    .title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 28px; font-weight: 700; }
-    .subtitle { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 16px; }
-    .box { stroke-width: 1.5; }
-    .box-title { fill: #162033; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 18px; font-weight: 700; }
-    .box-body { fill: #445066; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 14px; }
-    .arrow { stroke: #7a879c; stroke-width: 2; fill: none; }
-    .arrow-strong { stroke: #254f8f; stroke-width: 2.4; fill: none; }
-    .label { fill: #5b677a; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 600; }
-    .num { fill: #ffffff; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 700; }
-  </style>
-
-  <defs>
-    <marker id="head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7a879c"/>
-    </marker>
-    <marker id="head-strong" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#254f8f"/>
-    </marker>
-  </defs>
-
-  <rect class="canvas" x="0" y="0" width="700" height="500"/>
-
-  <text class="title" x="36" y="38">From authored files to a live world</text>
-  <text class="subtitle" x="36" y="62">The runtime owns the loop. A composed USD stage by itself does nothing.</text>
-
-  <rect class="box" x="36" y="92" width="190" height="98" rx="10" fill="#e8eef8" stroke="#b9c8dd"/>
-  <circle cx="58" cy="116" r="13" fill="#254f8f"/>
-  <text class="num" x="54" y="120">1</text>
-  <text class="box-title" x="78" y="121">Author</text>
-  <text class="box-body" x="54" y="146">twin.toml, scene.usda</text>
-  <text class="box-body" x="54" y="166">models, scenarios</text>
-  <text class="box-body" x="54" y="186">Assets.toml</text>
-
-  <rect class="box" x="240" y="92" width="190" height="98" rx="10" fill="#eaf3ee" stroke="#9fc7b2"/>
-  <circle cx="262" cy="116" r="13" fill="#2f7a55"/>
-  <text class="num" x="258" y="120">2</text>
-  <text class="box-title" x="282" y="121">Compose</text>
-  <text class="box-body" x="258" y="146">resolve references,</text>
-  <text class="box-body" x="258" y="166">variants, connections</text>
-  <text class="box-body" x="258" y="186">project to entities</text>
-
-  <rect class="box" x="444" y="92" width="190" height="98" rx="10" fill="#f2ecfa" stroke="#c0a8da"/>
-  <circle cx="466" cy="116" r="13" fill="#6a3d9a"/>
-  <text class="num" x="462" y="120">3</text>
-  <text class="box-title" x="486" y="121">Advance clock</text>
-  <text class="box-body" x="462" y="146">fixed master clock</text>
-  <text class="box-body" x="462" y="166">Modelica exchange</text>
-  <text class="box-body" x="462" y="186">Avian physics</text>
-
-  <rect class="box" x="36" y="248" width="190" height="98" rx="10" fill="#ffffff" stroke="#c8d2e0"/>
-  <circle cx="58" cy="272" r="13" fill="#315f91"/>
-  <text class="num" x="54" y="276">6</text>
-  <text class="box-title" x="78" y="277">Inspect + test</text>
-  <text class="box-body" x="54" y="302">read ports and state</text>
-  <text class="box-body" x="54" y="322">graphs, screenshots</text>
-  <text class="box-body" x="54" y="342">Rhai verdict</text>
-
-  <rect class="box" x="240" y="248" width="190" height="98" rx="10" fill="#e8eef8" stroke="#b9c8dd"/>
-  <circle cx="262" cy="272" r="13" fill="#254f8f"/>
-  <text class="num" x="258" y="276">5</text>
-  <text class="box-title" x="282" y="277">Present</text>
-  <text class="box-body" x="258" y="302">camera, terrain</text>
-  <text class="box-body" x="258" y="322">HUD and graphs</text>
-  <text class="box-body" x="258" y="342">UI sends commands</text>
-
-  <rect class="box" x="444" y="248" width="190" height="98" rx="10" fill="#fdf2e7" stroke="#dcb98c"/>
-  <circle cx="466" cy="272" r="13" fill="#a8611b"/>
-  <text class="num" x="462" y="276">4</text>
-  <text class="box-title" x="486" y="277">Observe</text>
-  <text class="box-body" x="462" y="302">events to on_event</text>
-  <text class="box-body" x="462" y="322">tasks and objectives</text>
-  <text class="box-body" x="462" y="342">typed commands</text>
-
-  <path class="arrow" marker-end="url(#head)" d="M226 141 L240 141"/>
-  <path class="arrow" marker-end="url(#head)" d="M430 141 L444 141"/>
-  <path class="arrow" marker-end="url(#head)" d="M539 190 L539 248"/>
-  <path class="arrow" marker-end="url(#head)" d="M444 297 L430 297"/>
-  <path class="arrow" marker-end="url(#head)" d="M240 297 L226 297"/>
-
-  <path class="arrow-strong" marker-end="url(#head-strong)" d="M131 346 L131 386 L539 386 L539 346"/>
-  <text class="label" x="230" y="402">commands and input feed the next fixed step</text>
-
-  <rect class="box" x="36" y="420" width="628" height="56" rx="9" fill="#162033" stroke="#162033"/>
-  <text class="box-body" x="54" y="444" fill="#c8d4e6">The loop is deterministic for the same admitted scene revision and ordered inputs.</text>
-  <text class="box-body" x="54" y="464" fill="#c8d4e6">UI responsiveness never chooses authoritative state.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="580" viewBox="0 0 1000 580" role="img" aria-labelledby="title desc">
+<title id="title">From authored files to a live world</title>
+<desc id="desc">Authored sources are composed, the fixed-step engine advances, Rhai responds to events, and presentation produces inspectable evidence.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#0b7285"/>
+  </marker>
+</defs>
+<style>
+  .canvas { fill: #f3f7f9; }
+  .title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.3px; }
+  .subtitle { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 15px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .node-title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .body { fill: #243847; font-family: system-ui, sans-serif; font-size: 15px; }
+  .label { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+  .callout-text { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+</style>
+<rect class="canvas" width="1000" height="580" rx="12"/>
+<text class="title" x="40" y="46">From authored files to a live world</text>
+<text class="subtitle" x="40" y="74">Commands and input return to the next fixed step; presentation never owns simulation state.</text><rect x="40" y="120" width="290" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="134" width="5" height="104" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="60" y="148" fill="#0b7285">01  AUTHOR</text>
+<text class="node-title" x="60" y="176">Twin sources</text>
+<text class="body" x="60" y="202" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">USD · Modelica</tspan><tspan x="60" dy="20">Rhai · Assets.toml</tspan></text><rect x="355" y="120" width="290" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="355" y="134" width="5" height="104" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="375" y="148" fill="#28785e">02  COMPOSE</text>
+<text class="node-title" x="375" y="176">Build the world</text>
+<text class="body" x="375" y="202" fill="#5e707d" font-size="15px"><tspan x="375" dy="0">Resolve layers and arcs</tspan><tspan x="375" dy="20">Project prims to entities</tspan></text><rect x="670" y="120" width="290" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="670" y="134" width="5" height="104" rx="2.5" fill="#6951a1"/>
+<text class="eyebrow" x="690" y="148" fill="#6951a1">03  ADVANCE</text>
+<text class="node-title" x="690" y="176">Fixed-step engine</text>
+<text class="body" x="690" y="202" fill="#5e707d" font-size="15px"><tspan x="690" dy="0">Modelica exchange</tspan><tspan x="690" dy="20">Avian physics</tspan></text><rect x="670" y="300" width="290" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="670" y="314" width="5" height="104" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="690" y="328" fill="#a96320">04  RESPOND</text>
+<text class="node-title" x="690" y="356">Rhai policy</text>
+<text class="body" x="690" y="382" fill="#5e707d" font-size="15px"><tspan x="690" dy="0">Events and objectives</tspan><tspan x="690" dy="20">Typed commands</tspan></text><rect x="355" y="300" width="290" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="355" y="314" width="5" height="104" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="375" y="328" fill="#0b7285">05  PRESENT</text>
+<text class="node-title" x="375" y="356">Live view</text>
+<text class="body" x="375" y="382" fill="#5e707d" font-size="15px"><tspan x="375" dy="0">Scene, HUD and graphs</tspan><tspan x="375" dy="20">Bounded UI updates</tspan></text><rect x="40" y="300" width="290" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="314" width="5" height="104" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="60" y="328" fill="#28785e">06  VERIFY</text>
+<text class="node-title" x="60" y="356">Inspect evidence</text>
+<text class="body" x="60" y="382" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">Ports, state and tests</tspan><tspan x="60" dy="20">Screenshots and verdicts</tspan></text><path d="M330 186 L348 186" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M645 186 L663 186" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M815 252 L815 293" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M670 366 L653 366" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M355 366 L338 366" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M185 432 V480 H978 V186 H960" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><text class="label" x="458" y="501" fill="#5e707d">typed input and commands seed the next fixed step</text><rect x="40" y="520" width="920" height="42" rx="10" fill="#eaf3f5" stroke="#c7dfe4"/>
+<rect x="40" y="520" width="5" height="42" rx="2.5" fill="#0b7285"/>
+<text class="callout-text" x="58" y="547" fill="#0b2239">The same admitted scene revision and ordered inputs produce the authoritative simulation state.</text>
 </svg>

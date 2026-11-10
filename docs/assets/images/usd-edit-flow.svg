@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+<title id="title">One edit, one document generation</title>
+<desc id="desc">Typed USD operations update a document, journal the inverse, author the canonical stage, notify the change sink, and reconcile affected entities.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#0b7285"/>
+  </marker>
+</defs>
+<style>
+  .canvas { fill: #f3f7f9; }
+  .title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.3px; }
+  .subtitle { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 15px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .node-title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .body { fill: #243847; font-family: system-ui, sans-serif; font-size: 15px; }
+  .label { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+  .callout-text { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+</style>
+<rect class="canvas" width="1000" height="600" rx="12"/>
+<text class="title" x="40" y="46">One edit, one document generation</text>
+<text class="subtitle" x="40" y="74">Text, scene tree, inspector, and viewport observe the same committed generation.</text><rect x="40" y="125" width="205" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="139" width="5" height="104" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="60" y="153" fill="#a96320">INPUT</text>
+<text class="node-title" x="60" y="181">User edit</text>
+<text class="body" x="60" y="207" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">Inspector, tree,</tspan><tspan x="60" dy="20">text or viewport</tspan></text><rect x="282" y="125" width="205" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="282" y="139" width="5" height="104" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="302" y="153" fill="#0b7285">DELTA</text>
+<text class="node-title" x="302" y="181">Typed UsdOp</text>
+<text class="body" x="302" y="207" fill="#5e707d" font-size="15px"><tspan x="302" dy="0">One description</tspan><tspan x="302" dy="20">of the change</tspan></text><rect x="525" y="125" width="205" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="525" y="139" width="5" height="104" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="545" y="153" fill="#28785e">DOCUMENT</text>
+<text class="node-title" x="545" y="181">UsdDocument</text>
+<text class="body" x="545" y="207" fill="#5e707d" font-size="15px"><tspan x="545" dy="0">Base + runtime</tspan><tspan x="545" dy="20">generation + 1</tspan></text><path d="M245 191 L274 191" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M487 191 L517 191" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M627 257 V295 H145 V320" fill="none" stroke="#c8d7df" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><path d="M627 257 V295 H405 V320" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><rect x="40" y="320" width="210" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="334" width="5" height="104" rx="2.5" fill="#6951a1"/>
+<text class="eyebrow" x="60" y="348" fill="#6951a1">HISTORY</text>
+<text class="node-title" x="60" y="376">Edit journal</text>
+<text class="body" x="60" y="402" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">Operation + inverse</tspan><tspan x="60" dy="20">for undo and sync</tspan></text><rect x="285" y="320" width="240" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="285" y="334" width="5" height="104" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="305" y="348" fill="#28785e">AUTHOR</text>
+<text class="node-title" x="305" y="376">CanonicalStage</text>
+<text class="body" x="305" y="402" fill="#5e707d" font-size="15px"><tspan x="305" dy="0">Write the same delta</tspan><tspan x="305" dy="20">to the composed stage</tspan></text><path d="M525 386 L552 386" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><rect x="560" y="320" width="170" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="560" y="334" width="5" height="104" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="580" y="348" fill="#0b7285">SIGNAL</text>
+<text class="node-title" x="580" y="376">Change sink</text>
+<text class="body" x="580" y="402" fill="#5e707d" font-size="15px"><tspan x="580" dy="0">Affected</tspan><tspan x="580" dy="20">paths</tspan></text><path d="M730 386 L757 386" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><rect x="765" y="320" width="195" height="132" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="765" y="334" width="5" height="104" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="785" y="348" fill="#a96320">PROJECT</text>
+<text class="node-title" x="785" y="376">ECS</text>
+<text class="body" x="785" y="402" fill="#5e707d" font-size="15px"><tspan x="785" dy="0">Reconcile</tspan><tspan x="785" dy="20">entities</tspan></text><rect x="40" y="500" width="920" height="42" rx="10" fill="#eaf3f5" stroke="#c7dfe4"/>
+<rect x="40" y="500" width="5" height="42" rx="2.5" fill="#0b7285"/>
+<text class="callout-text" x="58" y="527" fill="#0b2239">The operation is authored once; every view follows the same document revision.</text>
+</svg>

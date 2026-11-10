@@ -32,14 +32,10 @@ every instance sees it.
 
 Every edit is a typed operation on a `UsdDocument`:
 
-```text
-UsdOp ─apply→ UsdDocument (base ⊕ runtime, generation++)
-        │
-        ├─ journal records op + inverse (undo / sync)
-        └─ replay op → CanonicalStage.author_*
-                │ fires the change sink
-                └─ reconcile the affected ECS entities
-```
+<figure class="diagram">
+  <img src="../../assets/images/usd-edit-flow.svg" alt="A user edit becomes a typed UsdOp, updates a document generation, is journaled and authored to the canonical stage, then reconciles affected ECS entities.">
+  <figcaption>The same typed operation feeds undo and sync, stage authoring, and entity reconciliation.</figcaption>
+</figure>
 
 The operation is the single description of the delta. Views do not re-derive
 it by reading state back. This is the *author-once coherence* invariant: the

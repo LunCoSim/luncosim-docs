@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+<title id="title">One typed boundary for external tools</title>
+<desc id="desc">External clients translate their protocol into LunCoSim commands and queries; the runtime owns simulation state and typed results.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#0b7285"/>
+  </marker>
+</defs>
+<style>
+  .canvas { fill: #f3f7f9; }
+  .title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.3px; }
+  .subtitle { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 15px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .node-title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .body { fill: #243847; font-family: system-ui, sans-serif; font-size: 15px; }
+  .label { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+  .callout-text { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+</style>
+<rect class="canvas" width="1000" height="520" rx="12"/>
+<text class="title" x="40" y="46">One typed boundary for external tools</text>
+<text class="subtitle" x="40" y="74">An adapter can connect an existing tool without a second scene graph or direct ECS access.</text><rect x="40" y="150" width="215" height="148" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="164" width="5" height="120" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="60" y="178" fill="#a96320">CLIENT</text>
+<text class="node-title" x="60" y="206">Your tool</text>
+<text class="body" x="60" y="232" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">Operator UI, script</tspan><tspan x="60" dy="20">or ground system</tspan></text><rect x="275" y="150" width="215" height="148" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="275" y="164" width="5" height="120" rx="2.5" fill="#6951a1"/>
+<text class="eyebrow" x="295" y="178" fill="#6951a1">ADAPTER</text>
+<text class="node-title" x="295" y="206">Protocol bridge</text>
+<text class="body" x="295" y="232" fill="#5e707d" font-size="15px"><tspan x="295" dy="0">HTTP/JSON or Rhai</tspan><tspan x="295" dy="20">auth and workflow</tspan></text><rect x="510" y="150" width="215" height="148" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="510" y="164" width="5" height="120" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="530" y="178" fill="#0b7285">API</text>
+<text class="node-title" x="530" y="206">Typed commands</text>
+<text class="body" x="530" y="232" fill="#5e707d" font-size="15px"><tspan x="530" dy="0">POST /api/commands</tspan><tspan x="530" dy="20">queries and results</tspan></text><rect x="745" y="150" width="215" height="148" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="745" y="164" width="5" height="120" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="765" y="178" fill="#28785e">RUNTIME</text>
+<text class="node-title" x="765" y="206">LunCoSim</text>
+<text class="body" x="765" y="232" fill="#5e707d" font-size="15px"><tspan x="765" dy="0">USD · Modelica · Rhai</tspan><tspan x="765" dy="20">physics · telemetry</tspan></text><path d="M255 224 L271 224" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M490 224 L506 224" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M725 224 L741 224" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><text class="label" x="276" y="325" fill="#6951a1">translate protocol</text><text class="label" x="533" y="325" fill="#0b7285">typed contract</text><rect x="40" y="385" width="920" height="42" rx="10" fill="#eaf3f5" stroke="#c7dfe4"/>
+<rect x="40" y="385" width="5" height="42" rx="2.5" fill="#0b7285"/>
+<text class="callout-text" x="58" y="412" fill="#0b2239">The adapter owns protocol translation and authentication; LunCoSim owns the simulation and its results.</text>
+</svg>
