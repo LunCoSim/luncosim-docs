@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Install LunCoSim, run your first mission, and learn how Twins, USD, Modelica, Rhai, and Assets.toml fit together.">
+        <meta name="description" content="Documentation for LunCoSim, an open-source space mission workbench built on USD, Modelica, and Rhai.">
       
       
       
@@ -14,7 +14,7 @@
       
       
       
-        <link rel="next" href="getting-started/install/">
+        <link rel="next" href="general/">
       
       
         
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#build-a-space-missionsee-how-it-behaves" class="md-skip">
+        <a href="#luncosim-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -216,6 +216,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -314,10 +316,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-here" class="md-nav__link">
+  <a href="#about-this-document" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Start here
+        About this document
       
     </span>
   </a>
@@ -325,10 +327,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-can-do" class="md-nav__link">
+  <a href="#conventions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you can do
+        Conventions
       
     </span>
   </a>
@@ -336,21 +338,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-four-formats" class="md-nav__link">
+  <a href="#how-to-use-this-document" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The four formats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation map
+        How to use this document
       
     </span>
   </a>
@@ -362,17 +353,6 @@
     <span class="md-ellipsis">
       
         Current status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Community
       
     </span>
   </a>
@@ -395,6 +375,30 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -410,14 +414,15 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="general/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
-    Getting started
+    1 General
   
 
     
@@ -425,35 +430,43 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Getting started
+    1 General
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
+            
+              
                 
   
   
   
   
     <li class="md-nav__item">
-      <a href="getting-started/install/" class="md-nav__link">
+      <a href="general/introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Install
+    1.1 Introduction
   
 
     
@@ -474,14 +487,14 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/first-run/" class="md-nav__link">
+      <a href="general/how-it-fits-together/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    First run
+    1.2 How it fits together
   
 
     
@@ -502,14 +515,14 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/perspectives/" class="md-nav__link">
+      <a href="general/formats/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Perspectives
+    1.3 Formats
   
 
     
@@ -530,14 +543,154 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/first-lesson/" class="md-nav__link">
+      <a href="general/install/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    First lesson
+    1.4 Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="general/first-run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.5 First run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="general/perspectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.6 Perspectives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="general/twins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.7 Twins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="general/integrate-your-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.8 Integrate your stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="general/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.9 Glossary
   
 
     
@@ -565,6 +718,28 @@
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -581,14 +756,15 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="tutorials/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
-    Concepts
+    2 Tutorials
   
 
     
@@ -596,35 +772,43 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Concepts
+    2 Tutorials
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
+            
+              
                 
   
   
   
   
     <li class="md-nav__item">
-      <a href="concepts/how-it-fits-together/" class="md-nav__link">
+      <a href="tutorials/first-mission/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How it fits together
+    2.1 First mission
   
 
     
@@ -645,14 +829,14 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/twin/" class="md-nav__link">
+      <a href="tutorials/create-a-twin/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Twin
+    2.2 Create a Twin
   
 
     
@@ -673,14 +857,14 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/twin-toml/" class="md-nav__link">
+      <a href="tutorials/build-a-scene/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    twin.toml
+    2.3 Build a scene
   
 
     
@@ -701,14 +885,14 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/usd/" class="md-nav__link">
+      <a href="tutorials/add-modelica/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USD
+    2.4 Add a Modelica model
   
 
     
@@ -729,14 +913,14 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/modelica/" class="md-nav__link">
+      <a href="tutorials/script-a-mission/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Modelica
+    2.5 Script a mission
   
 
     
@@ -757,14 +941,14 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/rhai/" class="md-nav__link">
+      <a href="tutorials/author-a-shader/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Rhai
+    2.6 Author a shader
   
 
     
@@ -785,14 +969,42 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/assets-toml/" class="md-nav__link">
+      <a href="tutorials/compose-ui/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Assets.toml
+    2.7 Compose a HUD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/validate-and-share/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.8 Validate and share
   
 
     
@@ -820,6 +1032,26 @@
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -836,14 +1068,15 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="usd/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
-    Guides
+    3 USD
   
 
     
@@ -851,35 +1084,43 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Guides
+    3 USD
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
+            
+              
                 
   
   
   
   
     <li class="md-nav__item">
-      <a href="guides/create-a-twin/" class="md-nav__link">
+      <a href="usd/composition/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Create a Twin
+    3.1 Composition
   
 
     
@@ -900,14 +1141,14 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/write-a-scenario/" class="md-nav__link">
+      <a href="usd/physics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Write a Rhai scenario
+    3.2 Physics
   
 
     
@@ -928,14 +1169,14 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/inspect-telemetry/" class="md-nav__link">
+      <a href="usd/ports-and-connections/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Inspect telemetry
+    3.3 Ports and connections
   
 
     
@@ -956,14 +1197,14 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/http-api/" class="md-nav__link">
+      <a href="usd/programs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the HTTP API
+    3.4 Programs
   
 
     
@@ -984,14 +1225,70 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/troubleshooting/" class="md-nav__link">
+      <a href="usd/materials/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Troubleshooting
+    3.5 Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usd/addresses-and-assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.6 Addresses and assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usd/authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.7 Authoring
   
 
     
@@ -1020,6 +1317,22 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1035,14 +1348,15 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="modelica/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
-    Reference
+    4 Modelica
   
 
     
@@ -1050,19 +1364,1021 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Reference
+    4 Modelica
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modelica/language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modelica/cosimulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 Cosimulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modelica/lunica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 Lunica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modelica/libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4 Libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modelica/experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.5 Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="rhai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Rhai
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5 Rhai
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rhai/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rhai/tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rhai/commands-and-queries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3 Commands and queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rhai/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4 Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rhai/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5 Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rhai/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.6 Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rhai/tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.7 Tooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="shaders/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Shaders
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6 Shaders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shaders/parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1 Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shaders/texture-layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.2 Texture layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shaders/usd-materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.3 USD materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shaders/terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.4 Terrain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shaders/quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.5 Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shaders/authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.6 Authoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="ui/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 UI & Settings
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7 UI & Settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ui/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.1 Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ui/hud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.2 HUD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ui/theming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.3 Theming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ui/runtime-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.4 Runtime UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ui/telemetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.5 Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8 Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1078,7 +2394,7 @@
   <span class="md-ellipsis">
     
   
-    CLI
+    8.1 Command line
   
 
     
@@ -1106,7 +2422,203 @@
   <span class="md-ellipsis">
     
   
-    Controls
+    8.2 Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/twin-toml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.3 twin.toml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/assets-toml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.4 Assets.toml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/file-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.5 File formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/http-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.6 HTTP API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/mission-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.7 Mission control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.8 Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.9 Troubleshooting
   
 
     
@@ -1135,7 +2647,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1154,10 +2668,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-here" class="md-nav__link">
+  <a href="#about-this-document" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Start here
+        About this document
       
     </span>
   </a>
@@ -1165,10 +2679,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-can-do" class="md-nav__link">
+  <a href="#conventions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you can do
+        Conventions
       
     </span>
   </a>
@@ -1176,21 +2690,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-four-formats" class="md-nav__link">
+  <a href="#how-to-use-this-document" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The four formats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation map
+        How to use this document
       
     </span>
   </a>
@@ -1208,17 +2711,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Community
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1230,11 +2722,23 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+  
+
+
+
+  
+
+
+              
               <article class="md-content__inner md-typeset">
                 
-                  
+  
+  
 
 
+  
   
     <a href="https://github.com/LunCoSim/luncosim-docs/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
@@ -1244,141 +2748,139 @@
   
 
 
-<div class="hero">
-<div class="hero__copy">
-<p class="hero__eyebrow">Open-source space mission workbench</p>
-<h1 class="hero__title" id="build-a-space-missionsee-how-it-behaves">Build a space mission.<br>See how it behaves.<a class="headerlink" href="#build-a-space-missionsee-how-it-behaves" title="Permanent link">&para;</a></h1>
-<p class="hero__lead">LunCoSim connects a USD scene, Modelica equations, and
-Rhai mission logic into one running system. Assemble a vehicle and its
-environment, then watch the mission behave.</p>
-<div class="hero__actions">
-<p><a class="md-button md-button--primary" href="getting-started/install/">Install LunCoSim</a>
-<a class="md-button" href="getting-started/first-lesson/">Run your first lesson</a></p>
+  
+    <div class="titlepage">
+<p class="title-kicker">Technical documentation</p>
+<h1 id="luncosim-documentation">LunCoSim Documentation<a class="headerlink" href="#luncosim-documentation" title="Permanent link">&para;</a></h1>
+<p class="title-subtitle">An open-source workbench for authoring, simulating, and
+operating space missions with USD, Modelica, and Rhai.</p>
+<div class="title-meta">
+<dl>
+<dt>Document version</dt><dd>0.1</dd>
+<dt>Release date</dt><dd>November 2026</dd>
+<dt>LunCoSim version</dt><dd>0.6.0-dev</dd>
+<dt>LunCoSim source commit</dt><dd><code>c84fba03ae41c1c48548485e0effd8c152b3621d</code></dd>
+<dt>Applies to</dt><dd>LunCoSim desktop and browser builds</dd>
+<dt>Status</dt><dd>Living document; updated with each release</dd>
+<dt>License</dt><dd>Open source; see the repository for details</dd>
+</dl>
 </div>
+<div class="abstract">
+<p><strong>Abstract.</strong> LunCoSim combines a composed OpenUSD scene, continuous Modelica
+models, and discrete Rhai mission policy into one running simulation. This
+document describes the project model, the authoring workflow, the runtime
+contracts that connect the three formats, and the evidence required before a
+result is trusted. It is written for engineers, mission designers, educators,
+and tool integrators who need to understand both what to author and why the
+runtime behaves as it does.</p>
 </div>
-<figure class="hero__shot">
-<a href="assets/images/screenshots/first-drive.webp"><img src="assets/images/screenshots/first-drive.webp" alt="The LunCoSim workbench running the First Drive sandbox scene, with a rover, a glowing route marker, and the View perspective active."></a>
-<figcaption>First Drive in the View perspective. The tutorial card appears when a lesson starts.</figcaption>
+<div class="contents">
+<p><strong>Contents</strong></p>
+<ol>
+<li><a href="general/">General</a> — purpose, installation, first run, perspectives,
+   Twins, and the format boundaries.</li>
+<li><a href="tutorials/">Tutorials</a> — guided lessons from a first drive to a
+   validated, shareable Twin.</li>
+<li><a href="usd/">USD</a> — scene composition, physics, typed ports, programs,
+   materials, and asset addressing.</li>
+<li><a href="modelica/">Modelica</a> — continuous behavior, cosimulation, the Lunica
+   workbench, libraries, and experiments.</li>
+<li><a href="rhai/">Rhai</a> — scenario lifecycle, task trees, commands, events,
+   tests, and reusable policy patterns.</li>
+<li><a href="shaders/">Shaders</a> — WESL material parameters, texture layers, USD
+   material binding, terrain rendering, and quality budgets.</li>
+<li><a href="ui/">UI &amp; Settings</a> — global and project settings, HUD surfaces,
+   theming, and runtime-authored UI.</li>
+<li><a href="reference/">Reference</a> — command line, controls, manifests, file
+   formats, HTTP API, mission control, validation, and troubleshooting.</li>
+</ol>
+</div>
+<figure class="title-figure">
+<a href="assets/images/luncosim-layers.svg"><img src="assets/images/luncosim-layers.svg" alt="The LunCoSim layer model: TOML configuration, USD scene, Modelica behavior, Rhai policy, and the Rust runtime."></a>
+<figcaption>The authored formats and the runtime that projects them into a live
+world. Each fact has one owner.</figcaption>
 </figure>
-</div>
-<p>This site is the user guide. It covers installation, the first lessons, and the
-concepts behind a LunCoSim project.</p>
-<p><img alt="LunCoSim layers" src="assets/images/luncosim-layers.svg" /></p>
-<h2 id="start-here">Start here<a class="headerlink" href="#start-here" title="Permanent link">&para;</a></h2>
-<div class="grid cards">
+<h2 id="about-this-document">About this document<a class="headerlink" href="#about-this-document" title="Permanent link">&para;</a></h2>
+<p>This guide documents the behavior of the shipped application and the contracts
+an author can rely on. Where a capability is partial, experimental, or limited
+to one platform, the limitation is stated in the relevant section rather than
+implied by silence.</p>
+<p>The documentation follows the same ownership rule as the software:</p>
 <ul>
-<li>
-<p><strong>Install LunCoSim</strong></p>
-<p>Download the desktop package for Windows, macOS, or Linux, then launch it.</p>
-<p><a href="getting-started/install/">Install LunCoSim</a></p>
-</li>
-<li>
-<p><strong>Run your first lesson</strong></p>
-<p>Open the Tutorials menu, take control of a rover, and complete a short
-guided exercise.</p>
-<p><a href="getting-started/first-lesson/">First lesson</a></p>
-</li>
-<li>
-<p><strong>Learn the project model</strong></p>
-<p>Understand what a Twin is, how <code>twin.toml</code> declares it, and which file owns
-which part of the simulation.</p>
-<p><a href="concepts/how-it-fits-together/">How it fits together</a></p>
-</li>
-<li>
-<p><strong>Write a scenario</strong></p>
-<p>Use Rhai to react to events, command a rover, and sequence a mission.</p>
-<p><a href="guides/write-a-scenario/">Write a Rhai scenario</a></p>
-</li>
+<li><strong>USD</strong> owns scene structure, geometry, materials, physics schemas, and typed
+  connections.</li>
+<li><strong>Modelica</strong> owns continuous equations and state.</li>
+<li><strong>Rhai</strong> owns events, commands, mission sequencing, and authored verdicts.</li>
+<li><strong>TOML</strong> owns project and asset configuration.</li>
+<li><strong>The runtime</strong> owns projection, scheduling, physics integration, and
+  rendering.</li>
 </ul>
-</div>
-<h2 id="what-you-can-do">What you can do<a class="headerlink" href="#what-you-can-do" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Build and drive a rover.</strong> Assemble a vehicle, explore wheel and suspension
-  behavior, and observe its interaction with terrain.</li>
-<li><strong>Connect equations to motion.</strong> Wire a Modelica controller to a rigid body
-  and inspect the feedback loop while it runs.</li>
-<li><strong>Explore subsystem behavior.</strong> Edit electrical, thermal, and mechanical
-  models in the embedded Modelica workbench and compare plots.</li>
-<li><strong>Script an operation.</strong> Define mission phases, waypoints, and responses to
-  events, then inspect the resulting state in the UI or over the API.</li>
-<li><strong>Share a project.</strong> A Twin is an ordinary folder of USD, Modelica, Rhai, and
-  configuration files that you can version and hand to a colleague.</li>
-</ul>
-<h2 id="the-four-formats">The four formats<a class="headerlink" href="#the-four-formats" title="Permanent link">&para;</a></h2>
+<p>A reader who remembers only one rule should remember this one: do not
+reimplement a fact in a second layer. A wheel position belongs in USD, a motor
+curve in Modelica, a waypoint mission in Rhai, and a download declaration in
+<code>Assets.toml</code>.</p>
+<h2 id="conventions">Conventions<a class="headerlink" href="#conventions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Format</th>
-<th>Owns</th>
-<th>Typical files</th>
+<th>Convention</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>USD</strong></td>
-<td>Scene structure, geometry, materials, physics schemas, typed ports and connections</td>
-<td><code>.usda</code>, <code>.usdc</code></td>
+<td><strong>Bold</strong></td>
+<td>A user-interface label, a perspective name, or a term defined in the glossary.</td>
 </tr>
 <tr>
-<td><strong>Modelica</strong></td>
-<td>Continuous equations, state, and physical behavior</td>
-<td><code>.mo</code></td>
+<td><code>Monospace</code></td>
+<td>A file name, command, attribute, property, or literal value.</td>
 </tr>
 <tr>
-<td><strong>Rhai</strong></td>
-<td>Events, commands, mission policy, and test verdicts</td>
-<td><code>.rhai</code></td>
+<td><code>&gt;</code></td>
+<td>A menu path, for example <strong>File → Open Twin…</strong>.</td>
 </tr>
 <tr>
-<td><strong>TOML</strong></td>
-<td>The Twin manifest and external asset declarations</td>
-<td><code>twin.toml</code>, <code>Assets.toml</code></td>
+<td>Note boxes</td>
+<td>A constraint, a platform limitation, or a warning about a common mistake.</td>
+</tr>
+<tr>
+<td>Code blocks</td>
+<td>Authored source or a command to run. Shell blocks use a POSIX shell unless marked otherwise.</td>
+</tr>
+<tr>
+<td>Version numbers</td>
+<td>LunCoSim is under active development; command and schema details can change between releases.</td>
 </tr>
 </tbody>
 </table>
-<p>The runtime projects those authored documents into a live world. Rust and
-Avian provide the generic engine mechanics; they are not where you author a
-particular rover, mission, or lesson.</p>
-<h2 id="documentation-map">Documentation map<a class="headerlink" href="#documentation-map" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Section</th>
-<th>What it answers</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="getting-started/install/">Getting started</a></td>
-<td>How do I install and launch LunCoSim?</td>
-</tr>
-<tr>
-<td><a href="concepts/how-it-fits-together/">Concepts</a></td>
-<td>What is a Twin, and how do USD, Modelica, Rhai, and assets interact?</td>
-</tr>
-<tr>
-<td><a href="guides/create-a-twin/">Guides</a></td>
-<td>How do I create a project, script behavior, and inspect telemetry?</td>
-</tr>
-<tr>
-<td><a href="reference/cli/">Reference</a></td>
-<td>What are the CLI flags and default controls?</td>
-</tr>
-</tbody>
-</table>
+<p>Paths in this document use forward slashes. On Windows, substitute the
+platform separator where the application accepts a native path. Logical asset
+addresses such as <code>lunco://</code> and <code>twin://</code> always use forward slashes.</p>
+<h2 id="how-to-use-this-document">How to use this document<a class="headerlink" href="#how-to-use-this-document" title="Permanent link">&para;</a></h2>
+<p>A new user should read <a href="general/install/">Installation</a>, run
+<a href="tutorials/first-mission/">First mission</a>, and then read
+<a href="general/how-it-fits-together/">How it fits together</a>. An author who already
+knows the workbench can go directly to the format chapter for the layer being
+edited. An integrator should start with
+<a href="general/integrate-your-stack/">Integrate your stack</a> and the
+<a href="reference/http-api/">HTTP API</a>. An instructor should read the
+<a href="tutorials/">Tutorials</a> overview and the lesson descriptions before
+using the classroom track.</p>
 <h2 id="current-status">Current status<a class="headerlink" href="#current-status" title="Permanent link">&para;</a></h2>
-<p>LunCoSim is under active development. Model coverage and maturity vary, and
-engineering conclusions need validation for their intended use. Use the
-<a href="https://github.com/LunCoSim/lunco-sim/releases">GitHub releases</a> page to see
-the current builds and release notes.</p>
-<h2 id="community">Community<a class="headerlink" href="#community" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://github.com/LunCoSim/lunco-sim">LunCoSim on GitHub</a></li>
-<li><a href="https://discord.gg/A6U3GdvQum">Discord</a></li>
-<li><a href="https://www.youtube.com/@LunCoSim">YouTube demos</a></li>
-<li><a href="https://lunco.space/">lunco.space</a></li>
-</ul>
+<p>LunCoSim is under active development. Model coverage, platform support, and
+tool maturity vary. A successful build, a clean parse, or a green scene test is
+evidence about a specific claim; none of them is a general accuracy
+certificate. The <a href="reference/validation/">Validation</a> chapter explains how to
+separate preflight, runtime behavior, requirement coverage, and physical
+accuracy.</p>
+<p>Release builds and notes are published on the
+<a href="https://github.com/LunCoSim/lunco-sim/releases">GitHub releases page</a>.
+Community links are in the site footer.</p>
+</div>
+  
 
+  
 
 
 
@@ -1389,11 +2891,13 @@ the current builds and release notes.</p>
   
 
 
+  
+
+  
 
 
+  
 
-
-                
               </article>
             </div>
           
@@ -1413,17 +2917,19 @@ the current builds and release notes.</p>
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
         
           
-          <a href="getting-started/install/" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+          <a href="general/" class="md-footer__link md-footer__link--next" aria-label="Next: 1 General">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install
+                1 General
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1438,6 +2944,10 @@ the current builds and release notes.</p>
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      LunCoSim contributors · Documentation version 0.1 · November 2026
+    </div>
   
   
     Made with
@@ -1498,7 +3008,7 @@ the current builds and release notes.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.tooltips", "toc.follow"], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.c21346df.min.js"></script>

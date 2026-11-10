@@ -1,4 +1,4 @@
-/* LunCoSim documentation theme */
+/* LunCoSim documentation — specification-style theme */
 
 :root {
   --md-text-font-family: system-ui, -apple-system, "Segoe UI", Roboto,
@@ -6,313 +6,516 @@
   --md-code-font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
     "Liberation Mono", monospace;
 
-  --md-primary-fg-color: #0b1b2b;
-  --md-primary-fg-color--light: #16324a;
-  --md-primary-fg-color--dark: #07121d;
-  --md-accent-fg-color: #0b8fa3;
+  --md-primary-fg-color: #0b2239;
+  --md-primary-fg-color--light: #173a57;
+  --md-primary-fg-color--dark: #061523;
+  --md-accent-fg-color: #0b7285;
 
-  --lunco-cyan: #22b8cf;
-  --lunco-cyan-soft: rgba(34, 184, 207, 0.14);
-  --lunco-card-border: rgba(11, 27, 43, 0.12);
-  --lunco-shadow: 0 10px 30px rgba(4, 16, 28, 0.12);
+  --lunco-cyan: #1c8fa3;
+  --lunco-cyan-dark: #0a6273;
+  --lunco-cyan-soft: rgba(28, 143, 163, 0.12);
+  --lunco-rule: rgba(11, 34, 57, 0.16);
+  --lunco-rule-strong: rgba(11, 34, 57, 0.3);
+  --lunco-panel: #f5f8fa;
+  --lunco-panel-strong: #eaf0f4;
+  --lunco-shadow: 0 1px 2px rgba(6, 21, 35, 0.08);
 }
 
 [data-md-color-scheme="default"] {
-  --md-typeset-a-color: #0a6b7a;
+  --md-typeset-a-color: #0a6273;
+  --md-default-fg-color: #1c2733;
+  --md-default-fg-color--light: #4a5866;
+  --md-default-fg-color--lighter: #74818e;
+  --md-default-bg-color: #ffffff;
 }
 
 [data-md-color-scheme="slate"] {
-  --md-typeset-a-color: #4dd0e1;
-  --md-accent-fg-color: #4dd0e1;
-  --lunco-card-border: rgba(213, 228, 240, 0.16);
-  --lunco-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+  --md-typeset-a-color: #5cc8d8;
+  --md-accent-fg-color: #5cc8d8;
+  --lunco-cyan: #5cc8d8;
+  --lunco-cyan-dark: #8adce8;
+  --lunco-cyan-soft: rgba(92, 200, 216, 0.14);
+  --lunco-rule: rgba(213, 228, 240, 0.18);
+  --lunco-rule-strong: rgba(213, 228, 240, 0.32);
+  --lunco-panel: #17212b;
+  --lunco-panel-strong: #1e2b37;
+  --lunco-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
-/* Wider shell, larger and more comfortable reading type */
+/* Page shell */
 
 .md-grid {
-  max-width: 68rem;
+  max-width: 80rem;
 }
 
 .md-typeset {
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--md-default-fg-color);
+}
+
+.md-content__inner {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding-top: 1.1rem;
+  padding-bottom: 2.4rem;
 }
 
 .md-typeset p {
-  margin: 0.85em 0;
-}
-
-.md-typeset h1 {
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  margin-bottom: 0.8rem;
-}
-
-.md-typeset h2 {
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  margin-top: 2.1rem;
-}
-
-.md-typeset h3 {
-  font-weight: 700;
-  margin-top: 1.6rem;
+  margin: 0.8em 0;
 }
 
 .md-typeset li {
-  margin-bottom: 0.35em;
+  margin-bottom: 0.3em;
 }
 
-/* Tables were the smallest text on the site */
-
-.md-typeset table:not([class]) {
-  font-size: 0.84rem;
-  line-height: 1.55;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 0 1px var(--lunco-card-border);
+.md-typeset hr {
+  border-bottom: 1px solid var(--lunco-rule);
 }
 
-.md-typeset table:not([class]) th {
+/* Chapter and section numbering */
+
+.chapter {
+  counter-reset: section figure;
+}
+
+.chapter > h1::before {
+  content: var(--chapter-prefix) "\00a0\00a0";
+  color: var(--lunco-cyan-dark);
   font-weight: 700;
-  padding: 0.7em 0.9em;
-  background-color: var(--md-default-fg-color--lightest);
 }
 
-.md-typeset table:not([class]) td {
-  padding: 0.65em 0.9em;
-  vertical-align: top;
+.chapter h2 {
+  counter-increment: section;
+  counter-reset: subsection;
 }
 
-.md-typeset table:not([class]) tr:nth-child(even) td {
-  background-color: rgba(127, 127, 127, 0.035);
+.chapter h2::before {
+  content: var(--chapter-prefix) "." counter(section) "\00a0\00a0";
+  color: var(--lunco-cyan-dark);
+  font-weight: 700;
 }
 
-/* Code stays compact but legible */
+.chapter h3 {
+  counter-increment: subsection;
+}
+
+.chapter h3::before {
+  content: var(--chapter-prefix) "." counter(section) "." counter(subsection)
+    "\00a0\00a0";
+  color: var(--lunco-cyan-dark);
+  font-weight: 700;
+}
+
+/* A chapter overview is a part introduction, not a numbered section.
+   Keep its h1 prefix but do not collide with the nav's section numbers. */
+.chapter-overview h2::before,
+.chapter-overview h3::before {
+  content: none;
+}
+
+/* Headings */
+
+.md-typeset h1 {
+  margin: 0 0 1.2rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid var(--lunco-rule-strong);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.md-typeset h2 {
+  margin: 2.2rem 0 0.7rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--lunco-rule);
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.008em;
+}
+
+.md-typeset h3 {
+  margin: 1.7rem 0 0.5rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.md-typeset h4 {
+  margin: 1.3rem 0 0.4rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.md-typeset h5 {
+  margin: 1.1rem 0 0.35rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* Links and inline code */
+
+.md-typeset a {
+  text-decoration: none;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+}
 
 .md-typeset code {
-  font-size: 0.84em;
+  padding: 0.1em 0.3em;
+  border: 1px solid var(--lunco-rule);
+  border-radius: 3px;
+  background-color: var(--lunco-panel);
+  font-size: 0.82em;
 }
 
 .md-typeset pre > code {
-  font-size: 0.8rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 0.78rem;
   line-height: 1.6;
 }
 
 .md-typeset .highlight {
-  border-radius: 8px;
+  border: 1px solid var(--lunco-rule);
+  border-radius: 4px;
+  background-color: var(--lunco-panel);
 }
 
-.md-typeset img[src$=".svg"] {
+.md-typeset .highlight pre {
+  margin: 0;
+}
+
+.md-typeset .highlighttable .linenos {
+  border-right: 1px solid var(--lunco-rule);
+  background-color: var(--lunco-panel-strong);
+}
+
+/* Tables — specification style, not cards */
+
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+  margin: 1.1rem 0 1.4rem;
+  border: 1px solid var(--lunco-rule-strong);
+  border-collapse: collapse;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.md-typeset table:not([class]) th {
+  padding: 0.55em 0.7em;
+  border: 1px solid var(--lunco-rule-strong);
+  background-color: var(--lunco-panel-strong);
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.5em 0.7em;
+  border: 1px solid var(--lunco-rule);
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background-color: rgba(127, 127, 127, 0.025);
+}
+
+.md-typeset table:not([class]) caption {
+  caption-side: top;
+  padding: 0 0 0.4rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.76rem;
+  text-align: left;
+}
+
+/* Figures and captions */
+
+.md-typeset figure {
+  margin: 1.6rem 0;
+  text-align: center;
+}
+
+.chapter figure {
+  counter-increment: figure;
+}
+
+.md-typeset figure img {
   display: block;
   width: 100%;
-  border: 1px solid var(--lunco-card-border);
-  border-radius: 12px;
+  border: 1px solid var(--lunco-rule);
+  border-radius: 2px;
   box-shadow: var(--lunco-shadow);
+}
+
+.md-typeset figcaption {
+  margin-top: 0.55rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.chapter figcaption::before {
+  content: "Figure " counter(figure) ". ";
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset figure.shot a:hover img {
+  border-color: var(--md-accent-fg-color);
+}
+
+/* Admonitions */
+
+.md-typeset .admonition,
+.md-typeset details {
+  margin: 1.2rem 0;
+  border: 1px solid var(--lunco-rule);
+  border-left: 4px solid var(--md-accent-fg-color);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.82rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  padding: 0.55rem 0.8rem;
+  background-color: var(--lunco-panel);
+  font-weight: 700;
+}
+
+.md-typeset .admonition > :last-child,
+.md-typeset details > :last-child {
+  margin-bottom: 0.8rem;
 }
 
 /* Navigation */
 
 .md-nav {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
+.md-nav__title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
 }
 
 .md-nav__item {
-  padding-top: 0.18rem;
+  padding-top: 0.12rem;
 }
 
 .md-nav__link {
   line-height: 1.45;
 }
 
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  font-weight: 700;
+}
+
+.md-nav--primary .md-nav__item > .md-nav__link {
+  border-left: 2px solid transparent;
+  padding-left: 0.45rem;
+}
+
+.md-nav--primary .md-nav__item > .md-nav__link--active {
+  border-left-color: var(--md-accent-fg-color);
+  color: var(--md-typeset-a-color);
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item {
+  margin-top: 0.35rem;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+
+.md-nav--secondary {
+  font-size: 0.72rem;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  border-left: 2px solid var(--md-accent-fg-color);
+  padding-left: 0.4rem;
+}
+
+/* Header and footer */
+
 .md-header {
-  background: linear-gradient(100deg, #081521 0%, #0f2a40 58%, #0b3b4a 100%);
-  box-shadow: 0 2px 12px rgba(2, 10, 18, 0.28);
+  background-color: #0b2239;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.md-tabs {
-  background-color: #0a2233;
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
-.md-tabs__link {
-  font-size: 0.76rem;
-  font-weight: 600;
+.md-header__topic:first-child {
+  font-weight: 400;
+}
+
+.md-search__form {
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .md-footer {
-  background-color: #07121d;
+  background-color: #061523;
 }
 
-/* Home hero */
-
-.hero {
-  margin: 0.6rem 0 2.4rem;
-  padding: 2rem;
-  border: 1px solid var(--lunco-card-border);
-  border-radius: 16px;
-  background:
-    radial-gradient(
-      circle at 8% 12%,
-      var(--lunco-cyan-soft),
-      transparent 45%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(11, 27, 43, 0.055),
-      rgba(34, 184, 207, 0.08)
-    );
+.md-footer-meta {
+  background-color: rgba(0, 0, 0, 0.18);
 }
 
-.hero__copy {
-  max-width: 44rem;
+.md-copyright {
+  font-size: 0.68rem;
 }
 
-[data-md-color-scheme="slate"] .hero {
-  background:
-    radial-gradient(
-      circle at 8% 12%,
-      rgba(34, 184, 207, 0.16),
-      transparent 48%
-    ),
-    linear-gradient(135deg, rgba(7, 18, 29, 0.65), rgba(11, 44, 58, 0.55));
+/* Title page */
+
+.titlepage {
+  max-width: 46rem;
+  margin: 0.5rem auto 2rem;
 }
 
-.hero__eyebrow {
-  margin: 0 0 0.45rem;
-  color: #0a6b7a;
+.titlepage .title-kicker {
+  margin: 0 0 0.5rem;
+  color: var(--lunco-cyan-dark);
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-[data-md-color-scheme="slate"] .hero__eyebrow {
-  color: #63d8e8;
-}
-
-.hero__title {
-  margin: 0 0 0.8rem !important;
-  font-size: 2.1rem !important;
-  line-height: 1.15 !important;
-  font-weight: 700;
-}
-
-.hero__lead {
-  margin: 0 0 1.2rem;
-  font-size: 0.92rem;
-  line-height: 1.65;
-  color: var(--md-default-fg-color--light);
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.55rem;
-}
-
-.hero__actions .md-button {
+.titlepage h1 {
   margin: 0;
-  padding: 0.65em 1.35em;
-  font-size: 0.78rem;
+  padding: 0;
+  border: 0;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
-.hero__actions .md-button:not(.md-button--primary) {
-  color: var(--md-typeset-a-color);
-  border-color: currentColor;
-}
-
-[data-md-color-scheme="slate"] .hero__actions .md-button--primary {
-  color: #06202b;
-  background-color: var(--lunco-cyan);
-  border-color: var(--lunco-cyan);
-}
-
-[data-md-color-scheme="slate"] .hero__actions .md-button--primary:hover {
-  color: #06202b;
-  background-color: #63d8e8;
-  border-color: #63d8e8;
-}
-
-.hero__shot {
-  margin: 1.4rem 0 0;
-}
-
-.hero__shot img {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--lunco-card-border);
-  border-radius: 10px;
-  box-shadow: var(--lunco-shadow);
-}
-
-.hero__shot figcaption {
-  margin-top: 0.55rem;
+.titlepage .title-subtitle {
+  margin: 0.7rem 0 1.6rem;
   color: var(--md-default-fg-color--light);
-  font-size: 0.72rem;
-  line-height: 1.45;
-}
-
-/* Screenshot figures */
-
-.md-typeset figure.shot {
-  margin: 1.7rem 0;
-}
-
-.md-typeset figure.shot img {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--lunco-card-border);
-  border-radius: 10px;
-  box-shadow: var(--lunco-shadow);
-  transition:
-    border-color 150ms ease,
-    box-shadow 150ms ease;
-}
-
-.md-typeset figure.shot a:hover img {
-  border-color: var(--md-accent-fg-color);
-  box-shadow:
-    0 0 0 2px var(--lunco-cyan-soft),
-    var(--lunco-shadow);
-}
-
-.md-typeset figure.shot figcaption {
-  margin-top: 0.55rem;
-  color: var(--md-default-fg-color--light);
-  font-size: 0.74rem;
+  font-size: 1.05rem;
   line-height: 1.5;
 }
 
-/* Card grid on the home page */
+.titlepage .title-meta {
+  margin: 1.4rem 0 1.8rem;
+  border-top: 2px solid var(--lunco-rule-strong);
+  border-bottom: 1px solid var(--lunco-rule);
+  font-size: 0.8rem;
+}
+
+.titlepage .title-meta dl {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  margin: 0;
+  padding: 0.35rem 0;
+}
+
+.titlepage .title-meta dt {
+  padding: 0.4em 0.7em;
+  color: var(--md-default-fg-color--light);
+  font-weight: 700;
+}
+
+.titlepage .title-meta dd {
+  margin: 0;
+  padding: 0.4em 0.7em;
+}
+
+.titlepage .abstract {
+  margin: 1.4rem 0;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--lunco-cyan);
+  background-color: var(--lunco-panel);
+  font-size: 0.84rem;
+}
+
+.titlepage .abstract > :first-child {
+  margin-top: 0;
+}
+
+.titlepage .abstract > :last-child {
+  margin-bottom: 0;
+}
+
+.titlepage .contents {
+  margin: 1.5rem 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--lunco-rule);
+}
+
+.titlepage .contents ol {
+  margin: 0.4rem 0 0;
+  padding-left: 1.5rem;
+}
+
+.titlepage .contents li {
+  margin-bottom: 0.18em;
+}
+
+.titlepage .contents a {
+  color: var(--md-default-fg-color);
+}
+
+.titlepage .title-figure {
+  margin: 1.6rem 0;
+}
+
+.titlepage .title-figure figcaption {
+  text-align: center;
+}
+
+.home h2 {
+  margin-top: 2rem;
+}
+
+/* Grid cards, used sparingly on overview pages */
 
 .md-typeset .grid.cards > ul > li {
-  border: 1px solid var(--lunco-card-border);
-  border-radius: 12px;
-  transition:
-    border-color 150ms ease,
-    box-shadow 150ms ease,
-    transform 150ms ease;
+  border: 1px solid var(--lunco-rule);
+  border-radius: 3px;
+  box-shadow: none;
+  transition: border-color 120ms ease;
 }
 
 .md-typeset .grid.cards > ul > li:hover {
   border-color: var(--md-accent-fg-color);
-  box-shadow: var(--lunco-shadow);
-  transform: translateY(-2px);
+  box-shadow: none;
 }
 
-@media screen and (max-width: 60em) {
-  .hero {
-    padding: 1.4rem;
-  }
-
-  .hero__title {
-    font-size: 1.65rem !important;
-  }
+.md-typeset .grid.cards > ul > li > p:first-child {
+  font-weight: 700;
 }
 
 /* Perspective cards and task table */
+
+.md-typeset .perspective-cards.grid.cards > ul > li {
+  padding: 0.8rem;
+}
 
 @media screen and (max-width: 30em) {
   .md-typeset .perspective-cards.grid.cards {
@@ -326,16 +529,16 @@
 
   .md-typeset .perspective-cards.grid.cards > ul > li p {
     margin: 0.3em 0;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     line-height: 1.4;
-  }
-
-  .md-typeset .perspective-cards.grid.cards > ul > li > p:first-child {
-    font-size: 0.78rem;
   }
 }
 
 @media screen and (max-width: 44em) {
+  .titlepage .title-meta dl {
+    grid-template-columns: 7rem 1fr;
+  }
+
   .md-typeset .perspective-table table {
     display: block;
     border: 0;
@@ -356,8 +559,8 @@
   .md-typeset .perspective-table tr {
     margin: 0.55rem 0;
     padding: 0.65rem 0.8rem;
-    border: 1px solid var(--lunco-card-border);
-    border-radius: 10px;
+    border: 1px solid var(--lunco-rule);
+    border-radius: 2px;
     background-color: var(--md-default-bg-color);
   }
 
@@ -385,5 +588,43 @@
     content: "Start with: ";
     color: var(--md-default-fg-color--light);
     font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .md-typeset h1 {
+    font-size: 1.55rem;
+  }
+
+  .titlepage h1 {
+    font-size: 2rem;
+  }
+
+  .titlepage .title-meta table td:first-child {
+    width: 7rem;
+  }
+}
+
+@media print {
+  .md-header,
+  .md-sidebar,
+  .md-footer,
+  .md-top,
+  .md-content__button {
+    display: none !important;
+  }
+
+  .md-content__inner {
+    max-width: none;
+  }
+
+  .chapter h2 {
+    break-after: avoid;
+  }
+
+  .md-typeset table,
+  .md-typeset figure,
+  .md-typeset pre {
+    break-inside: avoid;
   }
 }
