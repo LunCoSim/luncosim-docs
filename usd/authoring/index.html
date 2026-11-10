@@ -2960,13 +2960,11 @@ the yard. A change to the rover's wheel mount belongs to the rover asset, where
 every instance sees it.</p>
 <h2 id="the-document-model">The document model<a class="headerlink" href="#the-document-model" title="Permanent link">&para;</a></h2>
 <p>Every edit is a typed operation on a <code>UsdDocument</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>UsdOp ─apply→ UsdDocument (base ⊕ runtime, generation++)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        ├─ journal records op + inverse (undo / sync)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        └─ replay op → CanonicalStage.author_*
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                │ fires the change sink
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                └─ reconcile the affected ECS entities
-</code></pre></div>
+<figure class="diagram">
+  <img src="../../assets/images/usd-edit-flow.svg" alt="A user edit becomes a typed UsdOp, updates a document generation, is journaled and authored to the canonical stage, then reconciles affected ECS entities.">
+  <figcaption>The same typed operation feeds undo and sync, stage authoring, and entity reconciliation.</figcaption>
+</figure>
+
 <p>The operation is the single description of the delta. Views do not re-derive
 it by reading state back. This is the <em>author-once coherence</em> invariant: the
 text editor, the scene tree, the property inspector, and the 3D viewport all
@@ -3079,12 +3077,12 @@ alignment plans. Both are policy wrappers over the journaled command surface.
 USD remains the scene and topology authority; Modelica remains the equation and
 graph authority.</p>
 <p>The normal sequence is:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>let context = model_authoring::model_context(doc, root, "@root@");
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>let ready = model_authoring::readiness_report(doc, root, "@root@", policy);
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>let recipe = model_authoring::scene_recipe(doc, "@root@", scene, context.generation);
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>let graph = model_authoring::port_graph(doc, root, "@root@");
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>let wires = model_authoring::wiring_plan(
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    doc, "@root@", root, connections, context.generation);
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>let context = model_authoring::model_context(doc, root, "@root@");
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>let ready = model_authoring::readiness_report(doc, root, "@root@", policy);
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>let recipe = model_authoring::scene_recipe(doc, "@root@", scene, context.generation);
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>let graph = model_authoring::port_graph(doc, root, "@root@");
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>let wires = model_authoring::wiring_plan(
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    doc, "@root@", root, connections, context.generation);
 </code></pre></div>
 <p><code>model_context</code> is one composed, path-addressed read: children, references,
 variants, component and frame facts, bodies, joints, colliders, ports,
@@ -3097,13 +3095,13 @@ text directly.</p>
 <h2 id="references-and-variants">References and variants<a class="headerlink" href="#references-and-variants" title="Permanent link">&para;</a></h2>
 <p>Use references for reusable assets. A reference composes the asset's prim tree
 under the instance; an override changes only the opinions that differ.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k k-Tokens">def</span><span class="w"> </span>Xform<span class="w"> </span><span class="s">"RoverA"</span><span class="w"> </span><span class="p">(</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">prepend</span><span class="w"> </span><span class="na">references</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="si">@lunco://vessels/rovers/skid_rover.usda@</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">double3</span><span class="w"> </span><span class="na">xformOp:translate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k k-Token">uniform</span><span class="w"> </span><span class="kt">token[]</span><span class="w"> </span><span class="na">xformOpOrder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"xformOp:translate"</span><span class="p">]</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k k-Tokens">def</span><span class="w"> </span>Xform<span class="w"> </span><span class="s">"RoverA"</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kt">prepend</span><span class="w"> </span><span class="na">references</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="si">@lunco://vessels/rovers/skid_rover.usda@</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kt">double3</span><span class="w"> </span><span class="na">xformOp:translate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k k-Token">uniform</span><span class="w"> </span><span class="kt">token[]</span><span class="w"> </span><span class="na">xformOpOrder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"xformOp:translate"</span><span class="p">]</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
 </code></pre></div>
 <p>Use variants for authored alternatives, not for runtime state. A variant
 selection is an authored opinion and enters the journal.</p>

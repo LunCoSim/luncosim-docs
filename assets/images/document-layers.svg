@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+<title id="title">Three layers, one live document</title>
+<desc id="desc">The USD document composes the authored base, durable runtime edits, and disposable view edits as one editable stage.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#0b7285"/>
+  </marker>
+</defs>
+<style>
+  .canvas { fill: #f3f7f9; }
+  .title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.3px; }
+  .subtitle { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 15px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .node-title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .body { fill: #243847; font-family: system-ui, sans-serif; font-size: 15px; }
+  .label { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+  .callout-text { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+</style>
+<rect class="canvas" width="1000" height="600" rx="12"/>
+<text class="title" x="40" y="46">Three layers, one live document</text>
+<text class="subtitle" x="40" y="74">Layer strength increases upward; the base remains the source file.</text><rect x="220" y="190" width="560" height="88" rx="14" fill="#fbf1e7" stroke="#c8d7df" stroke-width="1.5"/><rect x="220" y="202" width="5" height="64" rx="2.5" fill="#a96320"/><text class="eyebrow" x="246" y="220" fill="#a96320">VIEW</text><text class="node-title" x="246" y="250">Weakest · disposable</text><text class="body" x="550" y="246" fill="#5e707d">Temporary view edits</text><rect x="220" y="315" width="560" height="88" rx="14" fill="#e7f2f5" stroke="#c8d7df" stroke-width="1.5"/><rect x="220" y="327" width="5" height="64" rx="2.5" fill="#0b7285"/><text class="eyebrow" x="246" y="345" fill="#0b7285">RUNTIME</text><text class="node-title" x="246" y="375">Durable document edits</text><text class="body" x="550" y="371" fill="#5e707d">Kept out of the source file</text><rect x="220" y="440" width="560" height="88" rx="14" fill="#eaf3ee" stroke="#c8d7df" stroke-width="1.5"/><rect x="220" y="452" width="5" height="64" rx="2.5" fill="#28785e"/><text class="eyebrow" x="246" y="470" fill="#28785e">BASE</text><text class="node-title" x="246" y="500">Source file</text><text class="body" x="550" y="496" fill="#5e707d">Saved to the authored USD layer</text><path d="M500 439 L500 407" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M500 310 L500 282" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><text class="eyebrow" x="820" y="218" fill="#0b7285">STRONGER</text><path d="M865 465 V184" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><rect x="40" y="545" width="920" height="42" rx="10" fill="#eaf3f5" stroke="#c7dfe4"/>
+<rect x="40" y="545" width="5" height="42" rx="2.5" fill="#0b7285"/>
+<text class="callout-text" x="58" y="572" fill="#0b2239">Save base edits to the source; runtime and view layers keep their distinct lifetimes.</text>
+</svg>

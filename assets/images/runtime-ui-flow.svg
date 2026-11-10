@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660" role="img" aria-labelledby="title desc">
+<title id="title">Runtime UI: read snapshots, emit intent</title>
+<desc id="desc">Engine state becomes a named exposure snapshot for the retained UI. Authored controls emit semantic actions that Rhai maps to typed commands or events.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#0b7285"/>
+  </marker>
+</defs>
+<style>
+  .canvas { fill: #f3f7f9; }
+  .title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.3px; }
+  .subtitle { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 15px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .node-title { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+  .body { fill: #243847; font-family: system-ui, sans-serif; font-size: 15px; }
+  .label { fill: #5e707d; font-family: system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+  .callout-text { fill: #0b2239; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+</style>
+<rect class="canvas" width="1000" height="660" rx="12"/>
+<text class="title" x="40" y="46">Runtime UI: read snapshots, emit intent</text>
+<text class="subtitle" x="40" y="74">The surface presents state and requests actions; it does not inspect ECS state or mutate the simulation.</text><rect x="40" y="120" width="215" height="128" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="134" width="5" height="100" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="60" y="148" fill="#28785e">STATE</text>
+<text class="node-title" x="60" y="176">Authoritative state</text>
+<text class="body" x="60" y="202" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">Change detection</tspan><tspan x="60" dy="20">bounded cadence</tspan></text><rect x="275" y="120" width="215" height="128" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="275" y="134" width="5" height="100" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="295" y="148" fill="#0b7285">SNAPSHOT</text>
+<text class="node-title" x="295" y="176">EngineExposures</text>
+<text class="body" x="295" y="202" fill="#5e707d" font-size="15px"><tspan x="295" dy="0">Named values</tspan><tspan x="295" dy="20">revision-gated</tspan></text><rect x="510" y="120" width="215" height="128" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="510" y="134" width="5" height="100" rx="2.5" fill="#6951a1"/>
+<text class="eyebrow" x="530" y="148" fill="#6951a1">STYLE + BIND</text>
+<text class="node-title" x="530" y="176">HUI + Flair</text>
+<text class="body" x="530" y="202" fill="#5e707d" font-size="15px"><tspan x="530" dy="0">Template values</tspan><tspan x="530" dy="20">CSS custom properties</tspan></text><rect x="745" y="120" width="215" height="128" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="745" y="134" width="5" height="100" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="765" y="148" fill="#a96320">PRESENT</text>
+<text class="node-title" x="765" y="176">Retained UI tree</text>
+<text class="body" x="765" y="202" fill="#5e707d" font-size="15px"><tspan x="765" dy="0">Bevy surface</tspan><tspan x="765" dy="20">Workbench window</tspan></text><path d="M255 184 L271 184" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M490 184 L506 184" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M725 184 L741 184" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M382 248 L382 282" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><rect x="275" y="282" width="430" height="78" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="275" y="296" width="5" height="50" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="295" y="310" fill="#0b7285">READERS</text>
+<text class="node-title" x="295" y="338">Shared data consumers</text>
+<text class="body" x="295" y="364" fill="#5e707d" font-size="15px"><tspan x="295" dy="0">ReadExposures · telemetry · remote clients</tspan></text><rect x="40" y="430" width="175" height="112" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="40" y="444" width="5" height="84" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="60" y="458" fill="#a96320">CONTROL</text>
+<text class="node-title" x="60" y="486">HTML button</text>
+<text class="body" x="60" y="512" fill="#5e707d" font-size="15px"><tspan x="60" dy="0">Authored intent</tspan></text><rect x="225" y="430" width="175" height="112" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="225" y="444" width="5" height="84" rx="2.5" fill="#6951a1"/>
+<text class="eyebrow" x="245" y="458" fill="#6951a1">CALLBACK</text>
+<text class="node-title" x="245" y="486">HUI callback</text>
+<text class="body" x="245" y="512" fill="#5e707d" font-size="15px"><tspan x="245" dy="0">Action + HookValue</tspan><tspan x="245" dy="20">map</tspan></text><rect x="410" y="430" width="175" height="112" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="410" y="444" width="5" height="84" rx="2.5" fill="#0b7285"/>
+<text class="eyebrow" x="430" y="458" fill="#0b7285">SEMANTIC</text>
+<text class="node-title" x="430" y="486">Action request</text>
+<text class="body" x="430" y="512" fill="#5e707d" font-size="15px"><tspan x="430" dy="0">RuntimeUiAction</tspan><tspan x="430" dy="20">HookValue map</tspan></text><rect x="595" y="430" width="175" height="112" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="595" y="444" width="5" height="84" rx="2.5" fill="#a96320"/>
+<text class="eyebrow" x="615" y="458" fill="#a96320">POLICY</text>
+<text class="node-title" x="615" y="486">Rhai policy</text>
+<text class="body" x="615" y="512" fill="#5e707d" font-size="15px"><tspan x="615" dy="0">Twin-owned meaning</tspan></text><rect x="780" y="430" width="175" height="112" rx="13" fill="#ffffff" stroke="#c8d7df" stroke-width="1.5"/>
+<rect x="780" y="444" width="5" height="84" rx="2.5" fill="#28785e"/>
+<text class="eyebrow" x="800" y="458" fill="#28785e">COMMAND</text>
+<text class="node-title" x="800" y="486">Typed command</text>
+<text class="body" x="800" y="512" fill="#5e707d" font-size="15px"><tspan x="800" dy="0">Host validates</tspan><tspan x="800" dy="20">authority</tspan></text><path d="M215 486 L224 486" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M400 486 L409 486" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M585 486 L594 486" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M770 486 L779 486" fill="none" stroke="#0b7285" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arrow)"/><path d="M867 430 V398 H145 V244" fill="none" stroke="#28785e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/><text class="label" x="450" y="391" fill="#5e707d">typed requests return to the authoritative host</text><rect x="40" y="575" width="920" height="42" rx="10" fill="#eaf3f5" stroke="#c7dfe4"/>
+<rect x="40" y="575" width="5" height="42" rx="2.5" fill="#0b7285"/>
+<text class="callout-text" x="58" y="602" fill="#0b2239">Presentation stays separate from simulation authority, even when controls are interactive.</text>
+</svg>

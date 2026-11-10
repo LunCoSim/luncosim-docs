@@ -2862,7 +2862,7 @@
 the operation does</strong>. Each layer has a standard format and a clear owner. The
 runtime composes those layers into one live world and gives every participant
 the same clock, identity, and command surface.</p>
-<figure>
+<figure class="diagram">
 <a href="../../assets/images/luncosim-layers.svg"><img src="../../assets/images/luncosim-layers.svg" alt="The LunCoSim layer model, from the Twin manifest through USD, Modelica, Rhai, and the runtime."></a>
 <figcaption>The authored layers and the runtime. The arrows indicate ownership
 and projection, not a one-way build pipeline.</figcaption>
@@ -2914,7 +2914,7 @@ and projection, not a one-way build pipeline.</figcaption>
 USD. A motor's torque curve belongs in Modelica. A waypoint mission belongs in
 Rhai. A downloaded terrain DEM belongs in <code>Assets.toml</code> and the asset cache.</p>
 <h2 id="runtime-flow">Runtime flow<a class="headerlink" href="#runtime-flow" title="Permanent link">&para;</a></h2>
-<figure>
+<figure class="diagram">
 <a href="../../assets/images/runtime-loop.svg"><img src="../../assets/images/runtime-loop.svg" alt="The LunCoSim runtime loop: manifest, USD composition, projection, Modelica admission, physics, Rhai policy, and UI."></a>
 <figcaption>The runtime loop. The UI observes and commands; it does not own
 domain state.</figcaption>
@@ -2982,14 +2982,11 @@ waypoint mission.</p>
 </tbody>
 </table>
 <p>A complete drive loop can look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>USD                  Modelica                 Physics
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wheels + joints  →   drive law + motor   →   forces + motion
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      ↑                                           │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      └──────────── typed USD connections ─────────┘
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                           │
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                        Rhai policy
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                 mission events and commands
-</code></pre></div>
+<figure class="diagram">
+  <img src="../../assets/images/drive-loop.svg" alt="USD defines wheels, joints, ports and connections; Modelica computes the drive law; physics advances motion; Rhai handles commands and events.">
+  <figcaption>The arrows summarize the composed topology; the runtime derives the schedule from USD connections.</figcaption>
+</figure>
+
 <p>The arrows are not a dataflow that the author programs. They are the
 consequence of the authored topology. The wheel joint is a USD fact. The motor
 equation is a Modelica fact. The connection is a USD fact. The runtime derives
