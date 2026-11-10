@@ -85,6 +85,7 @@ LunCoSim uses standard formats wherever a standard exists:
 | Standard | Use in LunCoSim |
 |---|---|
 | OpenUSD | Scene description, composition, physics schemas, shader networks, and typed ports |
+| glTF 2.0 | External mesh and scene assets referenced from USD payloads |
 | Modelica | Continuous and discrete-equation models, packages, and acausal connectors |
 | FMI 3.0 Co-Simulation | Optional native import of scalar `Float64` FMUs on desktop builds |
 | SysML v2 / KerML | Requirements and verification mappings, with bounded support |
@@ -99,7 +100,7 @@ LunCoSim-specific schemas and asset addresses are available.
 ## What LunCoSim is not
 
 - It is not a CAD replacement. Use a content tool to author detailed geometry,
-  then bring the result in as USD.
+  then bring the result in as USD or as a glTF payload referenced from USD.
 - It is not a certified flight-dynamics or thermal-analysis package. Model
   coverage and numerical fidelity vary by domain.
 - It is not a mission-control system. It exposes a typed API that an operator

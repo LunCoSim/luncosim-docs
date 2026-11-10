@@ -20,6 +20,7 @@ USD, Modelica, Rhai, and TOML, see [Formats](../general/formats.md).
 |---|---|---|---|
 | `.usd`, `.usda`, `.usdc` | USD stage | Hierarchy, transforms, geometry, materials, physics, typed ports, connections, program attachments | USD composition, renderer, physics, co-simulation |
 | `.usdz` | Packaged USD | A self-contained USD package, when the registered USD file-format plugin is available | USD composition |
+| `.gltf`, `.glb` | glTF 2.0 asset | Mesh geometry, materials, node hierarchy | Bevy glTF loader through the USD render adapter |
 | `.mo` | Modelica source | Continuous equations, parameters, state, acausal connectors | Modelica compiler and solver |
 | `.fmu` | FMI 3 Co-Simulation archive | An external co-simulation participant | Native FMI 3 CS importer; scalar `Float64` profile |
 | `.rhai` | Rhai script | Events, commands, tasks, objectives, tutorial flow, test verdicts | Rhai runtime and tool hooks |
@@ -32,6 +33,14 @@ The native FMI importer is deliberately narrow. It supports scalar `Float64`
 signals and rejects Event Mode, early return, Model Exchange, arrays, Scheduled
 Execution clocks, and externally hosted FMUs. A `.fmu` that loads is not a claim
 of broad FMI conformance; state the tested profile when reporting a result.
+
+glTF is an external asset format, not a USD layer. A USD `payload` or
+`reference` arc names the file, and the render adapter reads that arc from the
+composed prim and loads the asset through Bevy's glTF loader. The default
+`lunco:assetMode = "scene"` attaches the whole scene; `"mesh"` attaches one mesh
+primitive as `Mesh3d`. `lunco:assetLabel` selects a named sub-asset. The same
+asset path works in native and browser builds. See
+[Addresses and assets](../usd/addresses-and-assets.md#gltf-payloads).
 
 ## Engine and policy manifests
 
@@ -123,6 +132,8 @@ Unknown fields are rejected by the manifest loaders that use strict schemas.
 
 - Keep the native format valid. A `.mo` file should still open in another
   Modelica tool, and a `.usda` file should still open in another USD application.
+- Reference glTF through a USD payload or reference. It is an external asset,
+  not a composable USD layer.
 - Do not edit a generated or cached artifact by hand. Author the source and let
   the pipeline produce the result.
 - Do not hardcode a cache path in a scene. Use `lunco://` or `twin://`.

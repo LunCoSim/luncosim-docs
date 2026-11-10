@@ -66,6 +66,10 @@ kernel, physics, and realtime-safe Modelica programs advance on fixed steps.
 **FMU.** A Functional Mock-up Unit packaged for FMI. LunCoSim can import FMI
 3.0 Co-Simulation FMUs with scalar `Float64` ports on desktop builds.
 
+**glTF.** An external mesh and scene format. A `.gltf` or `.glb` file is
+referenced from a USD payload or reference and loaded by the glTF importer; it
+is not a USD layer.
+
 **HUD.** A heads-up display surface over the viewport. LunCoSim has both
 workbench HUDs (graphs, performance, input overlay) and authored runtime
 surfaces (rover, camera, terrain progress).

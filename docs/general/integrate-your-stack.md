@@ -23,6 +23,7 @@ into a second integration layer.
 | Existing stack | What you keep | What changes | Status |
 |---|---|---|---|
 | USD scenes and assets | Geometry, materials, physics schemas, typed ports, composition | Reference through `lunco://` or `twin://`; no second scene graph | Available |
+| glTF mesh or scene | The `.gltf` or `.glb` asset and its materials | Reference it from a USD payload or reference; choose scene or mesh mode | Available |
 | Modelica source | `.mo` classes and package structure | Declare a Twin source root; recompile after edits | Available; see the package note below |
 | FMI 3.0 Co-Simulation FMU | The binary FMU | Load with `LoadFmu`; expose scalar `Float64` ports | Native import only |
 | ROS 2 nodes and topics | Your ROS 2 graph | Add a sidecar that translates ROS 2 traffic to the HTTP API | No bridge shipped |
@@ -119,6 +120,11 @@ LunCoSim does not import URDF, SDF, or MJCF directly. Convert the robot to USD,
 preserve the authored joint and collider structure, and validate the result
 before wiring behavior. A converter load test is backlog work, not a supported
 importer.
+
+glTF is the supported path for mesh content from a content tool. Export the
+model as `.gltf` or `.glb`, reference it from a USD payload or reference, and
+keep the USD prim as the scene identity. See
+[Addresses and assets](../usd/addresses-and-assets.md#gltf-payloads).
 
 ## A practical adoption path
 

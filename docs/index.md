@@ -17,6 +17,8 @@ operating space missions with USD, Modelica, and Rhai.</p>
 <dl>
 <dt>Document version</dt><dd>0.1</dd>
 <dt>Release date</dt><dd>November 2026</dd>
+<dt>LunCoSim version</dt><dd>0.6.0-dev</dd>
+<dt>LunCoSim source commit</dt><dd><code>c84fba03ae41c1c48548485e0effd8c152b3621d</code></dd>
 <dt>Applies to</dt><dd>LunCoSim desktop and browser builds</dd>
 <dt>Status</dt><dd>Living document; updated with each release</dd>
 <dt>License</dt><dd>Open source; see the repository for details</dd>

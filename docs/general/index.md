@@ -94,7 +94,7 @@ prove.
 |---|---|
 | [1.1 Introduction](introduction.md) | The problem, the design principles, and the intended audience |
 | [1.2 How it fits together](how-it-fits-together.md) | The runtime flow and the boundary between the layers |
-| [1.3 Formats](formats.md) | A side-by-side comparison of USD, Modelica, Rhai, TOML, and SysML |
+| [1.3 Formats](formats.md) | A side-by-side comparison of USD, Modelica, Rhai, TOML, SysML, and glTF |
 | [1.4 Installation](install.md) | Packaged builds, source builds, and the updater |
 | [1.5 First run](first-run.md) | The window, the perspectives, and the tutorial catalog |
 | [1.6 Perspectives](perspectives.md) | The five task layouts and how to switch between them |

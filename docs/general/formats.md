@@ -6,10 +6,10 @@ section: 3
 
 # Formats
 
-LunCoSim uses four core authored formats and one optional requirements format.
-Each format has a different job, a different editing tool, and a different
-runtime consumer. Understanding the division is more important than memorizing
-the syntax of any one of them.
+LunCoSim uses four core authored formats, one optional requirements format, and
+one external asset format. Each format has a different job, a different editing
+tool, and a different runtime consumer. Understanding the division is more
+important than memorizing the syntax of any one of them.
 
 ## The authored formats
 
@@ -24,6 +24,23 @@ the syntax of any one of them.
 The first four are the core. SysML is optional and is described in
 [Validation](../reference/validation.md) and
 [Integrate your stack](integrate-your-stack.md).
+
+## The external asset format
+
+glTF carries mesh geometry, materials, and a node hierarchy produced by a
+content tool. It is not a USD layer: USD composition does not parse `.gltf` or
+`.glb`. A USD prim points at the file with a `payload` or `reference` arc, and
+the renderer imports that file through the glTF loader.
+
+| Format | File types | Owns | Produced in |
+|---|---|---|---|
+| **glTF** | `.gltf`, `.glb` | Mesh geometry, materials, node hierarchy | Blender or another content tool |
+
+The default `lunco:assetMode = "scene"` attaches the whole glTF scene and keeps
+its hierarchy, materials, and lights. `lunco:assetMode = "mesh"` attaches one
+mesh primitive as `Mesh3d`, which a mesh collider can consume.
+`lunco:assetLabel` selects a named sub-asset. See
+[Addresses and assets](../usd/addresses-and-assets.md#gltf-payloads).
 
 ## Ownership in detail
 
@@ -97,6 +114,7 @@ Use the following questions as a guide:
 | Question | Format |
 |---|---|
 | Where is the part, how is it shaped, and how is it attached? | USD |
+| Which mesh or scene did a content tool export? | glTF, referenced from USD |
 | What equations govern its continuous behavior? | Modelica |
 | What should happen when a condition becomes true? | Rhai |
 | Which scene opens, and where are the sources? | `twin.toml` |
@@ -112,8 +130,9 @@ refers to.
 ## Portability
 
 The domain files remain in their standard syntax. A `.mo` file can be opened
-in another Modelica tool, and a `.usda` file can be opened in another USD
-application. LunCoSim-specific behavior is carried in:
+in another Modelica tool, a `.usda` file can be opened in another USD
+application, and a `.gltf` or `.glb` file can be opened in any glTF viewer.
+LunCoSim-specific behavior is carried in:
 
 - `LunCoProgramAPI` and related program attributes;
 - typed `inputs:` / `outputs:` properties and USD connections;
@@ -130,6 +149,8 @@ extensions are the workbench's contract, not a replacement for the standard.
 - Do not encode equations in USD attributes.
 - Do not put mission decisions or timers in Modelica.
 - Do not integrate physics in Rhai.
+- Do not treat a `.gltf` or `.glb` file as a USD layer; reference it from USD
+  and let the renderer import it.
 - Do not hardcode a cache path in a USD layer; use `lunco://` or `twin://`.
 - Do not add a Rust special case for a particular rover, lesson, or asset.
 - Do not hand-edit generated or cached assets; author the source and let the
@@ -139,6 +160,7 @@ extensions are the workbench's contract, not a replacement for the standard.
 
 - [How it fits together](how-it-fits-together.md) — the runtime flow
 - [USD](../usd/index.md) — the scene and topology
+- [Addresses and assets](../usd/addresses-and-assets.md#gltf-payloads) — glTF payloads and binary arcs
 - [Modelica](../modelica/index.md) — continuous behavior
 - [Rhai](../rhai/index.md) — scenario policy
 - [twin.toml](../reference/twin-toml.md) — the project manifest

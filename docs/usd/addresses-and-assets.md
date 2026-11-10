@@ -150,6 +150,37 @@ let uri = asset_source_relative_uri(document, "textures/hull.png");
 It preserves the document's registered source authority and performs URI
 algebra only. It does not read the file or create an asset handle.
 
+## glTF payloads
+
+A `.gltf` or `.glb` file is an external mesh or scene asset, not a USD layer.
+USD composition does not parse it. A prim points at the file with a standard
+`payload` or `reference` arc, and the render adapter reads that arc from the
+composed prim and imports the asset through the glTF loader:
+
+```usda
+def Xform "Lander" (
+    prepend payload = @twin://rover/models/lander.glb@
+)
+{
+    string lunco:assetMode = "scene"
+}
+```
+
+The default `lunco:assetMode` is `"scene"`: the whole glTF scene is attached as a
+child and keeps its hierarchy, materials, and lights. Set
+`lunco:assetMode = "mesh"` to attach one mesh primitive as `Mesh3d`, which is the
+form a mesh collider can consume. `lunco:assetLabel` selects the sub-asset label,
+for example `"Mesh0/Primitive0"`; an empty label uses the loader's default.
+
+The arc may live in a referenced USD wrapper. The adapter reads it from the
+composed prim stack and anchors the URI to the layer that authored it, so
+`scene → wrapper.usda → model.glb` renders on the composed prim. A `def Cube`
+placeholder with `lunco:placeholder = true` gives external tools a stand-in that
+hides once the glTF visual loads.
+
+External USD tools need a glTF `SdfFileFormat` plugin to compose the same arc.
+LunCoSim reads the authored arc itself and does not synthesize a USD layer.
+
 ## Composition and missing arcs
 
 A missing sublayer, reference, or payload does not discard the siblings that
@@ -180,6 +211,8 @@ explicitly rather than being interpreted as a relative path.
 - Use `lunco://` for shipped assets and `twin://` for project files.
 - Read the Twin authority with `twin_name()`; do not build it from a name.
 - Keep relative references inside their root.
+- Point at glTF with a payload or reference; USD composition does not parse the
+  binary.
 - Declare external bytes in `Assets.toml`; do not commit a cache path.
 - Treat a missing arc as a visible fact, not as an empty scene.
 - Fix a stale address by editing the authored file, not by adding a resolver
