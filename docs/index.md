@@ -19,7 +19,7 @@ operating space missions with USD, Modelica, and Rhai.</p>
 <dt>Release date</dt><dd>November 2026</dd>
 <dt>LunCoSim version</dt><dd>0.6.0-dev</dd>
 <dt>LunCoSim source commit</dt><dd><code>c84fba03ae41c1c48548485e0effd8c152b3621d</code></dd>
-<dt>Applies to</dt><dd>LunCoSim desktop and browser builds</dd>
+<dt>Applies to</dt><dd>Desktop builds; browser build coverage is TBD</dd>
 <dt>Status</dt><dd>Living document; updated with each release</dd>
 <dt>License</dt><dd>Open source; see the repository for details</dd>
 </dl>
@@ -53,9 +53,11 @@ runtime behaves as it does.
    tests, and reusable policy patterns.
 6. [Shaders](shaders/index.md) — WESL material parameters, texture layers, USD
    material binding, terrain rendering, and quality budgets.
-7. [UI & Settings](ui/index.md) — global and project settings, HUD surfaces,
+7. [SysML v2](sysml/index.md) — requirement sources, system structure, typed
+   analysis, and verification with scene tests.
+8. [UI & Settings](ui/index.md) — global and project settings, HUD surfaces,
    theming, and runtime-authored UI.
-8. [Reference](reference/index.md) — command line, controls, manifests, file
+9. [Reference](reference/index.md) — command line, controls, manifests, file
    formats, HTTP API, mission control, validation, and troubleshooting.
 
 </div>
@@ -113,7 +115,8 @@ edited. An integrator should start with
 [Integrate your stack](general/integrate-your-stack.md) and the
 [HTTP API](reference/http-api.md). An instructor should read the
 [Tutorials](tutorials/index.md) overview and the lesson descriptions before
-using the classroom track.
+using the classroom track. A requirements author should start with
+[SysML v2](sysml/index.md).
 
 ## Current status
 

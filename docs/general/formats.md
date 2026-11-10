@@ -19,11 +19,10 @@ important than memorizing the syntax of any one of them.
 | **Modelica** | `.mo` | Continuous equations, state, parameters, acausal connectors | **Lunica** or an external Modelica editor |
 | **Rhai** | `.rhai` | Events, commands, tasks, objectives, tutorial flow, test verdicts | A text editor, the Rhai editor, or the REPL |
 | **TOML** | `twin.toml`, `Assets.toml` | Project identity, entry scene, source roots, settings, external asset declarations | A text editor or the Twin settings panel |
-| **SysML** | `.sysml`, `.kerml` | Requirements, structure, and verification mappings | A text editor; support is bounded |
+| **SysML v2** | `.sysml`, `.kerml` | Requirements, logical structure, typed values, and trace links | A text editor or the SysML Requirements workspace; support is bounded |
 
-The first four are the core. SysML is optional and is described in
-[Validation](../reference/validation.md) and
-[Integrate your stack](integrate-your-stack.md).
+SysML is optional. The [SysML v2 chapter](../sysml/index.md) describes its
+supported profile, source workflow, and requirement verification path.
 
 ## The external asset format
 

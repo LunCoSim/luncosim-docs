@@ -139,3 +139,4 @@ field or flag.
 - [Perspectives](../general/perspectives.md) — the five task layouts
 - [Twins](../general/twins.md) — the project model
 - [Validation](../reference/validation.md) — the evidence layers
+- [SysML v2](../sysml/index.md): requirement source, analysis, and verification

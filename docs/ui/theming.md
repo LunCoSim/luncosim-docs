@@ -1,6 +1,6 @@
 ---
 title: Theming
-chapter: 7
+chapter: 8
 section: 3
 ---
 

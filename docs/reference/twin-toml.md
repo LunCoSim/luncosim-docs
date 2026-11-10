@@ -1,6 +1,6 @@
 ---
 title: twin.toml
-chapter: 8
+chapter: 9
 section: 3
 ---
 
@@ -99,7 +99,9 @@ outside the Twin, such as the bundled source library or a sibling folder.
 
 `[sysml]` is optional. When present, `root` selects the entry-point source and
 `paths` narrows the source-set discovery. SysML files remain ordinary Twin
-files; the section does not embed model text or duplicate requirements.
+files; the section does not embed model text or duplicate requirements. See
+[SysML requirements and structure](../sysml/requirements.md) for authoring and
+the [SysML v2 overview](../sysml/index.md) for the supported profile.
 
 ## Twin settings
 

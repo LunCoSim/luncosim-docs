@@ -1,6 +1,6 @@
 ---
 title: Telemetry
-chapter: 7
+chapter: 8
 section: 5
 ---
 

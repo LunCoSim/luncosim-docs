@@ -1,6 +1,6 @@
 ---
 title: HTTP API
-chapter: 8
+chapter: 9
 section: 6
 ---
 

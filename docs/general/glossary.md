@@ -144,9 +144,9 @@ point.
 **Stage.** A composed USD scene. The stage is inert until the runtime projects
 it.
 
-**SysML.** The requirements and systems-modeling language used for optional
-requirement and verification mappings. Support is bounded to scalar
-constraints and authored observations.
+**SysML v2.** The textual systems-modeling language used for requirements,
+logical structure, typed values, and verification links. LunCoSim supports a
+bounded profile; see [SysML v2](../sysml/index.md).
 
 **Texture layer.** A named raster role a shader can sample: Height, Albedo,
 Mineral, Surface, Normal, ShadowCache, and related roles. Texture slots are

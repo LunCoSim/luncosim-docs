@@ -1,6 +1,6 @@
 ---
 title: File formats
-chapter: 8
+chapter: 9
 section: 5
 ---
 
@@ -12,7 +12,8 @@ carried in standard USD, Modelica, Rhai, TOML, JSON, and WESL constructs rather
 than in a private project archive.
 
 This page is the extension-and-owner index. For the conceptual division between
-USD, Modelica, Rhai, and TOML, see [Formats](../general/formats.md).
+USD, Modelica, Rhai, TOML, and SysML, see [Formats](../general/formats.md).
+For SysML's supported language profile, see the [SysML v2 chapter](../sysml/index.md).
 
 ## Authored domain files
 
@@ -25,7 +26,7 @@ USD, Modelica, Rhai, and TOML, see [Formats](../general/formats.md).
 | `.fmu` | FMI 3 Co-Simulation archive | An external co-simulation participant | Native FMI 3 CS importer; scalar `Float64` profile |
 | `.rhai` | Rhai script | Events, commands, tasks, objectives, tutorial flow, test verdicts | Rhai runtime and tool hooks |
 | `.wesl` | WESL shader source | Parameter block, texture bindings, fragment and optional vertex entry points | Shader reflection and render pipeline |
-| `.sysml`, `.kerml` | SysML/KerML source | Requirements, structure, verification mappings | Bounded SysML validation and Rhai analysis |
+| `.sysml`, `.kerml` | SysML v2 textual source | Requirements, logical structure, typed values, and verification links | Bounded parsing, typed analysis, structural lint, and Rhai verification |
 | `twin.toml` | TOML | Project identity, entry scene, source roots, settings, children, journal policy | Workspace and Twin loader |
 | `Assets.toml` | TOML | External bytes, hashes, processing recipes, cache placement | Asset registry and downloader |
 

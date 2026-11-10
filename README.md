@@ -15,6 +15,7 @@ Content lives under `docs/` and is organized into numbered chapters:
 - `modelica/` — language, cosimulation, Lunica, libraries, experiments
 - `rhai/` — lifecycle, tasks, commands, events, testing, patterns
 - `shaders/` — parameters, texture layers, USD materials, terrain, quality
+- `sysml/` — SysML v2 requirements, structure, analysis, and verification
 - `ui/` — settings, HUD, theming, runtime UI, telemetry
 - `reference/` — CLI, controls, manifests, file formats, API, validation
 
@@ -23,7 +24,7 @@ Pages use frontmatter to place themselves in the chapter sequence:
 ```yaml
 ---
 title: Settings
-chapter: 7
+chapter: 8
 section: 1
 ---
 ```

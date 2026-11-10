@@ -1,6 +1,6 @@
 ---
 title: Reference
-chapter: 8
+chapter: 9
 ---
 
 # Reference
@@ -26,6 +26,9 @@ the evidence required before making a claim.
 | [Mission control](mission-control.md) | Operator lifecycle, authority claims, telemetry, release |
 | [Validation](validation.md) | Preflight, lint, scene tests, SysML verification, evidence |
 | [Troubleshooting](troubleshooting.md) | Startup, scene, input, asset, Modelica, telemetry, and API failures |
+
+SysML authors should also see the dedicated [SysML v2 chapter](../sysml/index.md)
+for source structure, typed analysis, and verification limits.
 
 ## Conventions
 

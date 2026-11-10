@@ -88,7 +88,7 @@ LunCoSim uses standard formats wherever a standard exists:
 | glTF 2.0 | External mesh and scene assets referenced from USD payloads |
 | Modelica | Continuous and discrete-equation models, packages, and acausal connectors |
 | FMI 3.0 Co-Simulation | Optional native import of scalar `Float64` FMUs on desktop builds |
-| SysML v2 / KerML | Requirements and verification mappings, with bounded support |
+| [SysML v2 / KerML](../sysml/index.md) | Requirements, system structure, typed analysis, and authored verification within a bounded profile |
 | WESL | Shader source assets and material parameter declarations |
 | TOML | Project and asset manifests |
 
@@ -115,9 +115,8 @@ LunCoSim-specific schemas and asset addresses are available.
 LunCoSim is under active development. The core authoring loop, the USD
 projection, the Rhai task kernel, and the Modelica cosimulation path are
 implemented and exercised by authored tests. Other areas are partial or
-platform-specific. Native FMI import is desktop-only. The browser build does
-not load native FMU binaries. ROS 2, URDF, and ground-system adapters are not
-bundled.
+platform-specific. Native FMI import is desktop-only. Browser build coverage
+is TBD. ROS 2, URDF, and ground-system adapters are not bundled.
 
 The documentation states these limits where they matter. When a workflow
 depends on a capability that is not shipped, the text says so rather than

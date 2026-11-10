@@ -55,6 +55,7 @@ every chapter.
 |---|---|
 | New user | [Installation](install.md) → [First run](first-run.md) → [First mission](../tutorials/first-mission.md) |
 | Project author | [Twins](twins.md) → [How it fits together](how-it-fits-together.md) → the format chapter for the layer being edited |
+| Requirements author | [SysML v2](../sysml/index.md) → [Requirements and structure](../sysml/requirements.md) → [Analysis and verification](../sysml/analysis-and-verification.md) |
 | Tool integrator | [Integrate your stack](integrate-your-stack.md) → [HTTP API](../reference/http-api.md) → [Mission control](../reference/mission-control.md) |
 | Instructor | [Tutorials](../tutorials/index.md) → [First mission](../tutorials/first-mission.md) → [Validate and share](../tutorials/validate-and-share.md) |
 | Contributor | [How it fits together](how-it-fits-together.md) → [USD](../usd/index.md) → [Modelica](../modelica/index.md) → [Rhai](../rhai/index.md) |
@@ -82,6 +83,9 @@ distinguishes three kinds of statement:
   enforce, such as keeping mission decisions out of Modelica.
 - **Limitation.** A capability that is partial, platform-specific, or not
   shipped, such as native FMI import being unavailable in the browser build.
+
+Browser build coverage is TBD. Feature-specific platform notes elsewhere in
+the guide describe known limits, not a complete browser support statement.
 
 Read the limitation notes before planning a workflow around a feature. The
 [Validation](../reference/validation.md) chapter explains how to turn a

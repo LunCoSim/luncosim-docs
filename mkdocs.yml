@@ -99,24 +99,28 @@ nav:
       - 6.4 Terrain: shaders/terrain.md
       - 6.5 Quality: shaders/quality.md
       - 6.6 Authoring: shaders/authoring.md
-  - 7 UI & Settings:
-      - 7 UI & Settings: ui/index.md
-      - 7.1 Settings: ui/settings.md
-      - 7.2 HUD: ui/hud.md
-      - 7.3 Theming: ui/theming.md
-      - 7.4 Runtime UI: ui/runtime-ui.md
-      - 7.5 Telemetry: ui/telemetry.md
-  - 8 Reference:
-      - 8 Reference: reference/index.md
-      - 8.1 Command line: reference/cli.md
-      - 8.2 Controls: reference/controls.md
-      - 8.3 twin.toml: reference/twin-toml.md
-      - 8.4 Assets.toml: reference/assets-toml.md
-      - 8.5 File formats: reference/file-formats.md
-      - 8.6 HTTP API: reference/http-api.md
-      - 8.7 Mission control: reference/mission-control.md
-      - 8.8 Validation: reference/validation.md
-      - 8.9 Troubleshooting: reference/troubleshooting.md
+  - 7 SysML v2:
+      - 7 SysML v2: sysml/index.md
+      - 7.1 Requirements and structure: sysml/requirements.md
+      - 7.2 Analysis and verification: sysml/analysis-and-verification.md
+  - 8 UI & Settings:
+      - 8 UI & Settings: ui/index.md
+      - 8.1 Settings: ui/settings.md
+      - 8.2 HUD: ui/hud.md
+      - 8.3 Theming: ui/theming.md
+      - 8.4 Runtime UI: ui/runtime-ui.md
+      - 8.5 Telemetry: ui/telemetry.md
+  - 9 Reference:
+      - 9 Reference: reference/index.md
+      - 9.1 Command line: reference/cli.md
+      - 9.2 Controls: reference/controls.md
+      - 9.3 twin.toml: reference/twin-toml.md
+      - 9.4 Assets.toml: reference/assets-toml.md
+      - 9.5 File formats: reference/file-formats.md
+      - 9.6 HTTP API: reference/http-api.md
+      - 9.7 Mission control: reference/mission-control.md
+      - 9.8 Validation: reference/validation.md
+      - 9.9 Troubleshooting: reference/troubleshooting.md
 
 extra_css:
   - assets/stylesheets/extra.css

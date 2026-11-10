@@ -1,6 +1,6 @@
 ---
 title: Command line
-chapter: 8
+chapter: 9
 section: 1
 ---
 
@@ -151,6 +151,9 @@ luncosim --validate path/to/model.mo path/to/scene.usda
 Supported inputs include `.mo`, `.usda`, `.sysml`, `.kerml`, `.wesl`, and
 `.rhai`. The command is parse-only: no window, GPU, or app launch. It exits `0`
 when every input is valid and `1` when any input fails.
+
+For Twin-wide SysML analysis and verification, see the
+[SysML v2 chapter](../sysml/index.md).
 
 ## Related
 

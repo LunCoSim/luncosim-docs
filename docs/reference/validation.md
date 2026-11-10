@@ -1,6 +1,6 @@
 ---
 title: Validation
-chapter: 8
+chapter: 9
 section: 8
 ---
 
@@ -111,8 +111,10 @@ substitute a private harness or `--validate`.
 
 ## Verify requirements with SysML
 
-A Twin can keep its requirements in `.sysml`/`.kerml` source and map a
-verification case to a scene and Rhai observer:
+A Twin can keep requirements and logical structure in `.sysml`/`.kerml` source.
+For the authoring and analysis workflow, see the
+[SysML v2 chapter](../sysml/index.md). The Twin maps a qualified verification
+case to a scene and Rhai observer:
 
 ```toml
 [verification]
@@ -130,15 +132,17 @@ luncosim test --scene path/to/twin/tests/drive.usda \
   --verification Project::VerifyDrive
 ```
 
-`ValidateSysml` checks source validity and structural policy. `AnalyzeSysml`
-returns typed facts for Rhai policy. `--verification` checks that the qualified
+`ValidateSysml` checks the resolved source set and reports parser/resolver
+diagnostics plus structural lint findings. `AnalyzeSysml` returns selected,
+typed source facts for Rhai policy. `--verification` checks that the qualified
 name, scene, observer, and verdict channel match the Twin registry before the
 run starts.
 
-This is a bounded subset: scalar constraints and authored observations are
-supported; full KerML execution and automatic requirement-to-USD projection are
-not. Keep the requirement text and limits in SysML, and keep provider selection
-and runtime observations in the Twin's Rhai observer.
+LunCoSim supports a bounded SysML v2 profile, including typed requirement
+criteria and source-linked constraint analysis. It does not execute arbitrary
+KerML behavior or project requirements into USD. Keep requirement text and
+limits in SysML, and keep provider selection and runtime observations in the
+Twin's Rhai observer.
 
 ## Read runtime evidence
 

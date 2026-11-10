@@ -48,7 +48,8 @@ A Twin deliberately separates tool configuration from system modeling:
 
 - **USD** owns geometry, composition, materials, physics, and connections.
 - **Modelica** owns equations and continuous state.
-- **SysML** owns requirements and system structure, when the Twin uses them.
+- **SysML v2** owns requirements and logical system structure, when the Twin
+  uses them. See [SysML v2](../sysml/index.md).
 - **Rhai** owns scenario and test policy.
 - **TOML** owns tool configuration: `twin.toml` and `Assets.toml`.
 

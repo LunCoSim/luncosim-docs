@@ -10,9 +10,9 @@ program attached to an entity. It observes the simulation, reacts to events, and
 issues typed commands. It does not integrate physics, solve equations, or
 replace a Modelica model.
 
-Rhai is small, sandboxed, and implemented in Rust. The same scripts run on the
-desktop and in the browser build. The engine exposes a deliberately narrow host
-surface; most convenience comes from an editable prelude written in Rhai itself.
+Rhai is small, sandboxed, and implemented in Rust. The engine exposes a
+deliberately narrow host surface; most convenience comes from an editable
+prelude written in Rhai itself. Browser build coverage is TBD.
 
 ## What Rhai owns
 

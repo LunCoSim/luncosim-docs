@@ -22,7 +22,7 @@ result at one layer does not imply a clean result at the next.
 | Does the Twin resolve its names and assets? | `ValidateTwin` | That a runtime owner does not collide |
 | Is the loaded scene structurally sound? | `RunLint` | That the behavior matches a requirement |
 | Does the authored scenario meet its verdict? | `luncosim test --scene` | That the model is physically accurate |
-| Does a SysML requirement pass? | `--verification` with a Twin registry entry | That every requirement is covered |
+| Does a SysML requirement pass? | `--verification` with a Twin registry entry and authored observer | That every requirement is covered |
 | Is the live runtime healthy? | `/api/ready`, `CosimStatus`, `GetBrokenConnections` | That the authored design is correct |
 | Does it look right? | Screenshot or recording | That the numbers are right |
 | Is it accurate for my mission? | Comparison with reference data and documented assumptions | That it is accurate outside that evidence |
@@ -115,6 +115,11 @@ substitute a private harness or `--validate`.
 
 ## Verify requirements with SysML
 
+This workflow uses LunCoSim's bounded SysML v2 profile. See
+[Requirements and structure](../sysml/requirements.md) for the source model and
+[Analysis and verification](../sysml/analysis-and-verification.md) for the
+editor, validation, and typed analysis surfaces.
+
 A Twin can keep its requirements in `.sysml`/`.kerml` source and map a
 verification case to a scene and Rhai observer:
 
@@ -139,10 +144,10 @@ returns typed facts for Rhai policy. `--verification` checks that the qualified
 name, scene, observer, and verdict channel match the Twin registry before the
 run starts.
 
-This is a bounded subset: scalar constraints and authored observations are
-supported; full KerML execution and automatic requirement-to-USD projection are
-not. Keep the requirement text and limits in SysML, and keep provider selection
-and runtime observations in the Twin's Rhai observer.
+LunCoSim supports a bounded set of typed constraints and authored observations.
+It does not execute arbitrary KerML behavior or automatically project
+requirements into USD. Keep requirement text and limits in SysML, and keep
+provider selection and runtime observations in the Twin's Rhai observer.
 
 ## Read runtime evidence
 
