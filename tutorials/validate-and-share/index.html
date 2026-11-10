@@ -2718,6 +2718,140 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../sysml/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 SysML v2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    9 SysML v2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysml/requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.1 Requirements and structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysml/analysis-and-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.2 Analysis and verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2984,7 +3118,7 @@ result at one layer does not imply a clean result at the next.</p>
 </tr>
 <tr>
 <td>Does a SysML requirement pass?</td>
-<td><code>--verification</code> with a Twin registry entry</td>
+<td><code>--verification</code> with a Twin registry entry and authored observer</td>
 <td>That every requirement is covered</td>
 </tr>
 <tr>
@@ -3112,6 +3246,10 @@ fail is not evidence.</p>
 stay together. Run scene tests through the production <code>luncosim</code> binary; do not
 substitute a private harness or <code>--validate</code>.</p>
 <h2 id="verify-requirements-with-sysml">Verify requirements with SysML<a class="headerlink" href="#verify-requirements-with-sysml" title="Permanent link">&para;</a></h2>
+<p>This workflow uses LunCoSim's bounded SysML v2 profile. See
+<a href="../../sysml/requirements/">Requirements and structure</a> for the source model and
+<a href="../../sysml/analysis-and-verification/">Analysis and verification</a> for the
+editor, validation, and typed analysis surfaces.</p>
 <p>A Twin can keep its requirements in <code>.sysml</code>/<code>.kerml</code> source and map a
 verification case to a scene and Rhai observer:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[verification]</span>
@@ -3129,10 +3267,10 @@ verification case to a scene and Rhai observer:</p>
 returns typed facts for Rhai policy. <code>--verification</code> checks that the qualified
 name, scene, observer, and verdict channel match the Twin registry before the
 run starts.</p>
-<p>This is a bounded subset: scalar constraints and authored observations are
-supported; full KerML execution and automatic requirement-to-USD projection are
-not. Keep the requirement text and limits in SysML, and keep provider selection
-and runtime observations in the Twin's Rhai observer.</p>
+<p>LunCoSim supports a bounded set of typed constraints and authored observations.
+It does not execute arbitrary KerML behavior or automatically project
+requirements into USD. Keep requirement text and limits in SysML, and keep
+provider selection and runtime observations in the Twin's Rhai observer.</p>
 <h2 id="read-runtime-evidence">Read runtime evidence<a class="headerlink" href="#read-runtime-evidence" title="Permanent link">&para;</a></h2>
 <p>Before treating a live value as final, check readiness:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">"http://127.0.0.1:4101/api/ready"</span>

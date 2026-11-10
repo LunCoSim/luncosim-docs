@@ -2707,6 +2707,140 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../sysml/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 SysML v2
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    9 SysML v2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysml/requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.1 Requirements and structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysml/analysis-and-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.2 Analysis and verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -3087,8 +3221,10 @@ fail is not evidence.</p>
 stay together. Run scene tests through the production <code>luncosim</code> binary; do not
 substitute a private harness or <code>--validate</code>.</p>
 <h2 id="verify-requirements-with-sysml">Verify requirements with SysML<a class="headerlink" href="#verify-requirements-with-sysml" title="Permanent link">&para;</a></h2>
-<p>A Twin can keep its requirements in <code>.sysml</code>/<code>.kerml</code> source and map a
-verification case to a scene and Rhai observer:</p>
+<p>A Twin can keep requirements and logical structure in <code>.sysml</code>/<code>.kerml</code> source.
+For the authoring and analysis workflow, see the
+<a href="../../sysml/">SysML v2 chapter</a>. The Twin maps a qualified verification
+case to a scene and Rhai observer:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[verification]</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">[[verification.cases]]</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Project::VerifyDrive"</span>
@@ -3100,14 +3236,16 @@ verification case to a scene and Rhai observer:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>luncosim<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--scene<span class="w"> </span>path/to/twin/tests/drive.usda<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>--verification<span class="w"> </span>Project::VerifyDrive
 </code></pre></div>
-<p><code>ValidateSysml</code> checks source validity and structural policy. <code>AnalyzeSysml</code>
-returns typed facts for Rhai policy. <code>--verification</code> checks that the qualified
+<p><code>ValidateSysml</code> checks the resolved source set and reports parser/resolver
+diagnostics plus structural lint findings. <code>AnalyzeSysml</code> returns selected,
+typed source facts for Rhai policy. <code>--verification</code> checks that the qualified
 name, scene, observer, and verdict channel match the Twin registry before the
 run starts.</p>
-<p>This is a bounded subset: scalar constraints and authored observations are
-supported; full KerML execution and automatic requirement-to-USD projection are
-not. Keep the requirement text and limits in SysML, and keep provider selection
-and runtime observations in the Twin's Rhai observer.</p>
+<p>LunCoSim supports a bounded SysML v2 profile, including typed requirement
+criteria and source-linked constraint analysis. It does not execute arbitrary
+KerML behavior or project requirements into USD. Keep requirement text and
+limits in SysML, and keep provider selection and runtime observations in the
+Twin's Rhai observer.</p>
 <h2 id="read-runtime-evidence">Read runtime evidence<a class="headerlink" href="#read-runtime-evidence" title="Permanent link">&para;</a></h2>
 <p>Before treating a live value as final, check readiness:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">"http://127.0.0.1:4101/api/ready"</span>
