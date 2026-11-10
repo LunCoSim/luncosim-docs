@@ -30,7 +30,7 @@ uses the shared asset bundle, not a self-contained copy of every referenced
 asset.
 
 <figure class="shot">
-<a href="../assets/images/screenshots/perspective-build.webp"><img src="../assets/images/screenshots/perspective-build.webp" alt="The Build perspective with the Entities panel, the Twin file list, the 3D viewport, the Inspector, and the Spawn palette."></a>
+<a href="../../assets/images/screenshots/perspective-build.webp"><img src="../../assets/images/screenshots/perspective-build.webp" alt="The Build perspective with the Entities panel, the Twin file list, the 3D viewport, the Inspector, and the Spawn palette."></a>
 <figcaption>The Build perspective keeps the scene tree, the Twin's files, the
 Inspector, and the Spawn palette together while the simulation keeps
 running.</figcaption>

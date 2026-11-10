@@ -12,7 +12,7 @@ runtime composes those layers into one live world and gives every participant
 the same clock, identity, and command surface.
 
 <figure>
-<a href="../assets/images/luncosim-layers.svg"><img src="../assets/images/luncosim-layers.svg" alt="The LunCoSim layer model, from the Twin manifest through USD, Modelica, Rhai, and the runtime."></a>
+<a href="../../assets/images/luncosim-layers.svg"><img src="../../assets/images/luncosim-layers.svg" alt="The LunCoSim layer model, from the Twin manifest through USD, Modelica, Rhai, and the runtime."></a>
 <figcaption>The authored layers and the runtime. The arrows indicate ownership
 and projection, not a one-way build pipeline.</figcaption>
 </figure>
@@ -35,7 +35,7 @@ Rhai. A downloaded terrain DEM belongs in `Assets.toml` and the asset cache.
 ## Runtime flow
 
 <figure>
-<a href="../assets/images/runtime-loop.svg"><img src="../assets/images/runtime-loop.svg" alt="The LunCoSim runtime loop: manifest, USD composition, projection, Modelica admission, physics, Rhai policy, and UI."></a>
+<a href="../../assets/images/runtime-loop.svg"><img src="../../assets/images/runtime-loop.svg" alt="The LunCoSim runtime loop: manifest, USD composition, projection, Modelica admission, physics, Rhai policy, and UI."></a>
 <figcaption>The runtime loop. The UI observes and commands; it does not own
 domain state.</figcaption>
 </figure>

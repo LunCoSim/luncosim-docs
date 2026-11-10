@@ -113,8 +113,8 @@ base   (the source file)
 The diagram below places USD in the larger layer model:
 
 <figure markdown="span">
-  <a href="../assets/images/luncosim-layers.svg">
-    <img src="../assets/images/luncosim-layers.svg" alt="The LunCoSim layer model: TOML configuration, USD scene, Modelica behavior, Rhai policy, and the Rust runtime.">
+  <a href="../../assets/images/luncosim-layers.svg">
+    <img src="../../assets/images/luncosim-layers.svg" alt="The LunCoSim layer model: TOML configuration, USD scene, Modelica behavior, Rhai policy, and the Rust runtime.">
   </a>
   <figcaption>USD owns the composed scene; the manifest, Modelica, Rhai, and the runtime own the surrounding layers.</figcaption>
 </figure>

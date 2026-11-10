@@ -93,7 +93,7 @@ an object does not give you its controls, and moving the camera does not change
 what is selected.
 
 <figure class="shot">
-<a href="../assets/images/screenshots/first-drive.webp"><img src="../assets/images/screenshots/first-drive.webp" alt="The View perspective with the First Drive rover scene filling the window."></a>
+<a href="../../assets/images/screenshots/first-drive.webp"><img src="../../assets/images/screenshots/first-drive.webp" alt="The View perspective with the First Drive rover scene filling the window."></a>
 <figcaption>The View perspective leaves the live scene full-window. Open optional
 panels from View when you need them.</figcaption>
 </figure>
@@ -122,7 +122,7 @@ in the center, **Telemetry** sits above **Entities** on the left, **Ports** is
 on the right, and **Graphs** occupies the bottom dock.
 
 <figure class="shot">
-<a href="../assets/images/screenshots/perspective-analyze.webp"><img src="../assets/images/screenshots/perspective-analyze.webp" alt="The Analyze perspective with the live scene in the center, Telemetry and Entities on the left, Ports on the right, and Graphs across the bottom."></a>
+<a href="../../assets/images/screenshots/perspective-analyze.webp"><img src="../../assets/images/screenshots/perspective-analyze.webp" alt="The Analyze perspective with the live scene in the center, Telemetry and Entities on the left, Ports on the right, and Graphs across the bottom."></a>
 <figcaption>Analyze brings the live scene, Telemetry, Ports, and Graphs together.
 Graphs records simulation samples, not rendered frames.</figcaption>
 </figure>
@@ -152,7 +152,7 @@ also available through the HTTP API when you need to script a check.
 **Inspector** and **Environment** sit above the **Spawn** palette on the right.
 
 <figure class="shot">
-<a href="../assets/images/screenshots/perspective-build.webp"><img src="../assets/images/screenshots/perspective-build.webp" alt="The Build perspective with Entities and Twin files on the left, the rover scene in the center, and Inspector, Environment, and Spawn on the right."></a>
+<a href="../../assets/images/screenshots/perspective-build.webp"><img src="../../assets/images/screenshots/perspective-build.webp" alt="The Build perspective with Entities and Twin files on the left, the rover scene in the center, and Inspector, Environment, and Spawn on the right."></a>
 <figcaption>Build places the scene tree, Twin files, Inspector, Environment, and
 Spawn palette around the live scene.</figcaption>
 </figure>
@@ -182,7 +182,7 @@ document preview is in the center, and **Inspector**, **Requirements**, and
 document or tool.
 
 <figure class="shot">
-<a href="../assets/images/screenshots/perspective-editor.webp"><img src="../assets/images/screenshots/perspective-editor.webp" alt="The Editor perspective showing the skid rover USD preview, the Prims tree, the Inspector, Requirements, and Change History."></a>
+<a href="../../assets/images/screenshots/perspective-editor.webp"><img src="../../assets/images/screenshots/perspective-editor.webp" alt="The Editor perspective showing the skid rover USD preview, the Prims tree, the Inspector, Requirements, and Change History."></a>
 <figcaption>Editor opens one USD document in an isolated preview. Selecting a prim
 drives the Inspector; save and undo apply to that document.</figcaption>
 </figure>
@@ -216,7 +216,7 @@ in their own document tabs; inside a model, switch between **Text**,
 **Diagram**, **Icon**, and **Docs**.
 
 <figure class="shot">
-<a href="../assets/images/screenshots/perspective-lunica.webp"><img src="../assets/images/screenshots/perspective-lunica.webp" alt="The Lunica perspective showing the RC circuit Modelica diagram, its component palette, and the model toolbar with Compile, Run, and Fast Run."></a>
+<a href="../../assets/images/screenshots/perspective-lunica.webp"><img src="../../assets/images/screenshots/perspective-lunica.webp" alt="The Lunica perspective showing the RC circuit Modelica diagram, its component palette, and the model toolbar with Compile, Run, and Fast Run."></a>
 <figcaption>Lunica opens Modelica sources from the Twin. Compile the model, run it
 live, or use Fast Run for a batch experiment.</figcaption>
 </figure>

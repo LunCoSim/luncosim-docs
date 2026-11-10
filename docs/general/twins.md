@@ -14,7 +14,7 @@ A folder becomes a Twin when it contains `twin.toml`. That manifest is the only
 required file.
 
 <figure>
-<a href="../assets/images/twin-layout.svg"><img src="../assets/images/twin-layout.svg" alt="A Twin folder containing twin.toml, a USD scene, Modelica models, Rhai scenarios, and a local .lunco directory."></a>
+<a href="../../assets/images/twin-layout.svg"><img src="../../assets/images/twin-layout.svg" alt="A Twin folder containing twin.toml, a USD scene, Modelica models, Rhai scenarios, and a local .lunco directory."></a>
 <figcaption>A typical Twin layout. The manifest selects the entry scene and the
 source roots; the other files remain ordinary domain files.</figcaption>
 </figure>

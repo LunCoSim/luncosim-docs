@@ -41,7 +41,7 @@ file. The scene stores the placement and any overrides; the reusable asset
 stays in the installed library or the Twin.
 
 <figure class="shot">
-<a href="../assets/images/screenshots/perspective-build.webp"><img src="../assets/images/screenshots/perspective-build.webp" alt="The Build perspective with the Entities panel, the Twin file list, the 3D viewport, the Inspector, and the Spawn palette."></a>
+<a href="../../assets/images/screenshots/perspective-build.webp"><img src="../../assets/images/screenshots/perspective-build.webp" alt="The Build perspective with the Entities panel, the Twin file list, the 3D viewport, the Inspector, and the Spawn palette."></a>
 <figcaption>Build places the scene tree, the Twin's files, the Inspector, and the
 Spawn palette around the live scene.</figcaption>
 </figure>
