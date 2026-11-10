@@ -7,12 +7,30 @@ the engine repository is required.
 
 ## Write
 
-Content lives under `docs/`:
+Content lives under `docs/` and is organized into numbered chapters:
 
-- `getting-started/` — install, first launch, first lesson
-- `concepts/` — Twin, `twin.toml`, USD, Modelica, Rhai, `Assets.toml`
-- `guides/` — hands-on workflows
-- `reference/` — CLI flags and controls
+- `general/` — introduction, formats, installation, perspectives, Twins
+- `tutorials/` — guided end-to-end lessons
+- `usd/` — scene composition, physics, ports, programs, materials
+- `modelica/` — language, cosimulation, Lunica, libraries, experiments
+- `rhai/` — lifecycle, tasks, commands, events, testing, patterns
+- `shaders/` — parameters, texture layers, USD materials, terrain, quality
+- `ui/` — settings, HUD, theming, runtime UI, telemetry
+- `reference/` — CLI, controls, manifests, file formats, API, validation
+
+Pages use frontmatter to place themselves in the chapter sequence:
+
+```yaml
+---
+title: Settings
+chapter: 7
+section: 1
+---
+```
+
+`chapter` renders the page as **7**, and `section` renders it as **7.1**.
+Headings below the page title are numbered automatically by the theme override
+in `overrides/main.html`; do not type the numbers into the heading text.
 
 Add new pages to `nav` in `mkdocs.yml`.
 

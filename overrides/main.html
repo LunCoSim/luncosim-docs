@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% include "partials/tags.html" %}
+  {% include "partials/actions.html" %}
+
+  {% if page.is_homepage %}
+    {{ page.content }}
+  {% else %}
+    {% set chapter = page.meta.chapter | default(1) %}
+    {% set prefix = chapter %}
+    {% if page.meta.section %}
+      {% set prefix = chapter ~ "." ~ page.meta.section %}
+    {% endif %}
+    <div class="chapter{% if not page.meta.section %} chapter-overview{% endif %}" style="--chapter-prefix: '{{ prefix }}';">
+      {{ page.content }}
+    </div>
+  {% endif %}
+
+  {% include "partials/source-file.html" %}
+  {% include "partials/feedback.html" %}
+  {% include "partials/comments.html" %}
+{% endblock %}

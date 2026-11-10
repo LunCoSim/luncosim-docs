@@ -1,124 +1,129 @@
 ---
 title: LunCoSim Documentation
+hide:
+  - toc
 ---
 
-<div class="hero" markdown>
-<div class="hero__copy" markdown>
-<p class="hero__eyebrow">Open-source space mission workbench</p>
-<h1 class="hero__title">Build a space mission.<br>See how it behaves.</h1>
-<p class="hero__lead">LunCoSim connects a USD scene, Modelica equations, and
-Rhai mission logic into one running system. Assemble a vehicle and its
-environment, then watch the mission behave.</p>
-<div class="hero__actions" markdown>
-[Install LunCoSim](getting-started/install.md){ .md-button .md-button--primary }
-[Run your first lesson](getting-started/first-lesson.md){ .md-button }
+<div class="titlepage" markdown>
+
+<p class="title-kicker">Technical documentation</p>
+
+# LunCoSim Documentation
+
+<p class="title-subtitle">An open-source workbench for authoring, simulating, and
+operating space missions with USD, Modelica, and Rhai.</p>
+
+<div class="title-meta">
+<dl>
+<dt>Document version</dt><dd>0.1</dd>
+<dt>Release date</dt><dd>November 2026</dd>
+<dt>Applies to</dt><dd>LunCoSim desktop and browser builds</dd>
+<dt>Status</dt><dd>Living document; updated with each release</dd>
+<dt>License</dt><dd>Open source; see the repository for details</dd>
+</dl>
 </div>
+
+<div class="abstract" markdown>
+
+**Abstract.** LunCoSim combines a composed OpenUSD scene, continuous Modelica
+models, and discrete Rhai mission policy into one running simulation. This
+document describes the project model, the authoring workflow, the runtime
+contracts that connect the three formats, and the evidence required before a
+result is trusted. It is written for engineers, mission designers, educators,
+and tool integrators who need to understand both what to author and why the
+runtime behaves as it does.
+
 </div>
-<figure class="hero__shot">
-<a href="assets/images/screenshots/first-drive.webp"><img src="assets/images/screenshots/first-drive.webp" alt="The LunCoSim workbench running the First Drive sandbox scene, with a rover, a glowing route marker, and the View perspective active."></a>
-<figcaption>First Drive in the View perspective. The tutorial card appears when a lesson starts.</figcaption>
+
+<div class="contents" markdown>
+
+**Contents**
+
+1. [General](general/index.md) — purpose, installation, first run, perspectives,
+   Twins, and the format boundaries.
+2. [Tutorials](tutorials/index.md) — guided lessons from a first drive to a
+   validated, shareable Twin.
+3. [USD](usd/index.md) — scene composition, physics, typed ports, programs,
+   materials, and asset addressing.
+4. [Modelica](modelica/index.md) — continuous behavior, cosimulation, the Lunica
+   workbench, libraries, and experiments.
+5. [Rhai](rhai/index.md) — scenario lifecycle, task trees, commands, events,
+   tests, and reusable policy patterns.
+6. [Shaders](shaders/index.md) — WESL material parameters, texture layers, USD
+   material binding, terrain rendering, and quality budgets.
+7. [UI & Settings](ui/index.md) — global and project settings, HUD surfaces,
+   theming, and runtime-authored UI.
+8. [Reference](reference/index.md) — command line, controls, manifests, file
+   formats, HTTP API, mission control, validation, and troubleshooting.
+
+</div>
+
+<figure class="title-figure">
+<a href="assets/images/luncosim-layers.svg"><img src="assets/images/luncosim-layers.svg" alt="The LunCoSim layer model: TOML configuration, USD scene, Modelica behavior, Rhai policy, and the Rust runtime."></a>
+<figcaption>The authored formats and the runtime that projects them into a live
+world. Each fact has one owner.</figcaption>
 </figure>
-</div>
 
-This site is the user guide. It covers installation, the first lessons, and the
-concepts behind a LunCoSim project.
+## About this document
 
-![LunCoSim layers](assets/images/luncosim-layers.svg)
+This guide documents the behavior of the shipped application and the contracts
+an author can rely on. Where a capability is partial, experimental, or limited
+to one platform, the limitation is stated in the relevant section rather than
+implied by silence.
 
-## Start here
+The documentation follows the same ownership rule as the software:
 
-<div class="grid cards" markdown>
+- **USD** owns scene structure, geometry, materials, physics schemas, and typed
+  connections.
+- **Modelica** owns continuous equations and state.
+- **Rhai** owns events, commands, mission sequencing, and authored verdicts.
+- **TOML** owns project and asset configuration.
+- **The runtime** owns projection, scheduling, physics integration, and
+  rendering.
 
-- **Install LunCoSim**
+A reader who remembers only one rule should remember this one: do not
+reimplement a fact in a second layer. A wheel position belongs in USD, a motor
+curve in Modelica, a waypoint mission in Rhai, and a download declaration in
+`Assets.toml`.
 
-    Download the desktop package for Windows, macOS, or Linux, then launch it.
+## Conventions
 
-    [Install LunCoSim](getting-started/install.md)
-
-- **Run your first lesson**
-
-    Open the Tutorials menu, take control of a rover, and complete a short
-    guided exercise.
-
-    [First lesson](getting-started/first-lesson.md)
-
-- **Learn the project model**
-
-    Understand what a Twin is, how `twin.toml` declares it, and which file owns
-    which part of the simulation.
-
-    [How it fits together](concepts/how-it-fits-together.md)
-
-- **Write a scenario**
-
-    Use Rhai to react to events, command a rover, and sequence a mission.
-
-    [Write a Rhai scenario](guides/write-a-scenario.md)
-
-- **Bring your existing stack**
-
-    See what you can keep, what must become USD or Modelica, and which
-    integration paths are available today.
-
-    [Integrate your stack](guides/integrate-your-stack.md)
-
-- **Validate before you trust it**
-
-    Preflight the assets, run the authored test, and understand what the
-    evidence does and does not prove.
-
-    [Validate a Twin](guides/validate-a-twin.md)
-
-</div>
-
-## What you can do
-
-- **Build and drive a rover.** Assemble a vehicle, explore wheel and suspension
-  behavior, and observe its interaction with terrain.
-- **Connect equations to motion.** Wire a Modelica controller to a rigid body
-  and inspect the feedback loop while it runs.
-- **Explore subsystem behavior.** Edit electrical, thermal, and mechanical
-  models in the embedded Modelica workbench and compare plots.
-- **Script an operation.** Define mission phases, waypoints, and responses to
-  events, then inspect the resulting state in the UI or over the API.
-- **Connect an operator surface.** Drive the same typed command and telemetry
-  surface from an external process. See
-  [Connect mission control](guides/mission-control.md).
-- **Share a project.** A Twin is an ordinary folder of USD, Modelica, Rhai, and
-  configuration files that you can version and hand to a colleague.
-
-## The four formats
-
-| Format | Owns | Typical files |
-|---|---|---|
-| **USD** | Scene structure, geometry, materials, physics schemas, typed ports and connections | `.usda`, `.usdc` |
-| **Modelica** | Continuous equations, state, and physical behavior | `.mo` |
-| **Rhai** | Events, commands, mission policy, and test verdicts | `.rhai` |
-| **TOML** | The Twin manifest and external asset declarations | `twin.toml`, `Assets.toml` |
-
-The runtime projects those authored documents into a live world. Rust and
-Avian provide the generic engine mechanics; they are not where you author a
-particular rover, mission, or lesson.
-
-## Documentation map
-
-| Section | What it answers |
+| Convention | Meaning |
 |---|---|
-| [Getting started](getting-started/install.md) | How do I install and launch LunCoSim? |
-| [Concepts](concepts/how-it-fits-together.md) | What is a Twin, and how do USD, Modelica, Rhai, and assets interact? |
-| [Guides](guides/create-a-twin.md) | How do I create a project, script behavior, integrate an existing stack, connect an operator tool, and validate the result? |
-| [Reference](reference/cli.md) | What are the CLI flags and default controls? |
+| **Bold** | A user-interface label, a perspective name, or a term defined in the glossary. |
+| `Monospace` | A file name, command, attribute, property, or literal value. |
+| `>` | A menu path, for example **File → Open Twin…**. |
+| Note boxes | A constraint, a platform limitation, or a warning about a common mistake. |
+| Code blocks | Authored source or a command to run. Shell blocks use a POSIX shell unless marked otherwise. |
+| Version numbers | LunCoSim is under active development; command and schema details can change between releases. |
+
+Paths in this document use forward slashes. On Windows, substitute the
+platform separator where the application accepts a native path. Logical asset
+addresses such as `lunco://` and `twin://` always use forward slashes.
+
+## How to use this document
+
+A new user should read [Installation](general/install.md), run
+[First mission](tutorials/first-mission.md), and then read
+[How it fits together](general/how-it-fits-together.md). An author who already
+knows the workbench can go directly to the format chapter for the layer being
+edited. An integrator should start with
+[Integrate your stack](general/integrate-your-stack.md) and the
+[HTTP API](reference/http-api.md). An instructor should read the
+[Tutorials](tutorials/index.md) overview and the lesson descriptions before
+using the classroom track.
 
 ## Current status
 
-LunCoSim is under active development. Model coverage and maturity vary, and
-engineering conclusions need validation for their intended use. Use the
-[GitHub releases](https://github.com/LunCoSim/lunco-sim/releases) page to see
-the current builds and release notes.
+LunCoSim is under active development. Model coverage, platform support, and
+tool maturity vary. A successful build, a clean parse, or a green scene test is
+evidence about a specific claim; none of them is a general accuracy
+certificate. The [Validation](reference/validation.md) chapter explains how to
+separate preflight, runtime behavior, requirement coverage, and physical
+accuracy.
 
-## Community
+Release builds and notes are published on the
+[GitHub releases page](https://github.com/LunCoSim/lunco-sim/releases).
+Community links are in the site footer.
 
-- [LunCoSim on GitHub](https://github.com/LunCoSim/lunco-sim)
-- [Discord](https://discord.gg/A6U3GdvQum)
-- [YouTube demos](https://www.youtube.com/@LunCoSim)
-- [lunco.space](https://lunco.space/)
+</div>

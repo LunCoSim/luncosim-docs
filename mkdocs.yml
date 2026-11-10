@@ -1,12 +1,14 @@
 site_name: LunCoSim Documentation
-site_description: Install LunCoSim, run your first mission, and learn how Twins, USD, Modelica, Rhai, and Assets.toml fit together.
+site_description: Documentation for LunCoSim, an open-source space mission workbench built on USD, Modelica, and Rhai.
 site_url: https://luncosim.github.io/luncosim-docs/
 repo_url: https://github.com/LunCoSim/luncosim-docs
 repo_name: LunCoSim/luncosim-docs
 edit_uri: edit/main/docs/
+copyright: LunCoSim contributors · Documentation version 0.1 · November 2026
 
 theme:
   name: material
+  custom_dir: overrides
   logo: assets/images/luncosim-icon.png
   favicon: assets/images/luncosim-icon.png
   language: en
@@ -15,12 +17,15 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
+    - navigation.indexes
+    - navigation.path
     - navigation.top
     - navigation.footer
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.action.edit
+    - content.tooltips
     - toc.follow
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -40,31 +45,78 @@ theme:
 
 nav:
   - Home: index.md
-  - Getting started:
-      - Install: getting-started/install.md
-      - First run: getting-started/first-run.md
-      - Perspectives: getting-started/perspectives.md
-      - First lesson: getting-started/first-lesson.md
-  - Concepts:
-      - How it fits together: concepts/how-it-fits-together.md
-      - Twin: concepts/twin.md
-      - twin.toml: concepts/twin-toml.md
-      - USD: concepts/usd.md
-      - Modelica: concepts/modelica.md
-      - Rhai: concepts/rhai.md
-      - Assets.toml: concepts/assets-toml.md
-  - Guides:
-      - Create a Twin: guides/create-a-twin.md
-      - Write a Rhai scenario: guides/write-a-scenario.md
-      - Inspect telemetry: guides/inspect-telemetry.md
-      - Use the HTTP API: guides/http-api.md
-      - Integrate your stack: guides/integrate-your-stack.md
-      - Connect mission control: guides/mission-control.md
-      - Validate a Twin: guides/validate-a-twin.md
-      - Troubleshooting: guides/troubleshooting.md
-  - Reference:
-      - CLI: reference/cli.md
-      - Controls: reference/controls.md
+  - 1 General:
+      - 1 General: general/index.md
+      - 1.1 Introduction: general/introduction.md
+      - 1.2 How it fits together: general/how-it-fits-together.md
+      - 1.3 Formats: general/formats.md
+      - 1.4 Installation: general/install.md
+      - 1.5 First run: general/first-run.md
+      - 1.6 Perspectives: general/perspectives.md
+      - 1.7 Twins: general/twins.md
+      - 1.8 Integrate your stack: general/integrate-your-stack.md
+      - 1.9 Glossary: general/glossary.md
+  - 2 Tutorials:
+      - 2 Tutorials: tutorials/index.md
+      - 2.1 First mission: tutorials/first-mission.md
+      - 2.2 Create a Twin: tutorials/create-a-twin.md
+      - 2.3 Build a scene: tutorials/build-a-scene.md
+      - 2.4 Add a Modelica model: tutorials/add-modelica.md
+      - 2.5 Script a mission: tutorials/script-a-mission.md
+      - 2.6 Author a shader: tutorials/author-a-shader.md
+      - 2.7 Compose a HUD: tutorials/compose-ui.md
+      - 2.8 Validate and share: tutorials/validate-and-share.md
+  - 3 USD:
+      - 3 USD: usd/index.md
+      - 3.1 Composition: usd/composition.md
+      - 3.2 Physics: usd/physics.md
+      - 3.3 Ports and connections: usd/ports-and-connections.md
+      - 3.4 Programs: usd/programs.md
+      - 3.5 Materials: usd/materials.md
+      - 3.6 Addresses and assets: usd/addresses-and-assets.md
+      - 3.7 Authoring: usd/authoring.md
+  - 4 Modelica:
+      - 4 Modelica: modelica/index.md
+      - 4.1 Language: modelica/language.md
+      - 4.2 Cosimulation: modelica/cosimulation.md
+      - 4.3 Lunica: modelica/lunica.md
+      - 4.4 Libraries: modelica/libraries.md
+      - 4.5 Experiments: modelica/experiments.md
+  - 5 Rhai:
+      - 5 Rhai: rhai/index.md
+      - 5.1 Lifecycle: rhai/lifecycle.md
+      - 5.2 Tasks: rhai/tasks.md
+      - 5.3 Commands and queries: rhai/commands-and-queries.md
+      - 5.4 Events: rhai/events.md
+      - 5.5 Testing: rhai/testing.md
+      - 5.6 Patterns: rhai/patterns.md
+      - 5.7 Tooling: rhai/tooling.md
+  - 6 Shaders:
+      - 6 Shaders: shaders/index.md
+      - 6.1 Parameters: shaders/parameters.md
+      - 6.2 Texture layers: shaders/texture-layers.md
+      - 6.3 USD materials: shaders/usd-materials.md
+      - 6.4 Terrain: shaders/terrain.md
+      - 6.5 Quality: shaders/quality.md
+      - 6.6 Authoring: shaders/authoring.md
+  - 7 UI & Settings:
+      - 7 UI & Settings: ui/index.md
+      - 7.1 Settings: ui/settings.md
+      - 7.2 HUD: ui/hud.md
+      - 7.3 Theming: ui/theming.md
+      - 7.4 Runtime UI: ui/runtime-ui.md
+      - 7.5 Telemetry: ui/telemetry.md
+  - 8 Reference:
+      - 8 Reference: reference/index.md
+      - 8.1 Command line: reference/cli.md
+      - 8.2 Controls: reference/controls.md
+      - 8.3 twin.toml: reference/twin-toml.md
+      - 8.4 Assets.toml: reference/assets-toml.md
+      - 8.5 File formats: reference/file-formats.md
+      - 8.6 HTTP API: reference/http-api.md
+      - 8.7 Mission control: reference/mission-control.md
+      - 8.8 Validation: reference/validation.md
+      - 8.9 Troubleshooting: reference/troubleshooting.md
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -74,8 +126,11 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - tables
+  - def_list
+  - footnotes
   - toc:
       permalink: true
+      toc_depth: 3
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -84,6 +139,7 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.details
   - pymdownx.keys
+  - pymdownx.smartsymbols
 
 extra:
   social:

@@ -1,3 +1,9 @@
+---
+title: Controls
+chapter: 8
+section: 2
+---
+
 # Controls
 
 These are the shipped default bindings. Tutorials and lessons show the current
@@ -68,12 +74,19 @@ right mouse button.
 
 ## Rebinding
 
-Open **Settings → Input** and change the action, not the physical key in a
-tutorial. The saved bindings are read from `assets/config/keybindings.json` in a
-source checkout and from the user settings location in a packaged build.
+Open **Settings → Keybindings** and change the action, not the physical key in a
+tutorial. The authored defaults are the input-bindings document discovered by
+kind `lunco.input-bindings.v1`; in a source checkout that document is
+`assets/config/keybindings.json`. Your edits persist in the `input_bindings`
+section of `settings.json`, not in the authored asset.
 
-A lesson that uses `input_hint("forward")` will display the new key. A lesson
-that hardcodes a key name is not using the controller-owned binding contract.
+A lesson that uses `input_hint("forward")` displays the effective binding. A
+lesson that hardcodes a key name is not using the controller-owned binding
+contract.
+
+A Twin can displace a conflicting lower-priority physical binding while it is
+active. The displaced action and the winning action are reported in Recent
+Events; your global preference stays stored and returns when the Twin closes.
 
 ## Gamepad and alternate input
 

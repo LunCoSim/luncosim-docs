@@ -1,3 +1,9 @@
+---
+title: Command line
+chapter: 8
+section: 1
+---
+
 # Command line
 
 The `luncosim` binary can open the desktop app, serve the API headlessly, run a
@@ -19,7 +25,7 @@ Run `luncosim --help` for the help text of the installed version.
 | `--scene PATH` | Load this USD scene at startup. The path may be relative to `assets/`, to the current directory, or absolute |
 | `--api [PORT]` | Serve the HTTP command API on the given port |
 | `--no-ui` | Run headless, without a window. Also `LUNCO_NO_UI=1` |
-| `--window-pos SPEC` | Place the window, for example `1920x1080+0+0` |
+| `--window-pos SPEC` | Place the window: `left`, `right`, `top-left`, `top-right`, `bottom-left`, or `bottom-right`. X11/XWayland only; native Wayland ignores it |
 | `--validate PATH…` | Parse-check asset files and exit without opening a window or GPU |
 
 `--no-ui` does **not** imply `--api`. Pass both when a headless run needs the
@@ -134,7 +140,7 @@ luncosim test-component --twin path/to/twin --component rover.wheels
 Run the production binary for these checks; do not substitute a private test
 harness or `--validate`. `--validate` only proves that the files parse and their
 declarations are structurally valid. See
-[Validate a Twin](../guides/validate-a-twin.md) for the evidence layers.
+[Validation](validation.md) for the evidence layers.
 
 ## Asset validation
 
@@ -149,5 +155,5 @@ when every input is valid and `1` when any input fails.
 ## Related
 
 - [Controls](controls.md) — default input bindings
-- [HTTP API](../guides/http-api.md) — command and query envelope
-- [Install](../getting-started/install.md) — packaged and source builds
+- [HTTP API](http-api.md) — command and query envelope
+- [Install](../general/install.md) — packaged and source builds
