@@ -18,7 +18,7 @@ operating space missions with USD, Modelica, and Rhai.</p>
 <dt>Document version</dt><dd>0.1</dd>
 <dt>Release date</dt><dd>November 2026</dd>
 <dt>LunCoSim version</dt><dd>0.6.0-dev</dd>
-<dt>LunCoSim source commit</dt><dd><code>c84fba03ae41c1c48548485e0effd8c152b3621d</code></dd>
+<dt>LunCoSim source commit</dt><dd><code>13b383cce1b99fa6755fa8689c466529cb0046da</code></dd>
 <dt>Applies to</dt><dd>Desktop builds; browser build coverage is TBD</dd>
 <dt>Status</dt><dd>Living document; updated with each release</dd>
 <dt>License</dt><dd>Open source; see the repository for details</dd>
@@ -44,7 +44,7 @@ runtime behaves as it does.
 1. [General](general/index.md) — purpose, installation, first run, perspectives,
    Twins, and the format boundaries.
 2. [Tutorials](tutorials/index.md) — guided lessons from a first drive to a
-   validated, shareable Twin.
+   validated Twin, including an AI assistant connection.
 3. [USD](usd/index.md) — scene composition, physics, typed ports, programs,
    materials, and asset addressing.
 4. [Modelica](modelica/index.md) — continuous behavior, cosimulation, the Lunica

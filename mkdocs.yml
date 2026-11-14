@@ -66,6 +66,7 @@ nav:
       - 2.6 Author a shader: tutorials/author-a-shader.md
       - 2.7 Compose a HUD: tutorials/compose-ui.md
       - 2.8 Validate and share: tutorials/validate-and-share.md
+      - 2.9 Use an AI assistant: tutorials/using-ai-assistants.md
   - 3 USD:
       - 3 USD: usd/index.md
       - 3.1 Composition: usd/composition.md

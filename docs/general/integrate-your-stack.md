@@ -26,6 +26,7 @@ into a second integration layer.
 | glTF mesh or scene | The `.gltf` or `.glb` asset and its materials | Reference it from a USD payload or reference; choose scene or mesh mode | Available |
 | Modelica source | `.mo` classes and package structure | Declare a Twin source root; recompile after edits | Available; see the package note below |
 | FMI 3.0 Co-Simulation FMU | The binary FMU | Load with `LoadFmu`; expose scalar `Float64` ports | Native import only |
+| MCP-compatible AI assistant | The AI client and model | Connect the MCP server from the engine checkout to a running app's HTTP API | Available; local source checkout required |
 | ROS 2 nodes and topics | Your ROS 2 graph | Add a sidecar that translates ROS 2 traffic to the HTTP API | No bridge shipped |
 | URDF, SDF, or MJCF robot | The source robot description | Convert it to USD first | No direct importer |
 | Python, C++, or Julia tools | Your process and libraries | Call the HTTP command/query API | HTTP only; no SDK |
@@ -54,6 +55,13 @@ structures or writes domain state behind the owning document.
 For live control, use `ClaimControl`/`ReleaseControlClaim` for authority and
 `SetPorts`/`ReleasePort` for input holds. See
 [Mission control](../reference/mission-control.md).
+
+## AI assistants
+
+An external AI client can inspect and control a running app through LunCoSim's
+MCP server. It connects to the same typed API used by the UI and scripts; it
+does not start the simulator. Follow [Use an AI assistant](../tutorials/using-ai-assistants.md)
+for setup, available tools, and the application-versus-Twin execution scopes.
 
 ## Modelica packages
 

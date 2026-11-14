@@ -103,5 +103,5 @@ prove.
 | [1.5 First run](first-run.md) | The window, the perspectives, and the tutorial catalog |
 | [1.6 Perspectives](perspectives.md) | The five task layouts and how to switch between them |
 | [1.7 Twins](twins.md) | The project folder, nested Twins, and the project lifecycle |
-| [1.8 Integrate your stack](integrate-your-stack.md) | What can be kept, what must be converted, and which adapters exist |
+| [1.8 Integrate your stack](integrate-your-stack.md) | What can be kept, what must be converted, and how an AI client connects |
 | [1.9 Glossary](glossary.md) | Definitions of the terms used throughout the document |

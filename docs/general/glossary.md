@@ -94,6 +94,10 @@ points.
 **Modelica source root.** A directory declared in `[modelica].paths` where the
 compiler looks for `.mo` sources.
 
+**MCP.** Model Context Protocol, a standard that lets an AI client call tools
+and read resources exposed by a server. LunCoSim's MCP server connects to a
+running app's HTTP API.
+
 ## N–R
 
 **OpenUSD.** The scene description and composition standard used for the
