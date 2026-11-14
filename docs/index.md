@@ -44,20 +44,22 @@ runtime behaves as it does.
 1. [General](general/index.md) — purpose, installation, first run, perspectives,
    Twins, and the format boundaries.
 2. [Tutorials](tutorials/index.md) — guided lessons from a first drive to a
-   validated Twin, including an AI assistant connection.
-3. [USD](usd/index.md) — scene composition, physics, typed ports, programs,
+   validated Twin.
+3. [AI assistant](tutorials/using-ai-assistants.md) — connect an MCP client and
+   work with app and Twin policy scopes.
+4. [USD](usd/index.md) — scene composition, physics, typed ports, programs,
    materials, and asset addressing.
-4. [Modelica](modelica/index.md) — continuous behavior, cosimulation, the Lunica
+5. [Modelica](modelica/index.md) — continuous behavior, cosimulation, the Lunica
    workbench, libraries, and experiments.
-5. [Rhai](rhai/index.md) — scenario lifecycle, task trees, commands, events,
+6. [Rhai](rhai/index.md) — scenario lifecycle, task trees, commands, events,
    tests, and reusable policy patterns.
-6. [Shaders](shaders/index.md) — WESL material parameters, texture layers, USD
+7. [Shaders](shaders/index.md) — WESL material parameters, texture layers, USD
    material binding, terrain rendering, and quality budgets.
-7. [SysML v2](sysml/index.md) — requirement sources, system structure, typed
+8. [SysML v2](sysml/index.md) — requirement sources, system structure, typed
    analysis, and verification with scene tests.
-8. [UI & Settings](ui/index.md) — global and project settings, HUD surfaces,
+9. [UI & Settings](ui/index.md) — global and project settings, HUD surfaces,
    theming, and runtime-authored UI.
-9. [Reference](reference/index.md) — command line, controls, manifests, file
+10. [Reference](reference/index.md) — command line, controls, manifests, file
    formats, HTTP API, mission control, validation, and troubleshooting.
 
 </div>

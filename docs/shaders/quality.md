@@ -1,6 +1,6 @@
 ---
 title: Quality
-chapter: 6
+chapter: 7
 section: 5
 ---
 

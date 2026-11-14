@@ -1,6 +1,6 @@
 ---
 title: Assets.toml
-chapter: 9
+chapter: 10
 section: 4
 ---
 

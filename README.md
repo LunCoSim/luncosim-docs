@@ -11,6 +11,7 @@ Content lives under `docs/` and is organized into numbered chapters:
 
 - `general/` — introduction, formats, installation, perspectives, Twins
 - `tutorials/` — guided end-to-end lessons
+- AI assistant chapter — MCP setup, tools, policy scopes, and hooks
 - `usd/` — scene composition, physics, ports, programs, materials
 - `modelica/` — language, cosimulation, Lunica, libraries, experiments
 - `rhai/` — lifecycle, tasks, commands, events, testing, patterns
@@ -24,12 +25,12 @@ Pages use frontmatter to place themselves in the chapter sequence:
 ```yaml
 ---
 title: Settings
-chapter: 8
+chapter: 9
 section: 1
 ---
 ```
 
-`chapter` renders the page as **7**, and `section` renders it as **7.1**.
+Keep `chapter` and `section` aligned with the numbering in `mkdocs.yml`.
 Headings below the page title are numbered automatically by the theme override
 in `overrides/main.html`; do not type the numbers into the heading text.
 

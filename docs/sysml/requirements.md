@@ -1,6 +1,6 @@
 ---
 title: Requirements and structure
-chapter: 7
+chapter: 8
 section: 1
 ---
 

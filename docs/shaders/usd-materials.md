@@ -1,6 +1,6 @@
 ---
 title: USD materials
-chapter: 6
+chapter: 7
 section: 3
 ---
 

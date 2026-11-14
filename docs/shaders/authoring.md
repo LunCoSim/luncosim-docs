@@ -1,6 +1,6 @@
 ---
 title: Authoring
-chapter: 6
+chapter: 7
 section: 6
 ---
 

@@ -102,7 +102,8 @@ mechanisms:
 | [Author a shader](author-a-shader.md) | A WESL material with parameters and texture layers |
 | [Compose a HUD](compose-ui.md) | A runtime-authored surface with bindings and actions |
 | [Validate and share](validate-and-share.md) | Preflight, lint, scene test, evidence, and handoff |
-| [Use an AI assistant](using-ai-assistants.md) | Connect an MCP client and understand app and Twin policy scopes |
+
+AI and MCP usage has its own [chapter](using-ai-assistants.md).
 
 ## Before you start
 

@@ -66,62 +66,63 @@ nav:
       - 2.6 Author a shader: tutorials/author-a-shader.md
       - 2.7 Compose a HUD: tutorials/compose-ui.md
       - 2.8 Validate and share: tutorials/validate-and-share.md
-      - 2.9 Use an AI assistant: tutorials/using-ai-assistants.md
-  - 3 USD:
-      - 3 USD: usd/index.md
-      - 3.1 Composition: usd/composition.md
-      - 3.2 Physics: usd/physics.md
-      - 3.3 Ports and connections: usd/ports-and-connections.md
-      - 3.4 Programs: usd/programs.md
-      - 3.5 Materials: usd/materials.md
-      - 3.6 Addresses and assets: usd/addresses-and-assets.md
-      - 3.7 Authoring: usd/authoring.md
-  - 4 Modelica:
-      - 4 Modelica: modelica/index.md
-      - 4.1 Language: modelica/language.md
-      - 4.2 Cosimulation: modelica/cosimulation.md
-      - 4.3 Lunica: modelica/lunica.md
-      - 4.4 Libraries: modelica/libraries.md
-      - 4.5 Experiments: modelica/experiments.md
-  - 5 Rhai:
-      - 5 Rhai: rhai/index.md
-      - 5.1 Lifecycle: rhai/lifecycle.md
-      - 5.2 Tasks: rhai/tasks.md
-      - 5.3 Commands and queries: rhai/commands-and-queries.md
-      - 5.4 Events: rhai/events.md
-      - 5.5 Testing: rhai/testing.md
-      - 5.6 Patterns: rhai/patterns.md
-      - 5.7 Tooling: rhai/tooling.md
-  - 6 Shaders:
-      - 6 Shaders: shaders/index.md
-      - 6.1 Parameters: shaders/parameters.md
-      - 6.2 Texture layers: shaders/texture-layers.md
-      - 6.3 USD materials: shaders/usd-materials.md
-      - 6.4 Terrain: shaders/terrain.md
-      - 6.5 Quality: shaders/quality.md
-      - 6.6 Authoring: shaders/authoring.md
-  - 7 SysML v2:
-      - 7 SysML v2: sysml/index.md
-      - 7.1 Requirements and structure: sysml/requirements.md
-      - 7.2 Analysis and verification: sysml/analysis-and-verification.md
-  - 8 UI & Settings:
-      - 8 UI & Settings: ui/index.md
-      - 8.1 Settings: ui/settings.md
-      - 8.2 HUD: ui/hud.md
-      - 8.3 Theming: ui/theming.md
-      - 8.4 Runtime UI: ui/runtime-ui.md
-      - 8.5 Telemetry: ui/telemetry.md
-  - 9 Reference:
-      - 9 Reference: reference/index.md
-      - 9.1 Command line: reference/cli.md
-      - 9.2 Controls: reference/controls.md
-      - 9.3 twin.toml: reference/twin-toml.md
-      - 9.4 Assets.toml: reference/assets-toml.md
-      - 9.5 File formats: reference/file-formats.md
-      - 9.6 HTTP API: reference/http-api.md
-      - 9.7 Mission control: reference/mission-control.md
-      - 9.8 Validation: reference/validation.md
-      - 9.9 Troubleshooting: reference/troubleshooting.md
+  - 3 AI assistant:
+      - 3 AI assistant: tutorials/using-ai-assistants.md
+  - 4 USD:
+      - 4 USD: usd/index.md
+      - 4.1 Composition: usd/composition.md
+      - 4.2 Physics: usd/physics.md
+      - 4.3 Ports and connections: usd/ports-and-connections.md
+      - 4.4 Programs: usd/programs.md
+      - 4.5 Materials: usd/materials.md
+      - 4.6 Addresses and assets: usd/addresses-and-assets.md
+      - 4.7 Authoring: usd/authoring.md
+  - 5 Modelica:
+      - 5 Modelica: modelica/index.md
+      - 5.1 Language: modelica/language.md
+      - 5.2 Cosimulation: modelica/cosimulation.md
+      - 5.3 Lunica: modelica/lunica.md
+      - 5.4 Libraries: modelica/libraries.md
+      - 5.5 Experiments: modelica/experiments.md
+  - 6 Rhai:
+      - 6 Rhai: rhai/index.md
+      - 6.1 Lifecycle: rhai/lifecycle.md
+      - 6.2 Tasks: rhai/tasks.md
+      - 6.3 Commands and queries: rhai/commands-and-queries.md
+      - 6.4 Events: rhai/events.md
+      - 6.5 Testing: rhai/testing.md
+      - 6.6 Patterns: rhai/patterns.md
+      - 6.7 Tooling: rhai/tooling.md
+  - 7 Shaders:
+      - 7 Shaders: shaders/index.md
+      - 7.1 Parameters: shaders/parameters.md
+      - 7.2 Texture layers: shaders/texture-layers.md
+      - 7.3 USD materials: shaders/usd-materials.md
+      - 7.4 Terrain: shaders/terrain.md
+      - 7.5 Quality: shaders/quality.md
+      - 7.6 Authoring: shaders/authoring.md
+  - 8 SysML v2:
+      - 8 SysML v2: sysml/index.md
+      - 8.1 Requirements and structure: sysml/requirements.md
+      - 8.2 Analysis and verification: sysml/analysis-and-verification.md
+  - 9 UI & Settings:
+      - 9 UI & Settings: ui/index.md
+      - 9.1 Settings: ui/settings.md
+      - 9.2 HUD: ui/hud.md
+      - 9.3 Theming: ui/theming.md
+      - 9.4 Runtime UI: ui/runtime-ui.md
+      - 9.5 Telemetry: ui/telemetry.md
+  - 10 Reference:
+      - 10 Reference: reference/index.md
+      - 10.1 Command line: reference/cli.md
+      - 10.2 Controls: reference/controls.md
+      - 10.3 twin.toml: reference/twin-toml.md
+      - 10.4 Assets.toml: reference/assets-toml.md
+      - 10.5 File formats: reference/file-formats.md
+      - 10.6 HTTP API: reference/http-api.md
+      - 10.7 Mission control: reference/mission-control.md
+      - 10.8 Validation: reference/validation.md
+      - 10.9 Troubleshooting: reference/troubleshooting.md
 
 extra_css:
   - assets/stylesheets/extra.css

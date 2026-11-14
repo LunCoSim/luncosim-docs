@@ -1,7 +1,6 @@
 ---
 title: Use an AI assistant
-chapter: 2
-section: 9
+chapter: 3
 ---
 
 # Use an AI assistant with LunCoSim

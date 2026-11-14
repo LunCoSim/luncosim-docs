@@ -1,6 +1,6 @@
 ---
 title: Ports and connections
-chapter: 3
+chapter: 4
 section: 3
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Shaders
-chapter: 6
+chapter: 7
 ---
 
 # Shaders

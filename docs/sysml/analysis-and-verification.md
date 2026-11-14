@@ -1,6 +1,6 @@
 ---
 title: Analysis and verification
-chapter: 7
+chapter: 8
 section: 2
 ---
 

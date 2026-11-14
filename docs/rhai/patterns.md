@@ -1,6 +1,6 @@
 ---
 title: Patterns
-chapter: 5
+chapter: 6
 section: 6
 ---
 

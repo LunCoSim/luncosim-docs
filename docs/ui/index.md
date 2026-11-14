@@ -1,6 +1,6 @@
 ---
 title: UI & Settings
-chapter: 8
+chapter: 9
 ---
 
 # UI & Settings

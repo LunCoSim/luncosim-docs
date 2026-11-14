@@ -1,6 +1,6 @@
 ---
 title: Rhai
-chapter: 5
+chapter: 6
 ---
 
 # Rhai

@@ -1,6 +1,6 @@
 ---
 title: SysML v2
-chapter: 7
+chapter: 8
 ---
 
 # SysML v2
