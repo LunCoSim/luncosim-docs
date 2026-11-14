@@ -648,6 +648,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ai-assistants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI assistants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#modelica-packages" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -768,6 +779,8 @@
       
         
           
+        
+      
         
       
         
@@ -1051,6 +1064,34 @@
     
   
     2.8 Validate and share
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/using-ai-assistants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.9 Use an AI assistant
   
 
     
@@ -2868,6 +2909,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ai-assistants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI assistants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#modelica-packages" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3061,6 +3113,12 @@ into a second integration layer.</p>
 <td>Native import only</td>
 </tr>
 <tr>
+<td>MCP-compatible AI assistant</td>
+<td>The AI client and model</td>
+<td>Connect the MCP server from the engine checkout to a running app's HTTP API</td>
+<td>Available; local source checkout required</td>
+</tr>
+<tr>
 <td>ROS 2 nodes and topics</td>
 <td>Your ROS 2 graph</td>
 <td>Add a sidecar that translates ROS 2 traffic to the HTTP API</td>
@@ -3115,6 +3173,11 @@ structures or writes domain state behind the owning document.</p>
 <p>For live control, use <code>ClaimControl</code>/<code>ReleaseControlClaim</code> for authority and
 <code>SetPorts</code>/<code>ReleasePort</code> for input holds. See
 <a href="../../reference/mission-control/">Mission control</a>.</p>
+<h2 id="ai-assistants">AI assistants<a class="headerlink" href="#ai-assistants" title="Permanent link">&para;</a></h2>
+<p>An external AI client can inspect and control a running app through LunCoSim's
+MCP server. It connects to the same typed API used by the UI and scripts; it
+does not start the simulator. Follow <a href="../../tutorials/using-ai-assistants/">Use an AI assistant</a>
+for setup, available tools, and the application-versus-Twin execution scopes.</p>
 <h2 id="modelica-packages">Modelica packages<a class="headerlink" href="#modelica-packages" title="Permanent link">&para;</a></h2>
 <p>Keep the package structure and its <code>within</code> declarations. Add the package
 directory to the Twin manifest:</p>
